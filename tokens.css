@@ -1,0 +1,18 @@
+/* ═══════════════════════════════════════════════════
+   S2R BUILD — SHARED DESIGN TOKENS
+   Copy this :root block into every new lens arc file.
+   Update here first, then propagate to all files.
+   ═══════════════════════════════════════════════════ */
+
+:root{
+  --navy:#1B3F7A;--navy-dk:#0F2550;--navy-lt:#2C5099;
+  --red:#8C1A1A;--red-m:#B22222;
+  --bg:#F8F7F4;--surf:#FFFFFF;--surf2:#F2F0EC;
+  --bdr:#E2DFD8;--bdr2:#CCC9C0;
+  --tx:#1A1A2E;--tx2:#4A4A5E;--tx3:#8A8A9E;
+  --build-bg:#F0EBF8;--build-bd:#9B8FD8;--build-tx:#3C2A8C;
+  --arc1-bg:#E8F4FD;--arc1-bd:#5BA3D9;--arc1-tx:#0C3D6B;
+  --arc2-bg:#FFF0E8;--arc2-bd:#E88A1A;--arc2-tx:#6B3200;
+  --arc3-bg:#F5EAF8;--arc3-bd:#9B4FCC;--arc3-tx:#4A0A7A;
+  --arc4-bg:#E8F8F0;--arc4-bd:#2DB57A;--arc4-tx:#0A4A2A;
+}
