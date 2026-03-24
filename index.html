@@ -9,89 +9,136 @@
 <style>
 :root{
   --navy:#1B3F7A;--navy-dk:#0F2550;--red:#8C1A1A;
-  --bg:#F8F7F4;--surf:#FFFFFF;--bdr:#E2DFD8;
+  --bg:#F8F7F4;--surf:#FFFFFF;--surf2:#F2F0EC;
+  --bdr:#E2DFD8;--bdr2:#CCC9C0;
   --tx:#1A1A2E;--tx2:#4A4A5E;--tx3:#8A8A9E;
+  --build-bg:#F0EBF8;--build-bd:#9B8FD8;--build-tx:#3C2A8C;
+  --found:#7B5CC8;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--tx);min-height:100vh}
-.nav{background:var(--navy-dk);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:58px;border-bottom:2px solid var(--red)}
-.brand{font-family:'DM Serif Display',serif;font-size:1.05rem;color:#fff;text-decoration:none}
-.brand sub{font-size:.52rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.1em;display:block;margin-top:-3px;font-family:'DM Sans',sans-serif}
-.nav-tag{font-size:.67rem;color:rgba(255,255,255,.38);font-weight:500;letter-spacing:.05em}
-.hero{background:var(--navy-dk);min-height:86vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:3rem 1.5rem;position:relative;overflow:hidden}
+
+/* ── NAV ── */
+.nav{background:var(--navy-dk);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:58px;border-bottom:2px solid var(--red);position:sticky;top:0;z-index:100}
+.brand{font-family:'DM Serif Display',serif;font-size:1.05rem;color:#fff;text-decoration:none;line-height:1.1}
+.brand sub{font-size:.5rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.1em;display:block;font-family:'DM Sans',sans-serif}
+.nav-tabs{display:flex;gap:3px}
+.nav-tab{padding:.38rem .9rem;border:none;background:rgba(255,255,255,.07);color:rgba(255,255,255,.6);font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;cursor:pointer;border-radius:6px;transition:all .2s;letter-spacing:.02em}
+.nav-tab:hover{background:rgba(255,255,255,.13);color:#fff}
+.nav-tab.active{background:var(--build-bd);color:#fff}
+.nav-tab.active.found{background:var(--found)}
+
+/* ── HERO ── */
+.hero{background:var(--navy-dk);padding:3rem 1.5rem 2.5rem;text-align:center;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 15% 75%,rgba(123,92,200,.15) 0%,transparent 50%),radial-gradient(ellipse at 85% 25%,rgba(44,80,153,.18) 0%,transparent 50%)}
-.hero-inner{max-width:740px;position:relative;z-index:1}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:.32rem 1rem;margin-bottom:1.4rem}
-.eyebrow span{font-size:.63rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.hero-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:.3rem .9rem;margin-bottom:1.2rem}
+.eyebrow span{font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
 .edot{width:5px;height:5px;border-radius:50%;background:#C8A8F0;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
-.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#fff;line-height:1.18;margin-bottom:.9rem;font-weight:400}
+.hero h1{font-family:'DM Serif Display',serif;font-size:clamp(1.8rem,4.5vw,2.8rem);color:#fff;line-height:1.18;margin-bottom:.85rem;font-weight:400}
 .hero h1 em{color:#C8A8F0;font-style:normal}
 .hero h1 strong{color:#F4C870;font-weight:400}
-.hero-sub{font-size:clamp(.83rem,2vw,.97rem);color:rgba(255,255,255,.58);line-height:1.75;max-width:580px;margin:0 auto 1.9rem}
-.hero-def{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:13px;padding:1rem 1.4rem;max-width:660px;margin:0 auto 2rem;text-align:left}
-.def-lbl{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:.45rem}
-.def-txt{font-size:.83rem;color:rgba(255,255,255,.75);line-height:1.75;font-style:italic}
-.def-cite{font-size:.6rem;color:rgba(255,255,255,.3);margin-top:.45rem;text-transform:uppercase;letter-spacing:.06em}
-.journeys{max-width:820px;margin:0 auto;padding:3.5rem 1.5rem}
-.sec-eyebrow{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:.5rem}
-.sec-title{font-family:'DM Serif Display',serif;font-size:clamp(1.3rem,3vw,1.75rem);color:var(--navy);margin-bottom:.45rem}
-.sec-sub{font-size:.87rem;color:var(--tx2);line-height:1.68;max-width:620px;margin-bottom:2rem}
-.journey-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-@media(max-width:620px){.journey-cards{grid-template-columns:1fr}}
-.jcard{background:var(--surf);border:1px solid var(--bdr);border-radius:14px;padding:1.5rem 1.35rem;position:relative;overflow:hidden;transition:box-shadow .18s,transform .18s;cursor:pointer;text-decoration:none;display:block}
-.jcard:hover{box-shadow:0 8px 28px rgba(0,0,0,.09);transform:translateY(-2px)}
-.jcard::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:14px 14px 0 0}
-.jcard-f::before{background:linear-gradient(90deg,#7B5CC8,#9B8FD8)}
-.jcard-b::before{background:linear-gradient(90deg,#1B3F7A,#3C2A8C)}
-.jcard-num{font-family:'DM Serif Display',serif;font-size:2.8rem;color:rgba(0,0,0,.045);position:absolute;top:.6rem;right:1rem;font-weight:400;line-height:1}
-.jcard-badge{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:.22rem .6rem;border-radius:5px;display:inline-block;margin-bottom:.7rem}
-.bf{background:#EDE8F8;color:#3A1A8A}
-.bb{background:#EEF2FA;color:#1B3F7A}
-.jcard-title{font-family:'DM Serif Display',serif;font-size:1.25rem;margin-bottom:.35rem;color:var(--navy)}
-.jcard-sub{font-size:.78rem;color:var(--tx2);line-height:1.58;margin-bottom:1rem}
-.jcard-meta{display:flex;flex-direction:column;gap:.32rem;margin-bottom:1rem}
-.jm{font-size:.73rem;color:var(--tx3);display:flex;align-items:center;gap:.4rem}
-.jm::before{content:'→';color:#CCC9C0;font-size:.7rem}
-.jcard-action{font-size:.75rem;font-weight:700;display:flex;align-items:center;gap:.35rem}
-.jcard-f .jcard-action{color:#7B5CC8}
-.jcard-b .jcard-action{color:var(--navy)}
-.dig-section{background:var(--surf);border-top:1px solid var(--bdr);border-bottom:1px solid var(--bdr);padding:3rem 1.5rem}
-.dig-inner{max-width:820px;margin:0 auto}
-.dig-row{display:grid;grid-template-columns:repeat(3,1fr);gap:.85rem;margin-top:1.5rem}
-@media(max-width:600px){.dig-row{grid-template-columns:1fr}}
-.dig-card{border-radius:12px;padding:1.2rem 1.1rem;border:1px solid}
-.dig-l{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;margin-bottom:.6rem}
-.dig-layer{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-bottom:.28rem;opacity:.7}
-.dig-name{font-family:'DM Serif Display',serif;font-size:1.05rem;margin-bottom:.35rem}
-.dig-items{display:flex;flex-direction:column;gap:3px}
-.dig-item{font-size:.72rem;color:var(--tx2);display:flex;align-items:flex-start;gap:5px}
-.dig-item::before{content:"→";opacity:.4;flex-shrink:0;margin-top:1px}
-.principles{background:var(--navy-dk);padding:3.5rem 1.5rem}
-.p-inner{max-width:820px;margin:0 auto}
-.p-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:.75rem;margin-top:1.5rem}
-.p-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:.95rem 1rem}
-.p-num{font-size:.58rem;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem}
-.p-title{font-family:'DM Serif Display',serif;font-size:.92rem;color:#fff;margin-bottom:.22rem}
-.p-txt{font-size:.72rem;color:rgba(255,255,255,.5);line-height:1.55}
-.p-cta{text-align:center;margin-top:2rem}
-.p-cta button{padding:.7rem 2rem;background:#C8A8F0;color:var(--navy-dk);border:none;border-radius:9px;font-family:'DM Sans',sans-serif;font-size:.88rem;font-weight:700;cursor:pointer;transition:all .15s}
-.p-cta button:hover{background:#fff}
-footer{background:var(--navy-dk);color:rgba(255,255,255,.28);text-align:center;padding:.85rem;font-size:.64rem;border-top:1px solid rgba(255,255,255,.07)}
-footer a{color:rgba(255,255,255,.35);text-decoration:none}
-footer a:hover{color:rgba(255,255,255,.6)}
+.hero-sub{font-size:.92rem;color:rgba(255,255,255,.55);line-height:1.72;max-width:560px;margin:0 auto 1.75rem}
+.hero-def{background:rgba(255,255,255,.055);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:.95rem 1.35rem;max-width:640px;margin:0 auto;text-align:left}
+.def-lbl{font-size:.57rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.32);margin-bottom:.4rem}
+.def-txt{font-size:.82rem;color:rgba(255,255,255,.72);line-height:1.72;font-style:italic}
+.def-cite{font-size:.58rem;color:rgba(255,255,255,.28);margin-top:.4rem;text-transform:uppercase;letter-spacing:.06em}
+
+/* ── JOURNEY SWITCHER ── */
+.journey-bar{background:var(--surf);border-bottom:1px solid var(--bdr);position:sticky;top:58px;z-index:90}
+.journey-bar-inner{max-width:960px;margin:0 auto;display:flex;gap:0;padding:0 1.5rem}
+.jbar-btn{padding:.9rem 1.25rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:500;color:var(--tx3);cursor:pointer;border:none;background:none;border-bottom:3px solid transparent;transition:all .2s;display:flex;align-items:center;gap:.5rem}
+.jbar-btn:hover{color:var(--tx2)}
+.jbar-btn.active-f{color:var(--found);border-bottom-color:var(--found);font-weight:600}
+.jbar-btn.active-b{color:var(--build-tx);border-bottom-color:var(--build-bd);font-weight:600}
+.jbar-pip{font-size:.6rem;font-weight:700;padding:.15rem .45rem;border-radius:10px}
+.pip-f{background:#EDE8F8;color:#3A1A8A}
+.pip-b{background:var(--build-bg);color:var(--build-tx)}
+
+/* ── PAGES ── */
+.page{display:none}.page.active{display:block}
+.main{max-width:960px;margin:0 auto;padding:1.75rem 1.5rem 5rem}
+
+/* ── FOUNDATIONS PAGE ── */
+.found-hero{background:linear-gradient(135deg,#2A1A6A,#3C2A8C);border-radius:14px;padding:1.75rem 1.75rem 1.5rem;color:#fff;margin-bottom:1.5rem}
+.found-hero-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.45);margin-bottom:.4rem}
+.found-hero-h{font-family:'DM Serif Display',serif;font-size:1.7rem;margin-bottom:.5rem}
+.found-hero-p{font-size:.83rem;color:rgba(255,255,255,.65);line-height:1.7;max-width:620px;margin-bottom:1.1rem}
+.found-enter-btn{display:inline-flex;align-items:center;gap:.4rem;background:#C8A8F0;color:#0F2550;border:none;border-radius:9px;padding:.65rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:700;cursor:pointer;text-decoration:none;transition:all .18s}
+.found-enter-btn:hover{background:#fff;transform:translateY(-1px)}
+.found-stats{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem}
+.fstat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.8);padding:.25rem .75rem;border-radius:20px;font-size:.7rem;font-weight:500}
+
+.found-what{background:var(--surf);border:1px solid var(--bdr);border-radius:12px;padding:1.25rem 1.35rem;margin-bottom:1rem}
+.found-what-title{font-size:.88rem;font-weight:600;color:var(--tx);margin-bottom:.85rem}
+.found-modules{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.65rem}
+.fmod{background:var(--surf2);border:1px solid var(--bdr);border-radius:9px;padding:.75rem .9rem}
+.fmod-num{font-size:.62rem;font-weight:700;color:var(--found);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.25rem}
+.fmod-title{font-size:.8rem;font-weight:600;color:var(--tx);margin-bottom:.2rem}
+.fmod-desc{font-size:.7rem;color:var(--tx3);line-height:1.5}
+
+/* ── BUILD PAGE ── */
+.build-hero{background:linear-gradient(135deg,var(--navy-dk) 0%,#1C2E6B 55%,#2A1A5A 100%);border-radius:14px;padding:1.75rem 1.75rem 1.5rem;color:#fff;margin-bottom:1.5rem}
+.build-hero-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--build-bd);margin-bottom:.4rem}
+.build-hero-h{font-family:'DM Serif Display',serif;font-size:1.7rem;margin-bottom:.5rem}
+.build-hero-h em{color:#C4B4F8;font-style:normal}
+.build-hero-p{font-size:.83rem;color:rgba(255,255,255,.62);line-height:1.7;max-width:620px;margin-bottom:1rem}
+.build-stats{display:flex;gap:.6rem;flex-wrap:wrap}
+.bstat{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.8);padding:.25rem .75rem;border-radius:20px;font-size:.7rem;font-weight:500}
+
+.progress-wrap{background:var(--surf);border:1px solid var(--bdr);border-radius:10px;padding:.8rem 1.1rem;margin-bottom:1.75rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.pb-label{font-size:.75rem;font-weight:600;color:var(--tx);white-space:nowrap}
+.pb-track{flex:1;min-width:120px;height:7px;background:var(--bdr2);border-radius:4px;overflow:hidden}
+.pb-fill{height:100%;background:var(--build-bd);border-radius:4px;width:9%}
+.pb-stat{font-size:.72rem;color:var(--tx3);white-space:nowrap}
+
+.camp-block{margin-bottom:2.25rem}
+.camp-hdr{display:flex;align-items:center;gap:.85rem;margin-bottom:.9rem;padding-bottom:.6rem;border-bottom:2px solid var(--bdr)}
+.camp-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:1rem;flex-shrink:0}
+.c1 .camp-num{background:var(--build-bg);color:var(--build-tx);border:2px solid var(--build-bd)}
+.c2 .camp-num{background:#E8F0FF;color:#1A3A8A;border:2px solid #5A80D0}
+.c3 .camp-num{background:#E8F8F0;color:#0A4A2A;border:2px solid #2AB07A}
+.camp-name{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--tx)}
+.camp-meta{font-size:.7rem;color:var(--tx3);margin-top:2px}
+.camp-tag{font-size:.62rem;font-weight:700;padding:.16rem .48rem;border-radius:9px;margin-left:.45rem;vertical-align:middle}
+.c1 .camp-tag{background:var(--build-bg);color:var(--build-tx);border:1px solid var(--build-bd)}
+.c2 .camp-tag{background:#E8F0FF;color:#1A3A8A;border:1px solid #5A80D0}
+.c3 .camp-tag{background:#E8F8F0;color:#0A4A2A;border:1px solid #2AB07A}
+
+.lens-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:.7rem}
+.lens-card{background:var(--surf);border:1px solid var(--bdr);border-radius:11px;padding:.95rem 1rem;transition:all .2s;position:relative;overflow:hidden;border-top:3px solid var(--bdr2);text-decoration:none;display:block}
+.lens-card.active{border-top-color:var(--build-bd);cursor:pointer}
+.lens-card.active:hover{border-color:var(--build-bd);transform:translateY(-2px);box-shadow:0 5px 16px rgba(60,42,140,.11)}
+.lens-card.coming{opacity:.48;cursor:default;pointer-events:none}
+.lc-num{font-size:.6rem;font-weight:700;color:var(--tx3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:.28rem}
+.lens-card.active .lc-num{color:var(--build-bd)}
+.lc-title{font-size:.85rem;font-weight:600;color:var(--tx);margin-bottom:.25rem;line-height:1.3}
+.lc-desc{font-size:.7rem;color:var(--tx3);line-height:1.5;margin-bottom:.6rem}
+.lc-arcs{display:flex;gap:3px;flex-wrap:wrap;margin-bottom:.5rem}
+.lc-arc{font-size:.58rem;font-weight:600;padding:.13rem .38rem;border-radius:7px;background:var(--surf2);color:var(--tx3);border:1px solid var(--bdr)}
+.lens-card.active .lc-arc{background:var(--build-bg);color:var(--build-tx);border-color:var(--build-bd)}
+.lc-action{font-size:.7rem;font-weight:600;color:var(--build-tx)}
+.lc-coming{font-size:.68rem;color:var(--tx3);font-style:italic}
+
+footer{background:var(--navy-dk);color:rgba(255,255,255,.28);text-align:center;padding:.8rem;font-size:.63rem;border-top:1px solid rgba(255,255,255,.07)}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav class="nav">
   <a class="brand" href="index.html">IMPACTIS <sub>Consulting</sub></a>
-  <span class="nav-tag">Strategy2Results® Platform</span>
+  <div class="nav-tabs">
+    <button class="nav-tab found active" onclick="showJourney('foundations')">S2R Foundations</button>
+    <button class="nav-tab" onclick="showJourney('build')">BUILD</button>
+  </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="eyebrow"><div class="edot"></div><span>Strategy2Results® · A proprietary consulting framework</span></div>
+    <div class="eyebrow"><div class="edot"></div><span>Strategy2Results® · Impactis Consulting</span></div>
     <h1>Where <em>thinking</em> meets <strong>results</strong></h1>
     <p class="hero-sub">A structured, diagnostic approach to strategy built for leaders who want clarity, coherence, and confidence in their direction. Two journeys — one system.</p>
     <div class="hero-def">
@@ -102,105 +149,167 @@ footer a:hover{color:rgba(255,255,255,.6)}
   </div>
 </section>
 
-<section class="journeys">
-  <div class="sec-eyebrow">The S2R Journey</div>
-  <div class="sec-title">Two journeys. One coherent system.</div>
-  <div class="sec-sub">Start with Foundations to establish the quality of your strategic thinking — then enter BUILD to design your strategy through eleven structured lenses.</div>
-  <div class="journey-cards">
+<!-- JOURNEY SWITCHER BAR -->
+<div class="journey-bar">
+  <div class="journey-bar-inner">
+    <button class="jbar-btn active-f" id="jbar-f" onclick="showJourney('foundations')">
+      <span class="jbar-pip pip-f">1</span> S2R Foundations
+    </button>
+    <button class="jbar-btn" id="jbar-b" onclick="showJourney('build')">
+      <span class="jbar-pip pip-b">2</span> BUILD
+    </button>
+  </div>
+</div>
 
-    <a class="jcard jcard-f" href="foundation.html">
-      <div class="jcard-num">1</div>
-      <div class="jcard-badge bf">Open · Start Here</div>
-      <div class="jcard-title">S2R Foundations</div>
-      <div class="jcard-sub">The complete deconstruction of the strategy definition. Establishes the quality of your strategic thinking before you build.</div>
-      <div class="jcard-meta">
-        <span class="jm">26 guiding questions across the DIG framework</span>
-        <span class="jm">Generates your strategic gap assessment</span>
-        <span class="jm">Readiness baseline before BUILD</span>
-      </div>
-      <div class="jcard-action">Enter Foundations →</div>
-    </a>
+<!-- FOUNDATIONS PAGE -->
+<div class="page active" id="page-foundations">
+  <div class="main">
 
-    <a class="jcard jcard-b" href="BUILD_index.html">
-      <div class="jcard-num">2</div>
-      <div class="jcard-badge bb">Client Access</div>
-      <div class="jcard-title">BUILD</div>
-      <div class="jcard-sub">Three Base Camps. Eleven structured lenses. Design, stress-test, and ground your complete strategic architecture.</div>
-      <div class="jcard-meta">
-        <span class="jm">Base Camp 1: Direction — 4 lenses</span>
-        <span class="jm">Base Camp 2: Influence — 4 lenses</span>
-        <span class="jm">Base Camp 3: Grounding — 3 lenses</span>
+    <div class="found-hero">
+      <div class="found-hero-lbl">Journey 1 · Open · Start Here</div>
+      <div class="found-hero-h">S2R Foundations</div>
+      <div class="found-hero-p">The complete deconstruction of the strategy definition. Before you design a strategy, you must understand what strategy actually is — and where your current thinking has gaps. Foundations establishes that baseline rigorously, using 26 guiding questions across the DIG framework.</div>
+      <a class="found-enter-btn" href="Strategy_Foundation_Diagnostics__29_.html">Enter S2R Foundations →</a>
+      <div class="found-stats">
+        <span class="fstat">26 guiding questions</span>
+        <span class="fstat">3 DIG layers</span>
+        <span class="fstat">Generates your gap assessment</span>
+        <span class="fstat">Open access</span>
       </div>
-      <div class="jcard-action">Enter BUILD →</div>
-    </a>
+    </div>
+
+    <div class="found-what">
+      <div class="found-what-title">What Foundations covers</div>
+      <div class="found-modules">
+        <div class="fmod"><div class="fmod-num">Layer D</div><div class="fmod-title">Direction</div><div class="fmod-desc">Strategic intent, purpose, domain scope, Success in Practice, OKR architecture.</div></div>
+        <div class="fmod"><div class="fmod-num">Layer I</div><div class="fmod-title">Influence</div><div class="fmod-desc">Execution capability, performance rhythm, CXO accountability architecture.</div></div>
+        <div class="fmod"><div class="fmod-num">Layer G</div><div class="fmod-title">Grounding</div><div class="fmod-desc">Culture, ESRG alignment, environmental navigation, FIT operating rhythm.</div></div>
+        <div class="fmod"><div class="fmod-num">Output</div><div class="fmod-title">DIG Gap Assessment</div><div class="fmod-desc">A structured readiness baseline that determines your entry point into BUILD.</div></div>
+      </div>
+    </div>
 
   </div>
-</section>
+</div>
 
-<section class="dig-section">
-  <div class="dig-inner">
-    <div class="sec-eyebrow">The Framework</div>
-    <div class="sec-title" style="margin-bottom:.35rem">Strategy is not a document. It is a system of decisions.</div>
-    <div style="font-size:.85rem;color:var(--tx2);line-height:1.68;max-width:600px;margin-bottom:.5rem">Strategy2Results® follows a rigorous causal chain from diagnosis to executable, durable direction — across three DIG layers.</div>
-    <div class="dig-row">
-      <div class="dig-card" style="background:#FEF3E2;border-color:#D8920A">
-        <div class="dig-l" style="background:rgba(216,146,10,.2);color:#7A4500">D</div>
-        <div class="dig-layer" style="color:#7A4500">Layer 1</div>
-        <div class="dig-name" style="color:#7A4500">Direction</div>
-        <div class="dig-items">
-          <div class="dig-item">Strategic intent &amp; purpose</div>
-          <div class="dig-item">Domain scope &amp; choices</div>
-          <div class="dig-item">Success in Practice (SiP)</div>
-          <div class="dig-item">OKR architecture</div>
+<!-- BUILD PAGE -->
+<div class="page" id="page-build">
+  <div class="main">
+
+    <div class="build-hero">
+      <div class="build-hero-lbl">Journey 2 · Client Access</div>
+      <div class="build-hero-h"><em>Build</em> your strategy. Lens by lens.</div>
+      <div class="build-hero-p">Three Base Camps. Eleven structured lenses. Each lens builds on the last — from aligning your leadership team through to grounding your strategy for durable execution. You cannot skip a lens. You can only move forward by completing the one you are in.</div>
+      <div class="build-stats">
+        <span class="bstat">⛺ 3 Base Camps</span>
+        <span class="bstat">🔭 11 Lenses</span>
+        <span class="bstat">⏱ 2 full days</span>
+        <span class="bstat">👥 Full CXO team required</span>
+      </div>
+    </div>
+
+    <div class="progress-wrap">
+      <span class="pb-label">Your BUILD progress</span>
+      <div class="pb-track"><div class="pb-fill"></div></div>
+      <span class="pb-stat">1 of 11 lenses active</span>
+    </div>
+
+    <!-- CAMP 1 -->
+    <div class="camp-block c1">
+      <div class="camp-hdr">
+        <div class="camp-num">1</div>
+        <div>
+          <div class="camp-name">Base Camp 1: Direction <span class="camp-tag">Day 1 · 4 lenses</span></div>
+          <div class="camp-meta">Where are we going — and why does it matter?</div>
         </div>
       </div>
-      <div class="dig-card" style="background:#EEF2FA;border-color:#6B8FCC">
-        <div class="dig-l" style="background:rgba(107,143,204,.2);color:#1B3F7A">I</div>
-        <div class="dig-layer" style="color:#1B3F7A">Layer 2</div>
-        <div class="dig-name" style="color:#1B3F7A">Influence</div>
-        <div class="dig-items">
-          <div class="dig-item">Execution capability</div>
-          <div class="dig-item">Performance management rhythm</div>
-          <div class="dig-item">CXO expectations register</div>
-          <div class="dig-item">Accountability architecture</div>
+      <div class="lens-grid">
+        <a class="lens-card active" href="lens_01_heartmind.html">
+          <div class="lc-num">Lens 01</div>
+          <div class="lc-title">Aligning Heart & Mind</div>
+          <div class="lc-desc">Team behavioural DNA, climate diagnostic, and alignment architecture.</div>
+          <div class="lc-arcs"><span class="lc-arc">Awareness</span><span class="lc-arc">Intelligence</span><span class="lc-arc">Extrapolating</span><span class="lc-arc">Converging</span></div>
+          <div class="lc-action">Enter lens →</div>
+        </a>
+        <div class="lens-card coming">
+          <div class="lc-num">Lens 02</div>
+          <div class="lc-title">Strategy Visioning & SiP</div>
+          <div class="lc-desc">Strategic intent, Success in Practice, and direction definition.</div>
+          <div class="lc-arcs"><span class="lc-arc">Awareness</span><span class="lc-arc">Intelligence</span><span class="lc-arc">Extrapolating</span><span class="lc-arc">Converging</span></div>
+          <div class="lc-coming">Building next</div>
         </div>
-      </div>
-      <div class="dig-card" style="background:#E2F5EE;border-color:#2EA87A">
-        <div class="dig-l" style="background:rgba(46,168,122,.2);color:#0A5030">G</div>
-        <div class="dig-layer" style="color:#0A5030">Layer 3</div>
-        <div class="dig-name" style="color:#0A5030">Grounding</div>
-        <div class="dig-items">
-          <div class="dig-item">Culture &amp; organisational health</div>
-          <div class="dig-item">ESRG alignment</div>
-          <div class="dig-item">Environmental navigation</div>
-          <div class="dig-item">FIT operating rhythm</div>
+        <div class="lens-card coming">
+          <div class="lc-num">Lens 03</div>
+          <div class="lc-title">KISS Mapping & OKR Design</div>
+          <div class="lc-desc">Strategic priorities, trade-offs, and OKR architecture.</div>
+          <div class="lc-arcs"><span class="lc-arc">Awareness</span><span class="lc-arc">Intelligence</span><span class="lc-arc">Extrapolating</span><span class="lc-arc">Converging</span></div>
+          <div class="lc-coming">Coming</div>
+        </div>
+        <div class="lens-card coming">
+          <div class="lc-num">Lens 04</div>
+          <div class="lc-title">ABCV Integrity Check</div>
+          <div class="lc-desc">Ambition, Boldness, Coherence, and Value alignment audit.</div>
+          <div class="lc-arcs"><span class="lc-arc">Awareness</span><span class="lc-arc">Intelligence</span><span class="lc-arc">Extrapolating</span><span class="lc-arc">Converging</span></div>
+          <div class="lc-coming">Coming</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="principles">
-  <div class="p-inner">
-    <div style="font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:.45rem">Why S2R Works</div>
-    <div style="font-family:'DM Serif Display',serif;font-size:clamp(1.2rem,3vw,1.65rem);color:#fff;margin-bottom:.35rem">Six operating principles</div>
-    <div class="p-grid">
-      <div class="p-card"><div class="p-num">Principle 1</div><div class="p-title">Logic before process</div><div class="p-txt">Most strategy fails from errors of logic — not errors of data. Thinking quality comes first.</div></div>
-      <div class="p-card"><div class="p-num">Principle 2</div><div class="p-title">Strategy is iterative</div><div class="p-txt">Not an annual event. A living feedback loop: sense → interpret → decide → act → observe.</div></div>
-      <div class="p-card"><div class="p-num">Principle 3</div><div class="p-title">All four Ws matter</div><div class="p-txt">WHAT, WHY, HOW and WHEN must all be explicit. Any gap creates structural incompleteness.</div></div>
-      <div class="p-card"><div class="p-num">Principle 4</div><div class="p-title">Value must be complete</div><div class="p-txt">Creating value is not enough. It must be delivered and the system that delivers it must be sustained.</div></div>
-      <div class="p-card"><div class="p-num">Principle 5</div><div class="p-title">Context is non-negotiable</div><div class="p-txt">Every strategy is a position inside a specific environment. Generic strategy is no strategy.</div></div>
-      <div class="p-card"><div class="p-num">Principle 6</div><div class="p-title">Grounding makes it durable</div><div class="p-txt">Culture, ESRG and environmental fit are not soft additions — they are the conditions of long-term strategy.</div></div>
+    <!-- CAMP 2 -->
+    <div class="camp-block c2">
+      <div class="camp-hdr">
+        <div class="camp-num">2</div>
+        <div>
+          <div class="camp-name">Base Camp 2: Influence <span class="camp-tag">Day 1 · 4 lenses</span></div>
+          <div class="camp-meta">How do we deliver — and who owns what?</div>
+        </div>
+      </div>
+      <div class="lens-grid">
+        <div class="lens-card coming"><div class="lc-num">Lens 05</div><div class="lc-title">Stakeholder Mapping</div><div class="lc-desc">Power, influence, and engagement architecture.</div><div class="lc-coming">Coming</div></div>
+        <div class="lens-card coming"><div class="lc-num">Lens 06</div><div class="lc-title">Narrative & 4W Design</div><div class="lc-desc">Strategic narrative construction across all stakeholder layers.</div><div class="lc-coming">Coming</div></div>
+        <div class="lens-card coming"><div class="lc-num">Lens 07</div><div class="lc-title">Influence Architecture</div><div class="lc-desc">CXO expectations register and accountability design.</div><div class="lc-coming">Coming</div></div>
+        <div class="lens-card coming"><div class="lc-num">Lens 08</div><div class="lc-title">Change Levers</div><div class="lc-desc">Activation levers and performance management rhythm.</div><div class="lc-coming">Coming</div></div>
+      </div>
     </div>
-    <div class="p-cta"><button onclick="window.location.href='foundation.html'">Begin with S2R Foundations →</button></div>
+
+    <!-- CAMP 3 -->
+    <div class="camp-block c3">
+      <div class="camp-hdr">
+        <div class="camp-num">3</div>
+        <div>
+          <div class="camp-name">Base Camp 3: Grounding <span class="camp-tag">Day 2 · 3 lenses</span></div>
+          <div class="camp-meta">What makes this durable — and what threatens it?</div>
+        </div>
+      </div>
+      <div class="lens-grid">
+        <div class="lens-card coming"><div class="lc-num">Lens 09</div><div class="lc-title">Risk & Stress Testing</div><div class="lc-desc">Where the strategy breaks under pressure.</div><div class="lc-coming">Coming</div></div>
+        <div class="lens-card coming"><div class="lc-num">Lens 10</div><div class="lc-title">Communication Design</div><div class="lc-desc">Cascade architecture and white space mapping.</div><div class="lc-coming">Coming</div></div>
+        <div class="lens-card coming"><div class="lc-num">Lens 11</div><div class="lc-title">Grounding Plan</div><div class="lc-desc">Culture, ESRG, and FIT operating rhythm.</div><div class="lc-coming">Coming</div></div>
+      </div>
+    </div>
+
   </div>
-</section>
+</div>
 
-<footer>
-  Strategy2Results® · Impactis Consulting · All rights reserved &nbsp;·&nbsp;
-  <a href="foundation.html">S2R Foundations</a> &nbsp;·&nbsp;
-  <a href="BUILD_index.html">BUILD</a>
-</footer>
+<footer>Strategy2Results® · Impactis Consulting · All rights reserved</footer>
 
+<script>
+function showJourney(j){
+  // pages
+  document.getElementById('page-foundations').classList.toggle('active',j==='foundations');
+  document.getElementById('page-build').classList.toggle('active',j==='build');
+  // bar buttons
+  var bf=document.getElementById('jbar-f');
+  var bb=document.getElementById('jbar-b');
+  bf.className='jbar-btn'+(j==='foundations'?' active-f':'');
+  bb.className='jbar-btn'+(j==='build'?' active-b':'');
+  // nav tabs
+  document.querySelectorAll('.nav-tab').forEach(function(t,i){
+    t.classList.remove('active');
+    if(i===0&&j==='foundations')t.classList.add('active','found');
+    if(i===1&&j==='build')t.classList.add('active');
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
 </body>
 </html>
