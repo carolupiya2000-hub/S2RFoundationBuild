@@ -406,6 +406,33 @@ table.cxo-table .domain-tag{font-size:.63rem;font-weight:600;padding:.18rem .45r
 textarea.czb-notes{width:100%;min-height:54px;border:1px solid var(--bdr2);border-radius:7px;padding:.48rem .62rem;font-family:'DM Sans',sans-serif;font-size:.77rem;color:var(--tx);background:var(--surf2);resize:vertical}
 textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var(--arc3-bg)}
 
+.ext-exercise{background:var(--surf);border:1.5px solid var(--arc3-bd);border-radius:13px;padding:1.25rem 1.35rem;margin-top:1.5rem}
+.ext-ex-title{font-family:'DM Serif Display',serif;font-size:1.1rem;color:var(--arc3-tx);margin-bottom:.35rem}
+.ext-ex-intro{font-size:.8rem;color:var(--tx2);line-height:1.68;margin-bottom:.25rem}
+.ex-domain-row{display:grid;grid-template-columns:1fr auto;gap:.75rem;align-items:center;background:var(--surf2);border:1px solid var(--bdr);border-radius:9px;padding:.65rem .9rem}
+.ex-domain-name{font-size:.82rem;font-weight:600;color:var(--tx)}
+.ex-btn-group{display:flex;gap:.35rem}
+.ex-btn{padding:.3rem .7rem;border-radius:20px;border:1.5px solid var(--bdr2);background:var(--surf);font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;cursor:pointer;color:var(--tx3);transition:all .18s;white-space:nowrap}
+.ex-btn:hover{border-color:var(--bdr2);color:var(--tx)}
+.ex-btn.sel-stable{background:#E8F8E8;border-color:#2AB07A;color:#0A4A1A}
+.ex-btn.sel-flame{background:#FFFBEE;border-color:#D8A020;color:#7A5000}
+.ex-btn.sel-burn{background:#FEE8E8;border-color:#D04040;color:#8A1A1A}
+.ext-ex-output{margin-top:1.1rem;border-radius:10px;overflow:hidden;border:1px solid var(--bdr)}
+.exo-section{padding:.75rem 1rem;border-bottom:1px solid var(--bdr)}
+.exo-section:last-child{border-bottom:none}
+.exo-label{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
+.exo-stable .exo-label{color:#0A4A1A;background:#E8F8E8;padding:.25rem .6rem;border-radius:12px;display:inline-block}
+.exo-flame .exo-label{color:#7A5000;background:#FFFBEE;padding:.25rem .6rem;border-radius:12px;display:inline-block}
+.exo-burn .exo-label{color:#8A1A1A;background:#FEE8E8;padding:.25rem .6rem;border-radius:12px;display:inline-block}
+.exo-items{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.45rem}
+.exo-item{font-size:.75rem;font-weight:500;padding:.22rem .65rem;border-radius:12px}
+.exo-stable .exo-item{background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090}
+.exo-flame .exo-item{background:#FFFBEE;color:#7A5000;border:1px solid #D8C080}
+.exo-burn .exo-item{background:#FEE8E8;color:#8A1A1A;border:1px solid #EEB0B0}
+.exo-action{font-size:.75rem;color:var(--tx2);line-height:1.6;margin-top:.5rem;padding:.5rem .7rem;border-radius:7px}
+.exo-burn .exo-action{background:#FEF5F5;color:#7A1A1A}
+.exo-flame .exo-action{background:#FFFBF0;color:#7A5000}
+
 /* SECTION DIVIDER */
 .sdiv{display:flex;align-items:center;gap:.65rem;margin:1.5rem 0 1.1rem}
 .sdiv::before,.sdiv::after{content:'';flex:1;height:1px;background:var(--bdr)}
@@ -864,46 +891,44 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
   <div class="arc-hdr a3">
     <div class="arc-lbl">Arc 3 — Extrapolating · 1:40–2:25</div>
     <div class="arc-hdr-h">Where are the alignment hot zones across your organisation?</div>
-    <div class="arc-hdr-p">This stage asks a critical leadership question: where in the organisation does alignment matter most right now? Extrapolating is the discipline of locating the organisational hot zones where alignment between hearts and minds is required, where it is beginning to fail, and where the symptoms of misalignment are most visible. These zones consistently appear in areas where human interpretation, emotional climate, and behaviour directly influence strategic outcomes.</div>
+    <div class="arc-hdr-p">This stage asks a critical leadership question: where in the organisation does alignment matter most right now? Extrapolating is the discipline of locating the organisational hot zones where alignment between hearts and minds is required, where it is beginning to fail, and where the symptoms of misalignment are most visible. These zones typically appear in areas where human interpretation, emotional climate, and behaviour directly influence strategic outcomes. Leaders learn to identify two types of zones: High Flammables and Burning Platforms.</div>
     <div class="arc-chips">
-      <span class="arc-chip">High Flammable Zones — Leverage</span>
-      <span class="arc-chip">Burning Platforms — Urgency</span>
-      <span class="arc-chip">COMPASS — 7 Signal Domains</span>
+      <span class="arc-chip">High Flammable Zones</span>
+      <span class="arc-chip">Burning Platforms</span>
+      <span class="arc-chip">COMPASS — 7 Domains</span>
     </div>
   </div>
 
-  <!-- TWO ZONE TYPES -->
+  <!-- ZONE TYPES -->
   <div class="ext-cols">
     <div class="ext-card ext-flame">
       <div class="ext-card-icon">🔥</div>
-      <div class="ext-card-title">High Flammable Zones</div>
-      <div class="ext-card-sub">The Leverage Zones — Where Alignment Has the Highest Risk and Reward</div>
-      <div class="ext-card-body">High Flammables are organisational leverage points — places where human interpretation, emotional state, and behaviour have a disproportionate impact on performance outcomes. When hearts and minds are actively aligned here, they generate rapid clarity, coordinated effort, and compounding momentum. When alignment is weak or absent, the same zones produce distorted interpretation, defensive behaviour, and friction that multiplies across functions.</div>
-      <div class="ext-card-body" style="margin-top:.55rem">High Flammables represent the most valuable places to intervene early — and the most dangerous places to ignore. If alignment is addressed early, the zone stabilises and becomes a performance amplifier.</div>
-      <div class="ext-outcome ext-outcome-good">Addressed early → performance amplifier</div>
+      <div class="ext-card-title">High Flammable Zones — The Leverage Zones</div>
+      <div class="ext-card-sub">Where Alignment Has the Highest Risk and Reward</div>
+      <div class="ext-card-body">High Flammables are organisational leverage points — places where human interpretation, emotional state, and behaviour have a disproportionate impact on performance outcomes. When hearts and minds are actively aligned in these areas, they generate rapid clarity, coordinated effort, and compounding momentum. When alignment is weak or absent, the same zones begin to produce distorted interpretation, defensive behaviour, and friction that multiplies across functions.<br><br>High Flammables represent the most valuable places to intervene early — and the most dangerous places to ignore. If alignment is addressed early, the zone stabilises and becomes a performance amplifier. If misalignment persists, the same zone eventually crosses a threshold and ignites into a Burning Platform.</div>
     </div>
     <div class="ext-card ext-burn">
       <div class="ext-card-icon">⚠️</div>
-      <div class="ext-card-title">Burning Platforms</div>
-      <div class="ext-card-sub">The Cost Zones — Where Misalignment Has Become Destructive</div>
-      <div class="ext-card-body">Burning Platforms are not separate from High Flammables. They are High Flammables that have remained misaligned long enough for the consequences to become visible and costly. Where High Flammables signal leverage, Burning Platforms signal urgency. They mark the points where execution damage is already occurring, trust or performance has begun to erode, and alignment work is no longer optional.</div>
-      <div class="ext-card-body" style="margin-top:.55rem">At a Burning Platform, cognitive alignment has fractured and emotional alignment has collapsed — fatigue, frustration, fear, or cynicism begin to dominate behaviour. Staying still becomes more dangerous than change. Alignment work becomes corrective and protective, not developmental.</div>
-      <div class="ext-outcome ext-outcome-bad">Left unaddressed → execution breakdown</div>
+      <div class="ext-card-title">Burning Platforms — The Cost Zones</div>
+      <div class="ext-card-sub">Where Misalignment Has Become Destructive</div>
+      <div class="ext-card-body">Burning Platforms are not separate from High Flammables. They are High Flammables that have remained misaligned long enough for the consequences to become visible and costly. Where High Flammables signal leverage, Burning Platforms signal urgency. They mark the points where execution damage is already occurring, trust or performance has begun to erode, and alignment work is no longer optional.<br><br>At a Burning Platform: cognitive alignment has fractured — people no longer share the same interpretation of strategy. Emotional alignment has collapsed — fatigue, frustration, fear, or cynicism begin to dominate behaviour. Staying still becomes more dangerous than change. Delaying alignment increases organisational cost. Leadership credibility erodes with every restart or correction. Alignment at this stage is no longer developmental — it becomes corrective and protective.</div>
     </div>
   </div>
 
-  <!-- COMPASS INSTRUCTION -->
-  <div class="ext-instruction">
-    <strong>Your task — COMPASS mapping:</strong> The seven High Flammable domains below represent your organisation's alignment exposure map. Expand each domain, read the signal narrative, identify whether you are at a High Flammable or Burning Platform stage, and rate the current heat level. This map feeds directly into your Converging Zone work in Arc 4.
-  </div>
+  <!-- COMPASS SECTION HEADER -->
+  <div class="sdiv"><span>COMPASS — Seven Organisational Signal Narratives</span></div>
+  <div style="font-size:.81rem;color:var(--tx2);line-height:1.68;margin-bottom:1rem">High Flammables consistently appear in seven domains. Select each domain to read the full signal narrative, then use the exercise below to identify where your organisation sits right now.</div>
 
-  <!-- COMPASS — 7 COLLAPSIBLE ZONES -->
-  <div class="compass-zones" id="compass-zones"></div>
+  <!-- 7 COLLAPSIBLE COMPASS ZONES -->
+  <div id="compass-zones" style="display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.5rem"></div>
 
-  <!-- TEAM REFLECTION -->
-  <div class="intel-reflection" style="margin-top:1.25rem">
-    <div class="ir-title">Extrapolating Arc — Team Assessment</div>
-    <div class="ir-prompt">Once all seven domains are rated, identify together: which are High Flammables you can leverage now — and which have already crossed into Burning Platform territory requiring corrective action? The domains rated 4–5 carry directly into Arc 4 as your convergence priorities.</div>
+  <!-- SIMPLE EXERCISE -->
+  <div class="ext-exercise">
+    <div class="ext-ex-title">The Alignment Brigade — Organisation Exercise</div>
+    <div class="ext-ex-intro">Having read each of the seven COMPASS narratives, your team now classifies each domain for your organisation. For each domain, select one of three positions. Be honest — a High Flammable you deny becomes a Burning Platform you inherit.</div>
+    <div id="exercise-grid" style="display:flex;flex-direction:column;gap:.55rem;margin-top:1rem"></div>
+    <div class="ext-ex-output" id="exercise-output" style="display:none"></div>
+    <button class="calc-btn" style="margin-top:.85rem" onclick="generateAlignmentMap()">▶ Generate Our Alignment Map</button>
   </div>
 
   <div class="arc-footer">
@@ -1529,19 +1554,14 @@ var heatState={};
 function buildCompass(){
   var wrap=document.getElementById('compass-zones');
   if(!wrap)return;
-  var rateDescs=['','1 — Emerging signal','2 — Moderate risk','3 — Active flammable','4 — High urgency','5 — Burning platform'];
   wrap.innerHTML=COMPASS_ZONES.map(function(z,i){
-    var hdots=[1,2,3,4,5].map(function(d){
-      return'<div class="cz-hdot" id="chd-'+i+'-'+d+'" onclick="event.stopPropagation();setCompassHeat('+i+','+d+')"></div>';
-    }).join('');
-    var bdots=[1,2,3,4,5].map(function(d){
-      return'<div class="czb-dot" id="czd-'+i+'-'+d+'" onclick="setCompassHeat('+i+','+d+')" title="'+rateDescs[d]+'"></div>';
-    }).join('');
     return'<div class="czone" id="czone-'+i+'">'
       +'<div class="czone-hdr" onclick="togCZ('+i+')">'
       +'<div class="czone-num">'+z.n+'</div>'
-      +'<div class="czone-info"><div class="czone-title">'+z.t+'</div><div class="czone-tagline">'+z.tl+'</div></div>'
-      +'<div class="czone-heat">'+hdots+'</div>'
+      +'<div class="czone-info">'
+      +'<div class="czone-title">'+z.t+'</div>'
+      +'<div class="czone-tagline">'+z.tl+'</div>'
+      +'</div>'
       +'<div class="czone-chev">▾</div>'
       +'</div>'
       +'<div class="czone-body">'
@@ -1549,31 +1569,86 @@ function buildCompass(){
       +'<div class="czb-narrative">'+z.narrative+'</div>'
       +'<div class="czb-bp-hdr">When this becomes a Burning Platform</div>'
       +'<div class="czb-bp">'+z.burning+'</div>'
-      +'<div class="czb-rate-row">'
-      +'<span class="czb-rate-lbl">Heat level</span>'
-      +'<div class="czb-dots">'+bdots+'</div>'
-      +'<span class="czb-rate-desc" id="czd-desc-'+i+'">Click to rate — 1 emerging · 5 burning platform</span>'
       +'</div>'
-      +'<div class="czb-obs-lbl">Your observations in this domain</div>'
-      +'<textarea class="czb-notes" placeholder="What are you currently seeing here? Where is misalignment most visible? What has already been tried?"></textarea>'
-      +'</div></div>';
+      +'</div>';
+  }).join('');
+
+  // Build exercise grid
+  var eg=document.getElementById('exercise-grid');
+  if(!eg)return;
+  eg.innerHTML=COMPASS_ZONES.map(function(z,i){
+    return'<div class="ex-domain-row">'
+      +'<div class="ex-domain-name">'+z.n+'. '+z.t+'</div>'
+      +'<div class="ex-btn-group">'
+      +'<button class="ex-btn" id="exb-'+i+'-s" onclick="selectZone('+i+',\'stable\')">✓ Stable</button>'
+      +'<button class="ex-btn" id="exb-'+i+'-f" onclick="selectZone('+i+',\'flame\')">🔥 High Flammable</button>'
+      +'<button class="ex-btn" id="exb-'+i+'-b" onclick="selectZone('+i+',\'burn\')">⚠️ Burning Platform</button>'
+      +'</div>'
+      +'</div>';
   }).join('');
 }
+
+var czoneSelections={};
 
 function togCZ(i){
   document.getElementById('czone-'+i).classList.toggle('cz-open');
 }
 
-function setCompassHeat(i,level){
-  for(var d=1;d<=5;d++){
-    var h=document.getElementById('chd-'+i+'-'+d);
-    var b=document.getElementById('czd-'+i+'-'+d);
-    if(h)h.classList.toggle('on',d<=level);
-    if(b)b.classList.toggle('on',d<=level);
+function selectZone(i,type){
+  czoneSelections[i]=type;
+  var types=['s','f','b'];
+  var clsMap={s:'sel-stable',f:'sel-flame',b:'sel-burn'};
+  var selKey={s:'stable',f:'flame',b:'burn'};
+  types.forEach(function(t){
+    var btn=document.getElementById('exb-'+i+'-'+t);
+    if(!btn)return;
+    btn.className='ex-btn'+(selKey[t]===type?' '+clsMap[t]:'');
+  });
+}
+
+function generateAlignmentMap(){
+  var stable=[],flame=[],burn=[];
+  COMPASS_ZONES.forEach(function(z,i){
+    var sel=czoneSelections[i];
+    if(sel==='stable')stable.push(z.t);
+    else if(sel==='flame')flame.push(z.t);
+    else if(sel==='burn')burn.push(z.t);
+  });
+
+  var total=stable.length+flame.length+burn.length;
+  if(total<7){
+    alert('Please classify all seven domains before generating the map.');
+    return;
   }
-  var desc=document.getElementById('czd-desc-'+i);
-  var labels=['','1 — Emerging signal','2 — Moderate risk','3 — Active flammable','4 — High urgency','5 — Burning platform'];
-  if(desc)desc.textContent=labels[level]||'';
+
+  var html='';
+
+  if(stable.length){
+    html+='<div class="exo-section exo-stable">'
+      +'<div class="exo-label">Stable — Monitor</div>'
+      +'<div class="exo-items">'+stable.map(function(d){return'<span class="exo-item">'+d+'</span>';}).join('')+'</div>'
+      +'</div>';
+  }
+
+  if(flame.length){
+    html+='<div class="exo-section exo-flame">'
+      +'<div class="exo-label">High Flammable — Intervene Early</div>'
+      +'<div class="exo-items">'+flame.map(function(d){return'<span class="exo-item">'+d+'</span>';}).join('')+'</div>'
+      +'<div class="exo-action">These zones are your leverage points. Address alignment here before moving into strategy design — they will become the foundation for your Converging Zone priorities in Arc 4.</div>'
+      +'</div>';
+  }
+
+  if(burn.length){
+    html+='<div class="exo-section exo-burn">'
+      +'<div class="exo-label">Burning Platform — Act Now</div>'
+      +'<div class="exo-items">'+burn.map(function(d){return'<span class="exo-item">'+d+'</span>';}).join('')+'</div>'
+      +'<div class="exo-action">These zones require corrective and protective action before strategy design can proceed. Cognitive alignment has fractured. Delaying alignment work here increases organisational cost and erodes leadership credibility with every cycle. Name the owner and the first action before leaving this arc.</div>'
+      +'</div>';
+  }
+
+  var out=document.getElementById('exercise-output');
+  out.innerHTML=html;
+  out.style.display='block';
 }
 
 /* ════════════════════ CXO TABLE ════════════════════ */
