@@ -1484,6 +1484,7 @@ function updateCCFeedback(){
 
 function buildACEIT(){
   var tbl=document.getElementById('aceit-tbl');
+  if(!tbl)return;
   var h='<thead><tr><th style="width:120px">Anchor Behaviour</th><th>Definition</th><th>Desired Leadership Behaviour</th><th style="width:220px">Observable Signs — log what you see in your organisation</th></tr></thead>';
   var b='<tbody>'+ACEIT_DATA.map(a=>`<tr>
     <td><div class="aceit-name">${a.n}<span>${a.def}</span></div></td>
