@@ -417,21 +417,66 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
 .ex-btn.sel-stable{background:#E8F8E8;border-color:#2AB07A;color:#0A4A1A}
 .ex-btn.sel-flame{background:#FFFBEE;border-color:#D8A020;color:#7A5000}
 .ex-btn.sel-burn{background:#FEE8E8;border-color:#D04040;color:#8A1A1A}
-.ext-ex-output{margin-top:1.1rem;border-radius:10px;overflow:hidden;border:1px solid var(--bdr)}
-.exo-section{padding:.75rem 1rem;border-bottom:1px solid var(--bdr)}
-.exo-section:last-child{border-bottom:none}
-.exo-label{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
-.exo-stable .exo-label{color:#0A4A1A;background:#E8F8E8;padding:.25rem .6rem;border-radius:12px;display:inline-block}
-.exo-flame .exo-label{color:#7A5000;background:#FFFBEE;padding:.25rem .6rem;border-radius:12px;display:inline-block}
-.exo-burn .exo-label{color:#8A1A1A;background:#FEE8E8;padding:.25rem .6rem;border-radius:12px;display:inline-block}
-.exo-items{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.45rem}
-.exo-item{font-size:.75rem;font-weight:500;padding:.22rem .65rem;border-radius:12px}
-.exo-stable .exo-item{background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090}
-.exo-flame .exo-item{background:#FFFBEE;color:#7A5000;border:1px solid #D8C080}
-.exo-burn .exo-item{background:#FEE8E8;color:#8A1A1A;border:1px solid #EEB0B0}
-.exo-action{font-size:.75rem;color:var(--tx2);line-height:1.6;margin-top:.5rem;padding:.5rem .7rem;border-radius:7px}
-.exo-burn .exo-action{background:#FEF5F5;color:#7A1A1A}
-.exo-flame .exo-action{background:#FFFBF0;color:#7A5000}
+#alignment-report{display:none;position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto}
+#alignment-report.open{display:block}
+.ar-topbar{background:var(--navy-dk);padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;border-bottom:2px solid var(--arc3-bd)}
+.ar-topbar-title{font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82)}
+.ar-topbar-actions{display:flex;gap:.4rem}
+.ar-btn{font-family:'DM Sans',sans-serif;font-size:.71rem;font-weight:600;cursor:pointer;border-radius:6px;padding:.28rem .72rem;border:none;transition:all .18s}
+.ar-btn-close{background:rgba(255,255,255,.1);color:rgba(255,255,255,.75)}.ar-btn-close:hover{background:rgba(255,255,255,.2);color:#fff}
+.ar-btn-print{background:var(--arc3-bd);color:#fff}.ar-btn-print:hover{background:#7A30A8}
+.ar-btn-email{background:var(--arc4-bd);color:#fff}.ar-btn-email:hover{background:#1A9A60}
+.ar-body{max-width:780px;margin:0 auto;padding:2.5rem 2rem 5rem;font-family:'DM Sans',sans-serif}
+.ar-masthead{padding-bottom:1.2rem;margin-bottom:1.8rem;border-bottom:3px solid var(--arc3-bd)}
+.ar-brand{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--arc3-tx);margin-bottom:.3rem}
+.ar-doc-title{font-family:'DM Serif Display',serif;font-size:1.85rem;color:var(--navy-dk);line-height:1.2;margin-bottom:.3rem}
+.ar-doc-sub{font-size:.77rem;color:var(--tx3);margin-bottom:.55rem}
+.ar-verdict{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.6rem}
+.ar-verdict-chip{font-size:.68rem;font-weight:700;padding:.22rem .68rem;border-radius:12px}
+.avc-stable{background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090}
+.avc-flame{background:#FFFBEE;color:#7A5000;border:1px solid #D8C080}
+.avc-burn{background:#FEE8E8;color:#8A1A1A;border:1px solid #EEB0B0}
+.ar-section{margin-bottom:2rem}
+.ar-sec-hdr{display:flex;align-items:center;gap:.65rem;margin-bottom:1rem;padding-bottom:.5rem;border-bottom:2px solid var(--bdr)}
+.ar-sec-title{font-size:.92rem;font-weight:600;color:var(--tx)}
+.ar-domain-card{border-radius:11px;border:1.5px solid;margin-bottom:.85rem;overflow:hidden;page-break-inside:avoid}
+.ar-domain-card.dc-burn{border-color:#D04040}.ar-domain-card.dc-flame{border-color:#D8A020}.ar-domain-card.dc-stable{border-color:#2AB07A}
+.ar-dc-hdr{padding:.72rem 1rem;display:flex;align-items:center;gap:.65rem}
+.dc-burn .ar-dc-hdr{background:#FEE8E8}.dc-flame .ar-dc-hdr{background:#FFFBEE}.dc-stable .ar-dc-hdr{background:#E8F8E8}
+.ar-dc-name{font-size:.88rem;font-weight:700}
+.dc-burn .ar-dc-name{color:#8A1A1A}.dc-flame .ar-dc-name{color:#7A5000}.dc-stable .ar-dc-name{color:#0A4A1A}
+.ar-dc-badge{font-size:.62rem;font-weight:700;padding:.16rem .5rem;border-radius:10px;margin-left:auto;white-space:nowrap}
+.dc-burn .ar-dc-badge{background:#FEE8E8;color:#8A1A1A;border:1px solid #EEB0B0}
+.dc-flame .ar-dc-badge{background:#FFFBEE;color:#7A5000;border:1px solid #D8C080}
+.dc-stable .ar-dc-badge{background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090}
+.ar-dc-body{padding:.85rem 1rem}
+.ar-dc-body+.ar-dc-body{border-top:1px solid var(--bdr)}
+.ar-row-lbl{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
+.dc-burn .ar-row-lbl{color:#8A1A1A}.dc-flame .ar-row-lbl{color:#7A5000}.dc-stable .ar-row-lbl{color:#0A4A1A}
+.ar-row-txt{font-size:.78rem;color:var(--tx2);line-height:1.68;margin-bottom:.75rem}
+.ar-row-txt:last-child{margin-bottom:0}
+.ar-actions-box{background:var(--build-bg);border:1.5px solid var(--build-bd);border-radius:9px;padding:.85rem 1rem;margin-top:.65rem}
+.ar-actions-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--build-tx);margin-bottom:.4rem}
+.ar-action-item{font-size:.77rem;color:var(--tx);line-height:1.55;padding-left:.9rem;position:relative;margin-bottom:.3rem}
+.ar-action-item:last-child{margin-bottom:0}
+.ar-action-item::before{content:'→';position:absolute;left:0;color:var(--build-bd);font-weight:700}
+.ar-commitbox{border:1.5px solid var(--bdr2);border-radius:9px;padding:.85rem 1rem;margin-bottom:.75rem;background:var(--surf)}
+.ar-commitbox-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:.4rem}
+.ar-commit-field{min-height:60px;border:1px solid var(--bdr2);border-radius:6px;padding:.5rem .65rem;font-family:'DM Sans',sans-serif;font-size:.79rem;color:var(--tx);background:var(--surf2);line-height:1.68;outline:none;white-space:pre-wrap;word-break:break-word}
+.ar-commit-field:empty::before{content:attr(data-ph);color:var(--tx3);pointer-events:none}
+.ar-commit-field:focus{border-color:var(--arc3-bd);background:var(--arc3-bg)}
+.ar-footer-bar{margin-top:2rem;padding-top:.85rem;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;font-size:.63rem;color:var(--tx3)}
+.ar-toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--navy-dk);color:#fff;font-size:.76rem;font-weight:500;padding:.45rem 1.2rem;border-radius:20px;z-index:600;opacity:0;transition:opacity .3s;pointer-events:none}
+.ar-toast.show{opacity:1}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .topnav,.arc-nav,.main,.ar-topbar{display:none!important}
+  #alignment-report{display:block!important;position:static!important;overflow:visible!important}
+  .ar-body{padding:1cm 1.5cm;max-width:100%}
+  .ar-domain-card{page-break-inside:avoid;break-inside:avoid}
+  .ar-commit-field{border:1px solid #ccc;background:#f9f9f9}
+  .ar-commit-field:empty::before{color:#aaa}
+}
 
 /* SECTION DIVIDER */
 .sdiv{display:flex;align-items:center;gap:.65rem;margin:1.5rem 0 1.1rem}
@@ -927,8 +972,9 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
     <div class="ext-ex-title">The Alignment Brigade — Organisation Exercise</div>
     <div class="ext-ex-intro">Having read each of the seven COMPASS narratives, your team now classifies each domain for your organisation. For each domain, select one of three positions. Be honest — a High Flammable you deny becomes a Burning Platform you inherit.</div>
     <div id="exercise-grid" style="display:flex;flex-direction:column;gap:.55rem;margin-top:1rem"></div>
-    <div class="ext-ex-output" id="exercise-output" style="display:none"></div>
-    <button class="calc-btn" style="margin-top:.85rem" onclick="generateAlignmentMap()">▶ Generate Our Alignment Map</button>
+    <div style="display:flex;gap:.55rem;flex-wrap:wrap;margin-top:.85rem;align-items:center">
+      <button class="calc-btn" onclick="generateAlignmentMap()">▶ Generate Alignment Report</button>
+    </div>
   </div>
 
   <div class="arc-footer">
@@ -1590,19 +1636,64 @@ function buildCompass(){
 
 var czoneSelections={};
 
+/* Per-domain risk, implications and corrective actions */
+var DOMAIN_DETAIL={
+  'Clarity of Strategic Direction':{
+    risk:'Strategy fragmentation. Executives operate from different interpretations of the same direction. Decisions made at the top do not survive translation through organisational layers. Priorities multiply without trade-off logic.',
+    implications:'Every leadership communication reinforces a different version of the strategy. Frontline execution bears no resemblance to boardroom intent — not from resistance, but from genuine ambiguity. The cost compounds silently with each planning cycle.',
+    flame_actions:['Establish a single, written strategy statement that every CXO can recite in the same language before the strategy build proceeds.','Run the "corridor test" — ask five people at different levels to describe the strategy. Where descriptions diverge, that divergence is the alignment gap to close.','Assign one leader as the narrative steward, responsible for catching and correcting interpretation drift before it becomes operational drift.'],
+    burn_actions:['Stop the strategy build. Rebuilding direction on a fractured narrative foundation produces a more polished version of the same problem.','Convene an emergency narrative session: the only agenda item is agreeing one shared description of direction, priorities, and trade-offs.','Identify which decisions have already been made under conflicting interpretations and determine which must be revisited before execution can proceed.']
+  },
+  'Organisational Alignment':{
+    risk:'Coordinated effort breaks down across functions. Silos deepen. Functions execute their own version of strategy. Decisions relitigated informally after forums close.',
+    implications:'Cross-functional initiatives stall. The organisation learns that the safest strategy is to stay in its own lane. Senior leadership time is consumed by arbitration of conflicts that aligned organisations handle at lower levels.',
+    flame_actions:['Map the two or three strategic initiatives that most require cross-functional movement. Assign a named integrator with authority to call and close cross-functional decisions.','Create a shared decision log visible to all CXOs — every decision is recorded, rationale noted, and informal relitigations are surfaced rather than absorbed.','Design one cross-functional accountability moment into the monthly operating rhythm specifically for strategic progress, not operational reporting.'],
+    burn_actions:['Name the specific seams where misalignment is producing the most visible execution damage. These are not cultural issues — they are structural failures requiring structural fixes.','Suspend cross-functional initiatives where the accountability model is genuinely unclear until governance is resolved. Proceeding without this produces expensive rework.','Appoint a CXO-level owner for alignment restoration in the two highest-risk domains. This is not an HR exercise — it is an operational emergency response.']
+  },
+  'Management Discipline':{
+    risk:'Accountability is diffuse. Performance reviews produce explanation rather than consequence. The same execution gaps recur cycle after cycle. Governance forums function as reporting rituals rather than decision-making engines.',
+    implications:'Leadership spends increasing time in meetings that produce no movement. The organisation becomes extraordinarily busy doing things that do not advance strategy. Chronic underperformance is absorbed into culture as normal.',
+    flame_actions:['Audit the last three performance review cycles: how many unresolved issues appear in all three? Each recurrence is an accountability failure that must be owned, not reported.','Redesign one governance forum — the most senior, most frequently held — to end with binding decisions and named owners, not summaries and action logs that are never reviewed.','Introduce a "consequence culture" signal: the next time a commitment is missed, the response must be different from the last time it was missed.'],
+    burn_actions:['Conduct an accountability audit: who is the named owner of each strategic priority, and what happens when they miss? If the answer is unclear, the accountability architecture does not exist.','Remove or restructure governance forums that have functioned as performance theatre for more than two cycles. Ritual without consequence wastes the organisation\'s most valuable resource: leadership attention.','Identify the two most persistent accountability failures and make them the organisation\'s visible test case for consequence culture — the signal the organisation needs that something has changed.']
+  },
+  'People & Capability':{
+    risk:'The organisation has approved a strategy its people cannot yet deliver. Capability gaps are masked by effort and goodwill until execution pressure reveals them — at which point the cost of remediation is substantially higher.',
+    implications:'Middle managers carry execution weight beyond their bandwidth. Engagement declines while leadership describes culture as resilient. Institutional knowledge becomes a single point of failure. Key talent exits when they realise the gap will not be closed.',
+    flame_actions:['Map the five most critical capabilities required by the strategy against current supply. Identify the two widest gaps and design a 90-day intervention for each — not a training programme, a capability deployment plan.','Protect the organisation\'s highest-capability individuals from being absorbed into operational escalation. Their bandwidth is the strategy\'s execution reserve.','Make succession depth visible at every leadership review. A succession plan that lives only in a document is not a succession plan.'],
+    burn_actions:['Conduct an honest capability inventory: which strategic priorities are currently impossible to execute at required quality given available capability? Name them. Fund remediation or deprioritise the work.','Identify the capability exits that have already occurred and assess the institutional knowledge that left with them. Design explicit recovery actions, not passive replacement plans.','Pause capability-consuming strategic initiatives where the people required do not exist internally and cannot be acquired within the execution window. Strategy approved without capability is intention without mechanism.']
+  },
+  'Allocation of Resources':{
+    risk:'The budget tells a different story from the strategy. Legacy spend continues by inertia. New priorities are approved in language and starved in practice. Strategic accountabilities are handed to leaders without the resources to honour them.',
+    implications:'The longer resources misalign with stated direction, the more credibility erodes. Leaders stop believing the strategy is real. Commitment retreats to protecting existing allocations rather than advancing new priorities.',
+    flame_actions:['Conduct a strategic spend audit: for each stated priority, trace the actual funding, headcount, and protected time allocated to it. Where the numbers do not match the language, the gap is the organisation\'s real priority signal.','Introduce a formal deprioritisation mechanism: for every new strategic commitment approved, identify what existing commitment is reduced or stopped. Strategy without trade-offs is a wish list.','Require every strategic initiative owner to present their resource case — not just their strategic case — before execution approval is granted.'],
+    burn_actions:['Stop approving strategic initiatives that do not have credible resource commitments attached to them. Approved but unfunded strategies produce cynicism faster than saying no.','Conduct an emergency portfolio review: which strategic initiatives have been running on inadequate resources for more than one cycle? Either fund them properly or stop them with honesty about why.','Make the resource reallocation decision in this room, in this session. Every day the allocation mismatch persists, alignment credibility erodes further.']
+  },
+  'Sensing & Adaptation':{
+    risk:'The organisation confuses having a strategy with having the right strategy. Early warning signals are filtered out rather than acted on. Market shifts are acknowledged in presentations and archived rather than operationalised.',
+    implications:'The organisation gradually loses its early warning capability as raising uncomfortable signals becomes culturally costly. Leaders defend forecasts rather than update them. The organisation finds itself reacting to crises that were entirely visible in hindsight.',
+    flame_actions:['Identify the last three customer or market signals that were acknowledged but not acted on. For each, name the specific decision that should have been different.','Create a protected "signal review" slot in the monthly leadership rhythm — not operational reporting, but active sense-making of signals that do not fit current assumptions.','Introduce a "forecast challenge" norm: any leader who defends a forecast without engaging contradicting evidence is required to document their reasoning for governance review.'],
+    burn_actions:['Name the market or competitive development that the organisation has been aware of but has not yet responded to. This is the burning platform signal. Assign a response owner and a 30-day timeline.','Audit decision forums for signal suppression: are people raising uncomfortable signals? What happens when they do? If the answers reveal social cost, the early warning system is already broken.','Redesign at least one customer feedback mechanism so that it produces a required decision, not an optional input. Feedback loops that do not close do not function.']
+  },
+  'Systems & Execution':{
+    risk:'A new strategy is running through an old machine. Operating models, governance structures, technology platforms, and role accountabilities were designed for a previous strategic direction and actively resist the current one.',
+    implications:'Technology investments produce impressive demonstrations and negligible adoption. Operating models built for stability are being asked to deliver agility. Structural ambiguities create friction that compounds with every execution cycle. Leaders reach for tactical interventions — more communication, more urgency — when the machine itself requires redesign.',
+    flame_actions:['Identify the two structural configurations most likely to constrain strategy execution: unclear accountability boundaries, overlapping ownership, single points of failure in critical roles. Name the owner of each fix.','Audit technology platforms against strategic requirements. For each platform gap, determine whether the constraint is genuine or a workaround preference. Genuine constraints need investment decisions, not tolerance.','Redesign the operating model for the one strategic priority most likely to be blocked by current structural configuration. Do not wait for a full operating model review — make the targeted structural change now.'],
+    burn_actions:['Stop asking the existing machine to run harder. Identify the structural configuration that is most directly blocking strategic execution and make the redesign decision in this session.','Conduct an accountability architecture audit: for every strategic outcome, is there a single named owner with the authority, resources, and decision rights to deliver it? Every gap in this audit is an execution failure waiting to happen.','Make an explicit commitment to redesigning at least one structural element — governance, role accountability, operating model — before the next execution cycle begins. Tactical interventions on a structural problem produce temporary movement and permanent recurrence.']
+  }
+};
+
 function togCZ(i){
   document.getElementById('czone-'+i).classList.toggle('cz-open');
 }
 
 function selectZone(i,type){
   czoneSelections[i]=type;
-  var types=['s','f','b'];
-  var clsMap={s:'sel-stable',f:'sel-flame',b:'sel-burn'};
-  var selKey={s:'stable',f:'flame',b:'burn'};
-  types.forEach(function(t){
+  ['s','f','b'].forEach(function(t){
     var btn=document.getElementById('exb-'+i+'-'+t);
     if(!btn)return;
-    btn.className='ex-btn'+(selKey[t]===type?' '+clsMap[t]:'');
+    var map={s:'sel-stable',f:'sel-flame',b:'sel-burn'};
+    var key={s:'stable',f:'flame',b:'burn'};
+    btn.className='ex-btn'+(key[t]===type?' '+map[t]:'');
   });
 }
 
@@ -1614,41 +1705,155 @@ function generateAlignmentMap(){
     else if(sel==='flame')flame.push(z.t);
     else if(sel==='burn')burn.push(z.t);
   });
-
-  var total=stable.length+flame.length+burn.length;
-  if(total<7){
-    alert('Please classify all seven domains before generating the map.');
+  if(stable.length+flame.length+burn.length<7){
+    alert('Please classify all seven domains before generating the report.');
     return;
   }
+  var today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
 
-  var html='';
+  function domainCard(name,type){
+    var d=DOMAIN_DETAIL[name]||{risk:'',implications:'',flame_actions:[],burn_actions:[]};
+    var cls=type==='burn'?'dc-burn':type==='flame'?'dc-flame':'dc-stable';
+    var badge=type==='burn'?'⚠️ Burning Platform':type==='flame'?'🔥 High Flammable':'✓ Stable';
+    var actions=type==='burn'?d.burn_actions:type==='flame'?d.flame_actions:[];
+    var html='<div class="ar-domain-card '+cls+'">'
+      +'<div class="ar-dc-hdr"><div class="ar-dc-name">'+name+'</div><div class="ar-dc-badge">'+badge+'</div></div>';
+    if(type!=='stable'){
+      html+='<div class="ar-dc-body">'
+        +'<div class="ar-row-lbl">Risk</div>'
+        +'<div class="ar-row-txt">'+d.risk+'</div>'
+        +'</div>'
+        +'<div class="ar-dc-body">'
+        +'<div class="ar-row-lbl">Implications for this strategy build</div>'
+        +'<div class="ar-row-txt">'+d.implications+'</div>'
+        +'</div>';
+      if(actions.length){
+        html+='<div class="ar-dc-body">'
+          +'<div class="ar-actions-box">'
+          +'<div class="ar-actions-lbl">'+(type==='burn'?'Corrective & protective actions — required before strategy design proceeds':'Leverage actions — intervene early to prevent escalation')+'</div>'
+          +actions.map(function(a){return'<div class="ar-action-item">'+a+'</div>';}).join('')
+          +'</div></div>';
+      }
+    }
+    html+='</div>';
+    return html;
+  }
 
-  if(stable.length){
-    html+='<div class="exo-section exo-stable">'
-      +'<div class="exo-label">Stable — Monitor</div>'
-      +'<div class="exo-items">'+stable.map(function(d){return'<span class="exo-item">'+d+'</span>';}).join('')+'</div>'
+  var burnSection='',flameSection='',stableSection='';
+
+  if(burn.length){
+    burnSection='<div class="ar-section">'
+      +'<div class="ar-sec-hdr"><div class="ar-sec-title">⚠️ Burning Platforms — Corrective Action Required</div></div>'
+      +'<div style="font-size:.8rem;color:#8A1A1A;background:#FEE8E8;border:1px solid #EEB0B0;border-radius:8px;padding:.65rem .85rem;margin-bottom:1rem;line-height:1.65">These zones have already crossed the threshold. Cognitive alignment has fractured. Emotional alignment has collapsed. <strong>Strategy design cannot proceed safely through these domains without corrective action.</strong> Assign an owner to each domain and define the first action before leaving this arc.</div>'
+      +burn.map(function(n){return domainCard(n,'burn');}).join('')
       +'</div>';
   }
 
   if(flame.length){
-    html+='<div class="exo-section exo-flame">'
-      +'<div class="exo-label">High Flammable — Intervene Early</div>'
-      +'<div class="exo-items">'+flame.map(function(d){return'<span class="exo-item">'+d+'</span>';}).join('')+'</div>'
-      +'<div class="exo-action">These zones are your leverage points. Address alignment here before moving into strategy design — they will become the foundation for your Converging Zone priorities in Arc 4.</div>'
+    flameSection='<div class="ar-section">'
+      +'<div class="ar-sec-hdr"><div class="ar-sec-title">🔥 High Flammables — Early Intervention Required</div></div>'
+      +'<div style="font-size:.8rem;color:#7A5000;background:#FFFBEE;border:1px solid #D8C080;border-radius:8px;padding:.65rem .85rem;margin-bottom:1rem;line-height:1.65">These zones are live leverage points. If alignment is addressed here now, they become performance amplifiers. If left unaddressed, they will escalate into Burning Platforms during the strategy execution phase.</div>'
+      +flame.map(function(n){return domainCard(n,'flame');}).join('')
       +'</div>';
   }
 
+  if(stable.length){
+    stableSection='<div class="ar-section">'
+      +'<div class="ar-sec-hdr"><div class="ar-sec-title">✓ Stable — Monitor</div></div>'
+      +'<div style="font-size:.8rem;color:var(--tx2);line-height:1.65;margin-bottom:.85rem">These domains are currently stable. Monitor them through the strategy build — they can be destabilised by decisions made in adjacent domains.</div>'
+      +'<div style="display:flex;flex-wrap:wrap;gap:.5rem">'
+      +stable.map(function(n){return'<span style="font-size:.75rem;font-weight:600;padding:.25rem .7rem;border-radius:12px;background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090">'+n+'</span>';}).join('')
+      +'</div></div>';
+  }
+
+  var html='<div class="ar-topbar">'
+    +'<span class="ar-topbar-title">Arc 3 — Extrapolating: Alignment Map Report</span>'
+    +'<div class="ar-topbar-actions">'
+    +'<button class="ar-btn ar-btn-email" onclick="emailAlignmentReport()">✉ Copy for Email</button>'
+    +'<button class="ar-btn ar-btn-print" onclick="window.print()">⬇ Print / Save as PDF</button>'
+    +'<button class="ar-btn ar-btn-close" onclick="closeAlignmentReport()">✕ Close</button>'
+    +'</div></div>'
+    +'<div class="ar-body">'
+    +'<div class="ar-masthead">'
+    +'<div class="ar-brand">S2R Strategy Design System · Impactis Consulting · Lens 1: Aligning Heart & Mind</div>'
+    +'<div class="ar-doc-title">Organisation Alignment Map</div>'
+    +'<div class="ar-doc-sub">Arc 3 — Extrapolating · COMPASS Assessment · Generated '+today+'</div>'
+    +'<div class="ar-verdict">'
+    +(burn.length?'<span class="ar-verdict-chip avc-burn">'+burn.length+' Burning Platform'+(burn.length>1?'s':'')+'</span>':'')
+    +(flame.length?'<span class="ar-verdict-chip avc-flame">'+flame.length+' High Flammable'+(flame.length>1?'s':'')+'</span>':'')
+    +(stable.length?'<span class="ar-verdict-chip avc-stable">'+stable.length+' Stable</span>':'')
+    +'</div></div>'
+    +burnSection+flameSection+stableSection
+    +'<div class="ar-section">'
+    +'<div class="ar-sec-hdr"><div class="ar-sec-title">Leadership Commitments — Before Proceeding to Arc 4</div></div>'
+    +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">Burning Platform owners and first actions agreed in this session</div><div class="ar-commit-field" contenteditable="true" data-ph="For each Burning Platform domain, record: the named owner, the first corrective action, and the agreed timeline. This must be completed before moving to the Converging Zone in Arc 4."></div></div>'
+    +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">High Flammable priorities for early intervention</div><div class="ar-commit-field" contenteditable="true" data-ph="Which High Flammable domains will be actively monitored through the strategy build? Who is responsible for signalling when they begin to escalate?"></div></div>'
+    +'</div>'
+    +'<div class="ar-footer-bar">'
+    +'<span><strong>S2R Strategy Design System</strong> · Impactis Consulting · Lens 1: Aligning Heart & Mind · Arc 3</span>'
+    +'<span>'+today+'</span>'
+    +'</div></div>';
+
+  var panel=document.getElementById('alignment-report');
+  panel.innerHTML=html;
+  panel.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+function closeAlignmentReport(){
+  document.getElementById('alignment-report').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function emailAlignmentReport(){
+  var stable=[],flame=[],burn=[];
+  COMPASS_ZONES.forEach(function(z,i){
+    var s=czoneSelections[i];
+    if(s==='stable')stable.push(z.t);
+    else if(s==='flame')flame.push(z.t);
+    else if(s==='burn')burn.push(z.t);
+  });
+  var today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  var lines=['ARC 3 — EXTRAPOLATING: ORGANISATION ALIGNMENT MAP','S2R Strategy Design System · Impactis Consulting','Generated: '+today,''];
   if(burn.length){
-    html+='<div class="exo-section exo-burn">'
-      +'<div class="exo-label">Burning Platform — Act Now</div>'
-      +'<div class="exo-items">'+burn.map(function(d){return'<span class="exo-item">'+d+'</span>';}).join('')+'</div>'
-      +'<div class="exo-action">These zones require corrective and protective action before strategy design can proceed. Cognitive alignment has fractured. Delaying alignment work here increases organisational cost and erodes leadership credibility with every cycle. Name the owner and the first action before leaving this arc.</div>'
-      +'</div>';
+    lines.push('BURNING PLATFORMS — CORRECTIVE ACTION REQUIRED');
+    burn.forEach(function(n){
+      var d=DOMAIN_DETAIL[n]||{};
+      lines.push('\n'+n);
+      lines.push('Risk: '+(d.risk||''));
+      lines.push('Implications: '+(d.implications||''));
+      lines.push('Required actions:');
+      (d.burn_actions||[]).forEach(function(a){lines.push('  → '+a);});
+    });
+    lines.push('');
   }
+  if(flame.length){
+    lines.push('HIGH FLAMMABLES — EARLY INTERVENTION REQUIRED');
+    flame.forEach(function(n){
+      var d=DOMAIN_DETAIL[n]||{};
+      lines.push('\n'+n);
+      lines.push('Risk: '+(d.risk||''));
+      lines.push('Implications: '+(d.implications||''));
+      lines.push('Leverage actions:');
+      (d.flame_actions||[]).forEach(function(a){lines.push('  → '+a);});
+    });
+    lines.push('');
+  }
+  if(stable.length){lines.push('STABLE — MONITOR');stable.forEach(function(n){lines.push('  '+n);});lines.push('');}
+  lines.push('For the full formatted report, open Lens 1 and use Print / Save as PDF.');
+  var body=lines.join('\n');
+  try{
+    navigator.clipboard.writeText(body).then(function(){showArToast('Report copied to clipboard — paste into email');});
+  }catch(e){
+    window.location.href='mailto:?subject='+encodeURIComponent('Alignment Map — '+today)+'&body='+encodeURIComponent(body);
+  }
+}
 
-  var out=document.getElementById('exercise-output');
-  out.innerHTML=html;
-  out.style.display='block';
+function showArToast(msg){
+  var t=document.getElementById('ar-toast');
+  if(!t){t=document.createElement('div');t.id='ar-toast';t.className='ar-toast';document.body.appendChild(t);}
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(function(){t.classList.remove('show');},2800);
 }
 
 /* ════════════════════ CXO TABLE ════════════════════ */
@@ -2051,9 +2256,9 @@ function showToast(msg){
 }
 </script>
 
-<!-- DNA REPORT PANEL (fullscreen overlay, also print target) -->
-<div id="dna-report"></div>
-<div class="copy-toast" id="copy-toast"></div>
+<!-- ALIGNMENT REPORT OVERLAY -->
+<div id="alignment-report"></div>
+<div class="ar-toast" id="ar-toast"></div>
 
 </body>
 </html>
