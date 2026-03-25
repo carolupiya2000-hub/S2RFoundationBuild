@@ -353,6 +353,58 @@ table.cxo-table .domain-tag{font-size:.63rem;font-weight:600;padding:.18rem .45r
 .synth-cell-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:.28rem}
 .synth-cell-txt{font-size:.75rem;color:rgba(255,255,255,.88);line-height:1.55}
 
+  /* EXTRAPOLATING ARC */
+.ext-two-col{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:1.25rem}
+@media(max-width:600px){.ext-two-col{grid-template-columns:1fr}}
+.ext-zone-type{border-radius:12px;padding:1.15rem 1.25rem;border:1.5px solid}
+.ext-flammable{background:#FFF8E8;border-color:#E8C020}
+.ext-burning{background:#FEF0F0;border-color:#D04040}
+.ezt-icon{font-size:1.4rem;margin-bottom:.4rem}
+.ezt-label{font-size:.85rem;font-weight:700;margin-bottom:.15rem}
+.ext-flammable .ezt-label{color:#7A5A00}
+.ext-burning .ezt-label{color:#8A1A1A}
+.ezt-subtitle{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:.55rem}
+.ext-flammable .ezt-subtitle{color:#A08020}
+.ext-burning .ezt-subtitle{color:#C04040}
+.ezt-body{font-size:.79rem;color:var(--tx2);line-height:1.68;margin-bottom:.65rem}
+.ezt-signal{font-size:.72rem;font-weight:600;padding:.3rem .7rem;border-radius:20px;display:inline-block}
+.ezt-signal.good{background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090}
+.ezt-signal.bad{background:#FEE8E8;color:#8A1A1A;border:1px solid #EEB0B0}
+.compass-instruction{font-size:.81rem;color:var(--tx2);line-height:1.68;margin-bottom:1rem;padding:.75rem .95rem;background:var(--arc3-bg);border:1px solid var(--arc3-bd);border-radius:9px}
+.compass-instruction strong{color:var(--arc3-tx)}
+
+/* COMPASS COLLAPSIBLE LIST */
+.compass-list{display:flex;flex-direction:column;gap:.55rem}
+.cz{background:var(--surf);border:1px solid var(--bdr);border-radius:12px;overflow:hidden;transition:box-shadow .2s}
+.cz.cz-open{box-shadow:0 3px 14px rgba(0,0,0,.07)}
+.cz-hdr{padding:.9rem 1.1rem;cursor:pointer;display:grid;grid-template-columns:28px 1fr auto auto;gap:.75rem;align-items:center;transition:background .15s;user-select:none}
+.cz-hdr:hover{background:var(--surf2)}
+.cz.cz-open .cz-hdr{background:var(--arc3-bg);border-bottom:1px solid var(--arc3-bd)}
+.cz-num{width:26px;height:26px;border-radius:50%;background:var(--arc3-bd);color:#fff;font-size:.7rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cz-meta{min-width:0}
+.cz-title{font-size:.88rem;font-weight:600;color:var(--tx);margin-bottom:.12rem}
+.cz-tagline{font-size:.7rem;color:var(--tx3);font-style:italic;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cz-heat-row{display:flex;gap:4px;align-items:center}
+.cz-hdot{width:10px;height:10px;border-radius:50%;background:var(--bdr2);cursor:pointer;transition:background .15s;flex-shrink:0}
+.cz-hdot.on{background:#E84040}
+.cz-chevron{font-size:.75rem;color:var(--tx3);transition:transform .25s;flex-shrink:0}
+.cz.cz-open .cz-chevron{transform:rotate(180deg)}
+.cz-body{display:none;padding:1rem 1.1rem}
+.cz.cz-open .cz-body{display:block}
+.cz-narrative{font-size:.8rem;color:var(--tx2);line-height:1.72;margin-bottom:.85rem;padding:.75rem .9rem;background:var(--surf2);border-radius:8px;border-left:3px solid var(--arc3-bd)}
+.cz-narrative strong{color:var(--tx);display:block;margin-bottom:.3rem;font-size:.82rem}
+.cz-bp-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#8A1A1A;margin-bottom:.4rem}
+.cz-bp-txt{font-size:.77rem;color:#7A1A1A;line-height:1.6;padding:.6rem .8rem;background:#FEE8E8;border:1px solid #EEB0B0;border-radius:7px;margin-bottom:.85rem;font-style:italic}
+.cz-rate-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:.3rem}
+.cz-rate-row{display:flex;align-items:center;gap:.55rem;margin-bottom:.75rem;flex-wrap:wrap}
+.cz-rate-dots{display:flex;gap:5px}
+.cz-rdot{width:14px;height:14px;border-radius:50%;background:var(--bdr2);cursor:pointer;transition:all .15s;border:2px solid transparent}
+.cz-rdot:hover{border-color:var(--arc3-bd)}
+.cz-rdot.on{background:#E84040;border-color:#C02020}
+.cz-rate-desc{font-size:.7rem;color:var(--tx3);font-style:italic}
+.cz-notes-lbl{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:.3rem}
+textarea.cz-notes{width:100%;min-height:52px;border:1px solid var(--bdr2);border-radius:7px;padding:.45rem .6rem;font-family:'DM Sans',sans-serif;font-size:.77rem;color:var(--tx);background:var(--surf2);resize:vertical}
+textarea.cz-notes:focus{outline:none;border-color:var(--arc3-bd);background:var(--arc3-bg)}
 /* SECTION DIVIDER */
 .sdiv{display:flex;align-items:center;gap:.65rem;margin:1.5rem 0 1.1rem}
 .sdiv::before,.sdiv::after{content:'';flex:1;height:1px;background:var(--bdr)}
@@ -811,23 +863,45 @@ table.cxo-table .domain-tag{font-size:.63rem;font-weight:600;padding:.18rem .45r
   <div class="arc-hdr a3">
     <div class="arc-lbl">Arc 3 — Extrapolating · 1:40–2:25</div>
     <div class="arc-hdr-h">Where are the alignment hot zones across your organisation?</div>
-    <div class="arc-hdr-p">Extrapolating is the discipline of locating where in your organisation alignment between hearts and minds is required, where it is beginning to fail, and where the symptoms of misalignment are most visible. These zones consistently appear across seven domains — the COMPASS. Your task is to map your organisation's current heat level in each domain and identify whether you are managing a High Flammable zone or already operating from a Burning Platform.</div>
+    <div class="arc-hdr-p">Extrapolating is the discipline of locating the organisational hot zones where alignment between hearts and minds is required, where it is beginning to fail, and where the symptoms of misalignment are most visible. These zones appear in areas where human interpretation, emotional climate, and behaviour directly influence strategic outcomes. Leaders identify two types of zones: High Flammables and Burning Platforms.</div>
     <div class="arc-chips">
-      <span class="arc-chip">COMPASS — 7 High Flammable Zones</span>
-      <span class="arc-chip">Burning Platforms Distinction</span>
-      <span class="arc-chip">Hot Zone Mapping — Your Organisation</span>
+      <span class="arc-chip">High Flammable Zones</span>
+      <span class="arc-chip">Burning Platforms</span>
+      <span class="arc-chip">COMPASS — 7 Domains</span>
     </div>
   </div>
 
-  <div class="info-note">
-    <strong>High Flammables vs Burning Platforms:</strong> High Flammables are leverage points where human interpretation and emotional state have a disproportionate impact on performance. When alignment is strong, they amplify performance. When alignment is weak, they escalate. Burning Platforms are High Flammables that have remained misaligned long enough for the consequences to become visible and costly. At a Burning Platform, staying still is more dangerous than change — alignment work becomes corrective, not developmental.
+  <!-- HIGH FLAMMABLES / BURNING PLATFORMS DISTINCTION -->
+  <div class="ext-two-col">
+    <div class="ext-zone-type ext-flammable">
+      <div class="ezt-icon">🔥</div>
+      <div class="ezt-label">High Flammable Zones</div>
+      <div class="ezt-subtitle">The Leverage Zones</div>
+      <div class="ezt-body">High Flammables are organisational leverage points — places where human interpretation, emotional state, and behaviour have a disproportionate impact on performance outcomes. When alignment is strong here, they generate rapid clarity, coordinated effort, and compounding momentum. When alignment is weak, the same zones produce distorted interpretation, defensive behaviour, and friction that multiplies across functions.</div>
+      <div class="ezt-signal good">Addressed early → performance amplifier</div>
+    </div>
+    <div class="ext-zone-type ext-burning">
+      <div class="ezt-icon">⚠️</div>
+      <div class="ezt-label">Burning Platforms</div>
+      <div class="ezt-subtitle">The Cost Zones</div>
+      <div class="ezt-body">Burning Platforms are not separate from High Flammables — they are High Flammables that have remained misaligned long enough for the consequences to become visible and costly. Cognitive alignment has fractured. Emotional alignment has collapsed. Staying still becomes more dangerous than change. Alignment work is no longer developmental — it becomes corrective and protective.</div>
+      <div class="ezt-signal bad">Left unaddressed → execution breakdown</div>
+    </div>
   </div>
 
-  <div class="compass-intro">
-    <strong>Your task:</strong> For each of the seven COMPASS domains, expand the zone, read the organisational signal narrative, and rate the current heat level in your organisation (1 dot = emerging risk, 5 dots = burning platform). Add your own observations about where misalignment is showing up. This map will feed directly into your Converging Zone work in Arc 4.
+  <!-- COMPASS INSTRUCTION -->
+  <div class="compass-instruction">
+    <strong>Your task:</strong> Work through each of the seven COMPASS domains. Expand the zone, read the signal narrative, then rate your organisation's current heat level and add your observations. This map feeds directly into your Converging Zone work in Arc 4.
   </div>
 
-  <div class="compass-grid" id="compass-grid"></div>
+  <!-- COMPASS ZONES — COLLAPSIBLE -->
+  <div class="compass-list" id="compass-list"></div>
+
+  <!-- REFLECTION -->
+  <div class="intel-reflection" style="margin-top:1.25rem">
+    <div class="ir-title">Extrapolating Arc — Team Assessment</div>
+    <div class="ir-prompt">Once all seven domains are rated, identify together: which zones are High Flammables you can leverage now — and which have already crossed into Burning Platform territory? The zones rated highest carry directly into Arc 4 as your convergence priorities.</div>
+  </div>
 
   <div class="arc-footer">
     <button class="afbtn prev" onclick="switchArc(2)">← Arc 2: Intelligence</button>
@@ -1032,27 +1106,79 @@ var EMO_DATA={
 
 var COMPASS_ZONES=[
   {n:1,t:'Clarity of Strategic Direction',tl:'When this signal is lit, the organisation is burning fuel without a map.',
-   signal:'The most dangerous fire in any organisation is the one nobody can see — the quiet combustion that happens when leaders believe they are aligned but are, in fact, navigating by different compasses. Clarity of Strategic Direction is not simply whether a strategy document exists. It is whether the people responsible for executing it can describe it in the same language, connect it to their daily decisions, and hold it steady when pressure mounts. When this signal flares, you will hear confidence in meetings and confusion in the corridors.',
-   bp:'Leaders present polished strategies that fracture the moment they leave the room. Priorities multiply. Trade-offs are avoided. Frontline teams work hard in directions that diverge from boardroom intent — not because they are resistant, but because no one has made the destination unambiguous enough to follow.'},
+   narrative:'The most dangerous fire in any organisation is the one nobody can see — the quiet combustion that happens when leaders believe they are aligned but are, in fact, navigating by different compasses. Clarity of Strategic Direction is not simply whether a strategy document exists. It is whether the people responsible for executing it can describe it in the same language, connect it to their daily decisions, and hold it steady when pressure mounts.',
+   burning:'Confidence in meetings and confusion in the corridors. Polished strategies that fracture the moment they leave the room. Priorities multiply. Trade-offs are avoided. Frontline teams work hard in directions that diverge from boardroom intent — not because they are resistant, but because no one has made the destination unambiguous enough to follow.'},
   {n:2,t:'Organisational Alignment',tl:'Alignment is not agreement in the room. It is coordinated behaviour outside it.',
-   signal:'Of all the flammables in this framework, Organisational Alignment is the one most frequently misdiagnosed. Leaders declare alignment after a planning session, observe nodding in forums, and interpret absence of challenge as shared commitment. True alignment is only visible in behaviour — in whether cross-functional teams move in the same direction without requiring constant senior arbitration, and in whether decisions made at the top survive intact through each layer of the organisation.',
-   bp:'Silos deepen. Functions execute their own version of the strategy. Leaders agree in meetings and relitigate decisions through resource approvals and parallel conversations. Initiatives that require genuine cross-functional collaboration consistently stall.'},
+   narrative:'Of all the flammables in this framework, Organisational Alignment is the one most frequently misdiagnosed. Leaders declare alignment after a planning session, observe nodding in forums, and interpret absence of challenge as shared commitment. They are often wrong. True alignment is only visible in behaviour — in whether cross-functional teams move in the same direction without requiring constant senior arbitration, and in whether decisions made at the top survive intact through each layer of the organisation.',
+   burning:'Silos deepen. Functions execute their own version of the strategy. Leaders agree in meetings and relitigate decisions through resource approvals and parallel conversations. Initiatives that require genuine cross-functional collaboration consistently stall, and the organisation learns, over time, that the safest bet is to stay in your lane.'},
   {n:3,t:'Management Discipline',tl:'Execution without discipline is intention without consequence.',
-   signal:'Strategy does not fail in the boardroom. It fails in the gap between what leaders decide and what managers actually enforce, measure, and hold people accountable for. Management Discipline tells you whether your organisation\'s operating rhythm — reviews, escalation norms, accountability structures, governance forums — is functioning as a genuine engine of delivery or as an elaborate performance of oversight.',
-   bp:'Performance reviews recycle the same issues without resolution. Governance forums produce reports, not decisions. The same gaps appear in consecutive cycles and are explained rather than corrected. Accountability is diffuse — owned collectively, which means owned by no one.'},
+   narrative:'Strategy does not fail in the boardroom. It fails in the gap between what leaders decide and what managers actually enforce, measure, and hold people accountable for. Management Discipline tells you whether the operating rhythm of the organisation — its reviews, escalation norms, accountability structures, and governance forums — is functioning as a genuine engine of delivery or as an elaborate performance of oversight.',
+   burning:'Performance reviews recycle the same issues without resolution. Governance forums produce reports, not decisions. The same gaps appear in consecutive cycles and are explained rather than corrected. Accountability is diffuse — owned collectively, which means owned by no one. The organisation becomes extraordinarily busy doing things that do not move it forward.'},
   {n:4,t:'People & Capability',tl:'The most expensive capability gap is the one you discover mid-execution.',
-   signal:'Organisations frequently approve strategies that their people are not yet equipped to deliver. This signal is alight when there is a meaningful distance between the skills, capacity, and engagement required to execute the strategy and what the organisation actually has available. It shows in middle managers stretched beyond their bandwidth, in succession plans that exist as documents but not as operational reality, in engagement scores that decline year on year.',
-   bp:'Leaders attribute execution failures to process or strategy when the root cause is a capability system never designed to carry the weight being placed on it. By the time the gap becomes undeniable — when key talent exits, when burnout becomes visible — the cost of recovery is substantially higher than early intervention would have been.'},
+   narrative:'Organisations frequently approve strategies that their people are not yet equipped to deliver. This signal is alight when there is a meaningful distance between the skills, capacity, and engagement required to execute the strategy and what the organisation actually has available. It shows in middle managers stretched beyond their bandwidth, in succession plans that exist as documents but not as operational reality, in engagement scores that decline year on year.',
+   burning:'Leaders attribute execution failures to process or strategy when the root cause is a capability system that was never designed to carry the weight being placed on it. By the time the gap becomes undeniable — when key talent exits, when burnout becomes visible — the cost of recovery is substantially higher than early intervention would have been.'},
   {n:5,t:'Allocation of Resources',tl:'Follow the money. It tells you what the organisation actually believes, not what it says.',
-   signal:'An organisation\'s true strategy is not found in its planning documents — it is found in its budget. When this signal ignites, there is a visible gap between what leadership declares as strategic and what gets funded, staffed, and protected when decisions become difficult. Legacy spend continues by inertia. New priorities are approved in language but starved in practice.',
-   bp:'People accountable for strategic outcomes are handed responsibility without the resources to honour it. The longer resources misalign with stated direction, the more credibility erodes, and the harder it becomes to mobilise genuine commitment behind any priority at all.'},
+   narrative:'An organisation\'s true strategy is not found in its planning documents — it is found in its budget. When this signal ignites, there is a visible gap between what leadership declares as strategic and what gets funded, staffed, and protected when decisions become difficult. Legacy spend continues by inertia. New priorities are approved in language but starved in practice.',
+   burning:'The people accountable for strategic outcomes are handed responsibility without the resources to honour it. The longer resources misalign with stated direction, the more credibility erodes, and the harder it becomes to mobilise genuine commitment behind any priority at all.'},
   {n:6,t:'Sensing & Adaptation',tl:'An organisation that cannot read the signals around it will eventually be overtaken by them.',
-   signal:'Markets shift. Customer needs evolve. Competitive dynamics change faster than planning cycles. This signal measures whether the organisation is genuinely learning from what is happening around it — or whether it is processing information selectively, defending existing plans, and mistaking activity for responsiveness.',
-   bp:'Customer data is reviewed but not acted on. Market shifts are acknowledged in presentations and then filed away. Leaders defend forecasts rather than update them. When leaders learn that raising uncomfortable signals carries social cost, the organisation gradually loses its early warning system entirely.'},
+   narrative:'Markets shift. Customer needs evolve. Competitive dynamics change faster than planning cycles. This signal measures whether the organisation is genuinely learning from what is happening around it — or whether it is processing information selectively, defending existing plans, and mistaking activity for responsiveness.',
+   burning:'Customer data is reviewed but not acted on. Market shifts are acknowledged in presentations and then filed away. Leaders defend forecasts rather than update them. When leaders learn that raising uncomfortable signals carries social cost, the organisation gradually loses its early warning system entirely.'},
   {n:7,t:'Systems & Execution',tl:'A new strategy running through an old machine will always produce the same result.',
-   signal:'This signal asks the hardest question: is the organisation actually built to deliver what it has committed to? Not in aspiration — in architecture. Does the operating model match the strategic priorities? Are the governance structures, technology platforms, role accountabilities, and process designs fit for the direction being pursued — or are they inherited from a previous strategy that no longer applies?',
-   bp:'Technology investments produce impressive demonstrations and negligible adoption. Operating models built for stability are asked to deliver agility. Structural ambiguities create friction that compounds with every execution cycle. Leaders sense that something fundamental is misaligned but reach for tactical interventions rather than redesigning the machine.'}
+   narrative:'This signal asks the hardest question: is the organisation actually built to deliver what it has committed to? Not in aspiration — in architecture. Does the operating model match the strategic priorities? Are the governance structures, technology platforms, role accountabilities, and process designs fit for the direction being pursued — or are they inherited from a previous strategy that no longer applies?',
+   burning:'Technology investments produce impressive demonstrations and negligible adoption. Operating models built for stability are asked to deliver agility. Leaders sense that something fundamental is misaligned but reach for tactical interventions — more communication, more governance layers, more urgency — when what is required is a willingness to redesign the machine, not just run it harder.'}
 ];
+
+var compassHeat={};
+
+function buildCompass(){
+  var list=document.getElementById('compass-list');
+  if(!list)return;
+  list.innerHTML=COMPASS_ZONES.map(function(z,i){
+    var dots=[1,2,3,4,5].map(function(d){
+      return'<div class="cz-hdot" id="chd-'+i+'-'+d+'" onclick="event.stopPropagation();setCompassHeat('+i+','+d+')"></div>';
+    }).join('');
+    return'<div class="cz" id="cz-'+i+'">'
+      +'<div class="cz-hdr" onclick="togCZ('+i+')">'
+      +'<div class="cz-num">'+z.n+'</div>'
+      +'<div class="cz-meta"><div class="cz-title">'+z.t+'</div><div class="cz-tagline">'+z.tl+'</div></div>'
+      +'<div class="cz-heat-row">'+dots+'</div>'
+      +'<div class="cz-chevron">▾</div>'
+      +'</div>'
+      +'<div class="cz-body">'
+      +'<div class="cz-narrative"><strong>The signal narrative</strong>'+z.narrative+'</div>'
+      +'<div class="cz-bp-lbl">When this becomes a Burning Platform</div>'
+      +'<div class="cz-bp-txt">'+z.burning+'</div>'
+      +'<div class="cz-rate-lbl">Rate the heat level in your organisation</div>'
+      +'<div class="cz-rate-row"><div class="cz-rate-dots" id="crd-'+i+'">'
+      +[1,2,3,4,5].map(function(d){return'<div class="cz-rdot" id="crd-'+i+'-'+d+'" onclick="setCompassHeat('+i+','+d+')" title="Level '+d+'"></div>';}).join('')
+      +'</div><span class="cz-rate-desc" id="crd-desc-'+i+'">Click to rate — 1 emerging · 5 burning platform</span></div>'
+      +'<div class="cz-notes-lbl">Your observations for this domain</div>'
+      +'<textarea class="cz-notes" placeholder="What are you seeing in this domain right now? Where is the misalignment most visible? What has already been tried?"></textarea>'
+      +'</div></div>';
+  }).join('');
+}
+
+function togCZ(i){
+  var el=document.getElementById('cz-'+i);
+  el.classList.toggle('cz-open');
+}
+
+function setCompassHeat(i,level){
+  compassHeat[i]=level;
+  // update small dots in header
+  for(var d=1;d<=5;d++){
+    var hd=document.getElementById('chd-'+i+'-'+d);
+    if(hd)hd.classList.toggle('on',d<=level);
+  }
+  // update large dots in body
+  for(var d=1;d<=5;d++){
+    var rd=document.getElementById('crd-'+i+'-'+d);
+    if(rd)rd.classList.toggle('on',d<=level);
+  }
+  var descs=['','1 — Emerging signal','2 — Moderate risk','3 — Active flammable','4 — High urgency','5 — Burning platform'];
+  var desc=document.getElementById('crd-desc-'+i);
+  if(desc)desc.textContent=descs[level]||'';
+}
 
 var CXO_ROLES=[
   {r:'CEO',c:'Integrates the seven domains into one coherent strategic narrative. Ensures direction, priorities, and trade-offs are communicated with one leadership voice.',d:['Clarity of Strategic Direction','Organisational Alignment']},
