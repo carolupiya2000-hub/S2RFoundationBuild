@@ -461,9 +461,9 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
 .ar-action-item:last-child{margin-bottom:0}
 .ar-action-item::before{content:'→';position:absolute;left:0;color:var(--build-bd);font-weight:700}
 .ar-commitbox{border:1.5px solid var(--bdr2);border-radius:9px;padding:.85rem 1rem;margin-bottom:.75rem;background:var(--surf)}
-.ar-commitbox-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx2);margin-bottom:.4rem}
+.ar-commitbox-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx);margin-bottom:.4rem}
 .ar-commit-field{min-height:60px;border:1px solid var(--bdr2);border-radius:6px;padding:.5rem .65rem;font-family:'DM Sans',sans-serif;font-size:.79rem;color:var(--tx);background:var(--surf2);line-height:1.68;outline:none;white-space:pre-wrap;word-break:break-word}
-.ar-commit-field:empty::before{content:attr(data-ph);color:#6A6A7E;pointer-events:none}
+.ar-commit-field:empty::before{content:attr(data-ph);color:#4A4A5E;pointer-events:none}
 .ar-commit-field:focus{border-color:var(--arc3-bd);background:var(--arc3-bg)}
 .ar-footer-bar{margin-top:2rem;padding-top:.85rem;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;font-size:.63rem;color:var(--tx3)}
 .ar-toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--navy-dk);color:#fff;font-size:.76rem;font-weight:500;padding:.45rem 1.2rem;border-radius:20px;z-index:600;opacity:0;transition:opacity .3s;pointer-events:none}
@@ -1912,7 +1912,7 @@ function generateAlignmentMap(){
     +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">Burning Platform owners and first actions agreed in this session</div><div class="ar-commit-field" contenteditable="true" data-ph="For each Burning Platform domain, record: the named owner, the first corrective action, and the agreed timeline. This must be completed before moving to the Converging Zone in Arc 4."></div></div>'
     +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">High Flammable priorities for early intervention</div><div class="ar-commit-field" contenteditable="true" data-ph="Which High Flammable domains will be actively monitored through the strategy build? Who is responsible for signalling when they begin to escalate?"></div></div>'
     +'</div>'
-    +'<div class="no-print" style="margin-top:1rem;padding:.6rem 1rem;background:#F2F0EC;border:1px dashed #CCC9C0;border-radius:8px;font-size:.72rem;color:#4A4A5E;line-height:1.7">'    +'<strong style="color:#1A1A2E">Export — </strong>'    +'<strong style="color:#3C2A8C">⬇ Save as PDF:</strong> click the button above · all red / amber / green colour coding is preserved. &nbsp;'    +'<strong style="color:#0A4A2A">✉ Email:</strong> copies a plain-text summary to clipboard ready to paste into any email client.'    +'</div>'    +'</div>'    +'<div class="ar-footer-bar">'    +'<span><strong>S2R Strategy Design System</strong> · Impactis Consulting · Lens 1: Aligning Heart & Mind · Arc 3</span>'    +'<span>'+today+'</span>'    +'</div>'    +'</div></div>';
+        +'</div>'    +'<div class="ar-footer-bar">'    +'<span><strong>S2R Strategy Design System</strong> · Impactis Consulting · Lens 1: Aligning Heart & Mind · Arc 3</span>'    +'<span>'+today+'</span>'    +'</div>'    +'</div></div>';
 
   var panel=document.getElementById('alignment-report');
   panel.innerHTML=html;
