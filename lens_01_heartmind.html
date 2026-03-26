@@ -471,7 +471,15 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .topnav,.arc-nav,.main,.ar-topbar,.lens-hero,.arc-footer,.report-trigger,.ext-exercise,.sdiv,.info-note,.arc-hdr,.ext-cols{display:none!important}
-  #alignment-report{display:block!important;position:static!important;overflow:visible!important}
+  /* Only the active overlay prints — controlled by body class set on open */
+  #alignment-report,#mc-report,#card-report,#ci-record{display:none!important}
+  body.print-alignment #alignment-report{display:block!important;position:static!important;overflow:visible!important}
+  body.print-mc #mc-report{display:block!important;position:static!important;overflow:visible!important}
+  body.print-mc #mc-report>div:first-child{display:none!important}
+  body.print-card #card-report{display:block!important;position:static!important;overflow:visible!important}
+  body.print-card #card-report>div:first-child{display:none!important}
+  body.print-ci #ci-record{display:block!important;position:static!important;overflow:visible!important}
+  body.print-ci #ci-record>div:first-child{display:none!important}
   .ar-body{padding:0;max-width:100%}
   .ar-domain-card{page-break-inside:avoid;break-inside:avoid}
   .ar-commit-field{border:1px solid #ccc;background:#f9f9f9;min-height:55px}
@@ -717,9 +725,9 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
     <p class="hero-p">Before any strategy can be executed, it must travel through people. Not through systems, not through dashboards — through people. This lens is the first for a reason: before you can lead strategy, you must understand the human terrain you are leading it through. The work you do here determines the quality of every decision you make in the lenses ahead.</p>
     <div class="hero-chips">
       <span class="chip">⏱ 3h40</span>
-      <span class="chip">👥 Full CXO Team</span>
+      <span class="chip">👥 Full Leadership Team</span>
       <span class="chip">4 Arcs</span>
-      <span class="chip">Awareness · Intelligence · Extrapolating · Converging Zone</span>
+      <span class="chip">Awareness · Intelligence · Extrapolating · Collective Intelligence</span>
     </div>
   </div>
 </div>
@@ -730,7 +738,7 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
     <div class="arc-tab active" data-arc="1" onclick="switchArc(1)"><span class="anum">1</span>AWARENESS — What</div>
     <div class="arc-tab" data-arc="2" onclick="switchArc(2)"><span class="anum">2</span>INTELLIGENCE — Why</div>
     <div class="arc-tab" data-arc="3" onclick="switchArc(3)"><span class="anum">3</span>EXTRAPOLATING — Where</div>
-    <div class="arc-tab" data-arc="4" onclick="switchArc(4)"><span class="anum">4</span>CONVERGING ZONE — How Collective</div>
+    <div class="arc-tab" data-arc="4" onclick="switchArc(4)"><span class="anum">4</span>COLLECTIVE INTELLIGENCE — How We Lead Together</div>
   </div>
 </div>
 
@@ -782,7 +790,7 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
     <div class="tbody" id="body-oceanal" style="display:none">
       <div class="data-collect-note">
         <div class="dcn-title">⚙ How to collect scores across your team</div>
-        <div style="font-size:.78rem;color:var(--tx2);line-height:1.65">Each CXO scores themselves. There are two practical approaches — choose the one that fits your session format:</div>
+        <div style="font-size:.78rem;color:var(--tx2);line-height:1.65">Each Leadership scores themselves. There are two practical approaches — choose the one that fits your session format:</div>
         <div class="dcn-options">
           <div class="dcn-opt">
             <div class="dcn-opt-title">Option A — Live session input</div>
@@ -790,7 +798,7 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
           </div>
           <div class="dcn-opt">
             <div class="dcn-opt-title">Option B — Pre-session individual scoring</div>
-            <div class="dcn-opt-body">Each CXO completes the printed or Excel pre-assessment individually before the session. Scores are transferred into this tool at the start of Arc 1 for immediate team DNA computation. Recommended when anonymity or independent reflection is preferred before group discussion.</div>
+            <div class="dcn-opt-body">Each Leadership completes the printed or Excel pre-assessment individually before the session. Scores are transferred into this tool at the start of Arc 1 for immediate team DNA computation. Recommended when anonymity or independent reflection is preferred before group discussion.</div>
           </div>
         </div>
       </div>
@@ -1090,38 +1098,38 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
 
   <div class="arc-footer">
     <button class="afbtn prev" onclick="switchArc(2)">← Arc 2: Intelligence</button>
-    <button class="afbtn next" onclick="switchArc(4)">Arc 4: Converging Zone →</button>
+    <button class="afbtn next" onclick="switchArc(4)">Arc 4: Collective Intelligence →</button>
   </div>
 </div>
 
 <!-- ══════════════════
-     ARC 4: CONVERGING ZONE
+     ARC 4: COLLECTIVE INTELLIGENCE
 ══════════════════════ -->
 <div class="arc-sec" id="arc-4">
   <div class="arc-hdr a4">
-    <div class="arc-lbl">Arc 4 — Converging Zone · 3:05–3:30</div>
-    <div class="arc-hdr-h">How does your CXO team create the Panoramic Convergent Zone?</div>
-    <div class="arc-hdr-p">The Converging Zone transforms functional expertise into coordinated leadership judgment. Without convergence, your organisation receives multiple interpretations of strategy — causing instability across the seven COMPASS domains. With convergence, your executive team operates as a single leadership system. This arc is the collective intelligence moment of Lens 1: you move from individual self-awareness to a shared map of how your roles jointly stabilise the organisation's alignment terrain.</div>
+    <div class="arc-lbl">Arc 4 — Collective Intelligence · 3:05–3:30</div>
+    <div class="arc-hdr-h">How does your Leadership team create Collective Intelligence across all seven COMPASS domains?</div>
+    <div class="arc-hdr-p">Collective Intelligence transforms functional expertise into coordinated leadership judgment. Without it, your organisation receives multiple interpretations of strategy — causing instability across the seven COMPASS domains. With Collective Intelligence, your executive team operates as a single leadership system. This arc is the collective intelligence moment of Lens 1: you move from individual self-awareness to a shared map of how your roles jointly stabilise the organisation's alignment terrain.</div>
     <div class="arc-chips">
-      <span class="arc-chip">CXO Convergence Table</span>
+      <span class="arc-chip">Leadership Collective Intelligence Table</span>
       <span class="arc-chip">Panoramic Application — 3 Steps</span>
-      <span class="arc-chip">Build Your Organisation's Convergence Map</span>
+      <span class="arc-chip">Build Your Organisation's Collective Intelligence Map</span>
     </div>
   </div>
 
-  <!-- CXO CONVERGENCE TABLE -->
+  <!-- Leadership CONVERGENCE TABLE -->
   <div class="tool-block">
     <div class="tool-hdr" onclick="togTool('cxo')">
       <div class="ticon" style="background:var(--arc4-bg)">🎯</div>
       <div class="thdr-info">
-        <div class="tnum">Reference — CXO Convergence Map</div>
-        <div class="ttitle">How Each CXO Role Stabilises the Seven COMPASS Domains</div>
-        <div class="tsub">Understand your role's convergence responsibility before building your organisation's specific map</div>
+        <div class="tnum">Reference — Leadership Collective Intelligence Map</div>
+        <div class="ttitle">How Each Leadership Role Stabilises the Seven COMPASS Domains</div>
+        <div class="tsub">Understand your role's Collective Intelligence responsibility before building your organisation's specific map</div>
       </div>
       <span class="ttog" id="tog-cxo">▾</span>
     </div>
     <div class="tbody" id="body-cxo" style="display:none">
-      <div class="czinfo">Each domain is influenced by multiple executive functions simultaneously. Alignment cannot be stabilised by any single leader — it requires executive convergence. Review your role and the roles of your colleagues. Then, in the Panoramic Application below, you will build your organisation's specific convergence map.</div>
+      <div class="czinfo">Each domain is influenced by multiple executive functions simultaneously. Alignment cannot be stabilised by any single leader — it requires Collective Intelligence. Review your role and the roles of your colleagues.</div>
       <div class="cxo-table-wrap"><table class="cxo-table" id="cxo-tbl"></table></div>
     </div>
   </div>
@@ -1132,9 +1140,10 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
       <div class="ticon" style="background:var(--arc4-bg)">🔭</div>
       <div class="thdr-info">
         <div class="tnum">Exercise — Panoramic Application</div>
-        <div class="ttitle">Build Your Organisation's Convergence Map</div>
-        <div class="tsub">Three steps: self-reflection → perspective exchange → collective convergence</div>
+        <div class="ttitle">Build Your Organisation's Collective Intelligence Map</div>
+        <div class="tsub">Three steps: self-reflection → perspective exchange → collective intelligence. Then, build your organisation's specific Collective Intelligence map.</div>
       </div>
+      <button onclick="event.stopPropagation();openCardPrint()" style="background:var(--arc4-bd);color:#fff;border:none;border-radius:7px;padding:.32rem .8rem;font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;margin-right:.6rem">🖨 Print Leader Cards</button>
       <span class="ttog" id="tog-panoramic">▾</span>
     </div>
     <div class="tbody" id="body-panoramic" style="display:none">
@@ -1142,25 +1151,111 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
     </div>
   </div>
 
-  <!-- LENS 1 SYNTHESIS -->
-  <div class="synth">
-    <div class="synth-h">Lens 1 Complete — Your Organisation's Alignment Foundation</div>
-    <div class="synth-p">You have mapped the human terrain your strategy must travel through. This is not background context — it is the first execution system. Everything you build in the lenses ahead rests on the clarity of what you have surfaced here.</div>
-    <div class="synth-grid">
-      <div class="synth-cell">
-        <div class="synth-cell-lbl">What you now know</div>
-        <div class="synth-cell-txt">Your team's aggregate behavioural DNA, the live SCARF climate signals, and the emotional dynamics currently shaping how your leadership team interprets and experiences the strategy process.</div>
+
+  <!-- MICRO-CLIMB SUMMARY -->
+  <div class="tool-block" style="margin-top:1.5rem">
+    <div class="tool-hdr" onclick="togTool('microclimb')">
+      <div class="ticon" style="background:var(--arc4-bg)">📋</div>
+      <div class="thdr-info">
+        <div class="tnum">Micro-Climb Summary</div>
+        <div class="ttitle">Aligning Hearts & Minds — What This Micro-Climb Establishes</div>
+        <div class="tsub">The four stages that build the human foundation for strategy execution</div>
       </div>
-      <div class="synth-cell">
-        <div class="synth-cell-lbl">What you have mapped</div>
-        <div class="synth-cell-txt">The seven COMPASS hot zones with your organisation's current heat rating — distinguishing High Flammables you can leverage from Burning Platforms requiring corrective intervention.</div>
-      </div>
-      <div class="synth-cell">
-        <div class="synth-cell-lbl">What you must now design</div>
-        <div class="synth-cell-txt">The ACE-IT behavioural architecture and the convergence commitments that ensure your CXO team sends one coherent signal across all seven domains as you move into Lens 2: Strategy Visioning & SiP.</div>
-      </div>
+      <button onclick="event.stopPropagation();openMCPrint()" style="background:var(--arc4-bd);color:#fff;border:none;border-radius:7px;padding:.32rem .8rem;font-family:'DM Sans',sans-serif;font-size:.7rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0;margin-right:.6rem">⬇ Save as PDF</button>
+      <span class="ttog" id="tog-microclimb">▾</span>
     </div>
-  </div>
+    <div class="tbody" id="body-microclimb" style="display:none">
+      <div class="czinfo" style="margin-bottom:1.2rem">The Aligning Hearts &amp; Minds micro-climb establishes the human conditions required for strategy execution. It recognises a simple but decisive reality: <strong>strategy moves through people before it moves through systems.</strong> Execution therefore depends on whether the organisation achieves alignment of cognition (mind) and alignment of emotional engagement (heart) among the people responsible for delivering the strategy.</div>
+
+      <div class="panoramic-steps">
+
+        <div class="pstep ps-open" id="mc-1">
+          <div class="pstep-hdr" onclick="this.closest('.pstep').classList.toggle('ps-open')" style="cursor:pointer">
+            <div class="pstep-n" style="background:var(--arc1-bd)">1</div>
+            <div class="pstep-meta">
+              <div class="pstep-title">Awareness — What</div>
+              <div class="pstep-time">Strategy execution is first a human interpretation problem</div>
+            </div>
+          </div>
+          <div class="pstep-body">
+            <p>Leaders recognise that every executive interprets strategy through functional expertise, personality tendencies, and emotional context. Cognitive biases and emotional states shape how strategy is understood, prioritised, and acted upon. Aligning hearts and minds establishes the behavioural conditions that allow diverse perspectives to converge into coordinated action.</p>
+            <div style="display:inline-block;font-size:.7rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;background:var(--arc1-bg);color:var(--arc1-tx);border:1px solid var(--arc1-bd);margin-top:.3rem">OCEANAL Profile · SCARF Diagnostic · 5 Principles of Alignment</div>
+          </div>
+        </div>
+
+        <div class="pstep ps-open" id="mc-2">
+          <div class="pstep-hdr" onclick="this.closest('.pstep').classList.toggle('ps-open')" style="cursor:pointer">
+            <div class="pstep-n" style="background:var(--arc2-bd)">2</div>
+            <div class="pstep-meta">
+              <div class="pstep-title">Intelligence — Why</div>
+              <div class="pstep-time">Alignment determines execution outcomes</div>
+            </div>
+          </div>
+          <div class="pstep-body">
+            <p>Leaders understand why alignment determines execution outcomes. A strategy document represents strategic potential — direction, intent, and ambition. Execution begins only when individuals choose to invest energy in advancing that direction. Organisations can drive execution through compliance or through commitment. Alignment of hearts and minds shifts the organisation from supervised effort to self-driven momentum, enabling resilience, discretionary effort, and coordinated progress.</p>
+            <div style="display:inline-block;font-size:.7rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;background:var(--arc2-bg);color:var(--arc2-tx);border:1px solid var(--arc2-bd);margin-top:.3rem">Potential vs Kinetic Energy · Commitment vs Compliance · ACE-IT Behaviours</div>
+          </div>
+        </div>
+
+        <div class="pstep ps-open" id="mc-3">
+          <div class="pstep-hdr" onclick="this.closest('.pstep').classList.toggle('ps-open')" style="cursor:pointer">
+            <div class="pstep-n" style="background:var(--arc3-bd)">3</div>
+            <div class="pstep-meta">
+              <div class="pstep-title">Extrapolating — Where</div>
+              <div class="pstep-time">Identifying the organisational hot zones where alignment matters most</div>
+            </div>
+          </div>
+          <div class="pstep-body">
+            <p>Leaders identify the organisational hot zones where alignment matters most. These High-Flammable zones appear across seven COMPASS domains: <strong>Clarity of Strategic Direction, Allocation of Resources, Sensing &amp; Adaptation, Organisational Alignment, Management Discipline, People &amp; Capability,</strong> and <strong>Systems &amp; Execution.</strong></p>
+            <p>When alignment is strong, these domains amplify performance. When alignment weakens, they gradually escalate into Burning Platforms, where execution breakdown becomes visible and costly.</p>
+            <div style="display:inline-block;font-size:.7rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;background:var(--arc3-bg);color:var(--arc3-tx);border:1px solid var(--arc3-bd);margin-top:.3rem">7 COMPASS Domains · High Flammables · Burning Platforms</div>
+          </div>
+        </div>
+
+        <div class="pstep ps-open" id="mc-4">
+          <div class="pstep-hdr" onclick="this.closest('.pstep').classList.toggle('ps-open')" style="cursor:pointer">
+            <div class="pstep-n" style="background:var(--arc4-bd)">4</div>
+            <div class="pstep-meta">
+              <div class="pstep-title">Collective Intelligence — How We Lead Together</div>
+              <div class="pstep-time">Individual perspectives integrate into one shared leadership system</div>
+            </div>
+          </div>
+          <div class="pstep-body">
+            <p>The executive team achieves Collective Intelligence, where individual functional perspectives integrate into a shared leadership interpretation. At this point, the leadership team begins operating as a single leadership system — stabilising the seven High-Flammable COMPASS domains and sending one coherent signal across the organisation.</p>
+            <p>Collective Intelligence occurs when each leader understands not only their own domain responsibilities, but how those responsibilities interlock with every other executive function. The organisation stops receiving multiple functional interpretations of strategy and instead receives one unified leadership signal.</p>
+            <div style="display:inline-block;font-size:.7rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;background:var(--arc4-bg);color:var(--arc4-tx);border:1px solid var(--arc4-bd);margin-top:.3rem;margin-bottom:1rem">Leadership Collective Intelligence Map · Panoramic Application · Commitment to One Signal</div>
+
+            <div id="mc4-commitment-wrap" style="display:none;background:linear-gradient(135deg,var(--arc4-bg),#d4f5e5);border:1.5px solid var(--arc4-bd);border-radius:10px;padding:1rem 1.1rem;margin-top:.25rem">
+              <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--arc4-tx);margin-bottom:.5rem">Team Collective Intelligence Commitment — carried forward into Lens 2</div>
+              <div id="mc4-commitment-text" style="font-size:.82rem;color:var(--tx);line-height:1.78"></div>
+            </div>
+            <div id="mc4-commitment-empty" style="font-size:.72rem;color:var(--tx3);font-style:italic;margin-top:.5rem">Team commitment will appear here once generated in Step 3 above.</div>
+          </div>
+        </div>
+
+      </div><!-- /panoramic-steps -->
+
+      <div class="synth" style="margin-top:1.5rem">
+        <div class="synth-h">Outcome of the Micro-Climb</div>
+        <div class="synth-p">The organisation leaves this micro-climb with aligned leadership interpretation, emotional commitment to the strategy, and clear visibility of the organisational conditions that will enable or constrain execution.</div>
+        <div class="synth-grid">
+          <div class="synth-cell">
+            <div class="synth-cell-lbl">What you have surfaced</div>
+            <div class="synth-cell-txt">The human terrain your strategy must travel through — including your team's behavioural DNA, live SCARF climate signals, and the emotional dynamics shaping leadership interpretation.</div>
+          </div>
+          <div class="synth-cell">
+            <div class="synth-cell-lbl">What you have mapped</div>
+            <div class="synth-cell-txt">The seven COMPASS hot zones with your current heat rating — distinguishing High Flammables you can leverage from Burning Platforms requiring corrective action before strategy design proceeds.</div>
+          </div>
+          <div class="synth-cell">
+            <div class="synth-cell-lbl">What you are carrying forward</div>
+            <div class="synth-cell-txt">This alignment creates the human foundation for the next stage of the Strategy2Results® journey, where the leadership team will define Success in Practice (SiP) and translate strategic direction into a shared picture of the future organisation.</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /tbody -->
+  </div><!-- /tool-block microclimb -->
 
   <div class="arc-footer">
     <button class="afbtn prev" onclick="switchArc(3)">← Arc 3: Extrapolating</button>
@@ -1313,7 +1408,7 @@ var COMPASS_ZONES=[
    burning:'When this signal is lit, technology investments produce impressive demonstrations and negligible adoption. Operating models built for stability are asked to deliver agility. Structural ambiguities — unclear accountabilities, overlapping ownership, single points of failure in critical roles — create friction that compounds with every execution cycle. The organisation invests in transformation while being structurally configured to resist it. Leaders sense that something fundamental is misaligned but reach for tactical interventions — more communication, more governance layers, more urgency — when what is actually required is a willingness to redesign the machine, not just run it harder.'}
 ];
 
-var CXO_ROLES=[
+var Leadership_ROLES=[
   {r:'CEO',c:'Integrates the seven domains into one coherent strategic narrative. Ensures direction, priorities, and trade-offs are communicated with one leadership voice.',d:['Clarity of Strategic Direction','Organisational Alignment']},
   {r:'CFO',c:'Ensures capital allocation and financial discipline reinforce strategic intent rather than dispersing resources across competing priorities.',d:['Allocation of Resources','Management Discipline']},
   {r:'COO',c:'Converts strategy into operational flow, ensuring execution routines, coordination, and hand-offs move the organisation forward.',d:['Systems & Execution','Management Discipline']},
@@ -1339,7 +1434,7 @@ window.addEventListener('DOMContentLoaded',function(){
   buildACEIT();
   buildEmo('joy');
   buildCompass();
-  buildCXOTable();
+  buildLeadershipTable();
   buildPanoSteps();
 });
 
@@ -1501,12 +1596,12 @@ function buildStrategyImplications(profiles){
     if(t==='Conscientiousness'&&d==='High')watches.push('High conscientiousness may cause over-engineering of the strategy document itself. Time-box planning phases and define Minimum Viable Output for each lens deliverable.');
     if(t==='Extraversion'&&d==='Low')designs.push('Low extraversion means the most valuable insights in this team will not surface in open discussion. Use written pre-input protocols before all strategy arc discussions.');
     if(t==='Extraversion'&&d==='High')risks.push('High extraversion creates authority bias risk — dominant voices will frame strategy for the team. Enforce leader-last speaking rules in Lens 2 visioning discussions.');
-    if(t==='Agreeableness'&&d==='Low')watches.push('Low agreeableness increases the risk of adversarial dynamics in cross-CXO strategy sessions. Deploy Problem/Data/Options debate structure for all contested decisions from Lens 2 onwards.');
+    if(t==='Agreeableness'&&d==='Low')watches.push('Low agreeableness increases the risk of adversarial dynamics in cross-Leadership strategy sessions. Deploy Problem/Data/Options debate structure for all contested decisions from Lens 2 onwards.');
     if(t==='Agreeableness'&&d==='High')risks.push('High agreeableness creates false consensus risk — apparent alignment in strategy sessions will mask unresolved disagreements. Build Pre-Mortem checks into Lens 4 (ABCV Integrity Check).');
     if(t==='Emotional Stability'&&d==='Low')designs.push('Low emotional stability requires explicit climate regulation protocols in each session. Use the Emotional Climate Thermometer actively across all four lenses — do not wait for breakdown.');
     if(t==='Emotional Stability'&&d==='High')watches.push('High emotional stability can mask urgency signals. Ensure the strategy process includes explicit "burning platform" naming moments — calmness must not become complacency.');
     if(t==='Values Alignment'&&d==='High')strengths.push('High values alignment is a strategic asset: this team can anchor difficult decisions to shared principles. Embed values-based decision criteria explicitly into the ABCV Integrity Check in Lens 4.');
-    if(t==='Values Alignment'&&d==='Low')risks.push('Low values alignment creates inconsistent decision standards across the CXO team. Establish shared decision criteria early in Lens 2 — without this, strategy will be interpreted differently at each leadership layer.');
+    if(t==='Values Alignment'&&d==='Low')risks.push('Low values alignment creates inconsistent decision standards across the Leadership team. Establish shared decision criteria early in Lens 2 — without this, strategy will be interpreted differently at each leadership layer.');
     if(t==='Learning Orientation'&&d==='Low')risks.push('Low learning orientation means course-correction signals will be resisted. Build explicit feedback loops and review cadences into the OKR and Stress Testing lenses (3 and 9).');
     if(t==='Learning Orientation'&&d==='High')strengths.push('High learning orientation is a strategy process accelerator. Use this team\'s appetite for iteration to build adaptive review cycles into every lens deliverable.');
   });
@@ -1752,14 +1847,14 @@ var DOMAIN_DETAIL={
   'Clarity of Strategic Direction':{
     risk:'Strategy fragmentation. Executives operate from different interpretations of the same direction. Decisions made at the top do not survive translation through organisational layers. Priorities multiply without trade-off logic.',
     implications:'Every leadership communication reinforces a different version of the strategy. Frontline execution bears no resemblance to boardroom intent — not from resistance, but from genuine ambiguity. The cost compounds silently with each planning cycle.',
-    flame_actions:['Establish a single, written strategy statement that every CXO can recite in the same language before the strategy build proceeds.','Run the "corridor test" — ask five people at different levels to describe the strategy. Where descriptions diverge, that divergence is the alignment gap to close.','Assign one leader as the narrative steward, responsible for catching and correcting interpretation drift before it becomes operational drift.'],
+    flame_actions:['Establish a single, written strategy statement that every Leadership can recite in the same language before the strategy build proceeds.','Run the "corridor test" — ask five people at different levels to describe the strategy. Where descriptions diverge, that divergence is the alignment gap to close.','Assign one leader as the narrative steward, responsible for catching and correcting interpretation drift before it becomes operational drift.'],
     burn_actions:['Stop the strategy build. Rebuilding direction on a fractured narrative foundation produces a more polished version of the same problem.','Convene an emergency narrative session: the only agenda item is agreeing one shared description of direction, priorities, and trade-offs.','Identify which decisions have already been made under conflicting interpretations and determine which must be revisited before execution can proceed.']
   },
   'Organisational Alignment':{
     risk:'Coordinated effort breaks down across functions. Silos deepen. Functions execute their own version of strategy. Decisions relitigated informally after forums close.',
     implications:'Cross-functional initiatives stall. The organisation learns that the safest strategy is to stay in its own lane. Senior leadership time is consumed by arbitration of conflicts that aligned organisations handle at lower levels.',
-    flame_actions:['Map the two or three strategic initiatives that most require cross-functional movement. Assign a named integrator with authority to call and close cross-functional decisions.','Create a shared decision log visible to all CXOs — every decision is recorded, rationale noted, and informal relitigations are surfaced rather than absorbed.','Design one cross-functional accountability moment into the monthly operating rhythm specifically for strategic progress, not operational reporting.'],
-    burn_actions:['Name the specific seams where misalignment is producing the most visible execution damage. These are not cultural issues — they are structural failures requiring structural fixes.','Suspend cross-functional initiatives where the accountability model is genuinely unclear until governance is resolved. Proceeding without this produces expensive rework.','Appoint a CXO-level owner for alignment restoration in the two highest-risk domains. This is not an HR exercise — it is an operational emergency response.']
+    flame_actions:['Map the two or three strategic initiatives that most require cross-functional movement. Assign a named integrator with authority to call and close cross-functional decisions.','Create a shared decision log visible to all Leaderships — every decision is recorded, rationale noted, and informal relitigations are surfaced rather than absorbed.','Design one cross-functional accountability moment into the monthly operating rhythm specifically for strategic progress, not operational reporting.'],
+    burn_actions:['Name the specific seams where misalignment is producing the most visible execution damage. These are not cultural issues — they are structural failures requiring structural fixes.','Suspend cross-functional initiatives where the accountability model is genuinely unclear until governance is resolved. Proceeding without this produces expensive rework.','Appoint a Leadership-level owner for alignment restoration in the two highest-risk domains. This is not an HR exercise — it is an operational emergency response.']
   },
   'Management Discipline':{
     risk:'Accountability is diffuse. Performance reviews produce explanation rather than consequence. The same execution gaps recur cycle after cycle. Governance forums function as reporting rituals rather than decision-making engines.',
@@ -1931,11 +2026,13 @@ function generateAlignmentMap(){
   var panel=document.getElementById('alignment-report');
   panel.innerHTML=html;
   panel.classList.add('open');
+  document.body.classList.add('print-alignment');
   document.body.style.overflow='hidden';
 }
 
 function closeAlignmentReport(){
   document.getElementById('alignment-report').classList.remove('open');
+  document.body.classList.remove('print-alignment');
   document.body.style.overflow='';
 }
 
@@ -1990,12 +2087,12 @@ function showArToast(msg){
   setTimeout(function(){t.classList.remove('show');},2800);
 }
 
-/* ════════════════════ CXO TABLE ════════════════════ */
+/* ════════════════════ Leadership TABLE ════════════════════ */
 
-function buildCXOTable(){
+function buildLeadershipTable(){
   var tbl=document.getElementById('cxo-tbl');
-  tbl.innerHTML='<thead><tr><th>CXO Role</th><th>Converging Zone Contribution</th><th>Top 2 COMPASS Domains Most Activated</th></tr></thead><tbody>'+
-  CXO_ROLES.map(r=>`<tr>
+  tbl.innerHTML='<thead><tr><th>Leadership Role</th><th>Collective Intelligence Contribution</th><th>Top 2 COMPASS Domains Most Activated</th></tr></thead><tbody>'+
+  Leadership_ROLES.map(r=>`<tr>
     <td class="cxo-role">${r.r}</td>
     <td class="cxo-contrib">${r.c}</td>
     <td><div class="cxo-domains">${r.d.map(d=>`<span class="domain-tag">${d}</span>`).join('')}</div></td>
@@ -2010,16 +2107,17 @@ function buildPanoSteps(){
   <div class="pstep" id="ps-1">
     <div class="pstep-hdr" onclick="togPS(1)">
       <div class="pstep-n">1</div>
-      <div class="pstep-meta"><div class="pstep-title">Self-Reflection & Colleague Interpretation</div><div class="pstep-time">10 minutes — individual then pair</div></div>
+      <div class="pstep-meta"><div class="pstep-title">Self-Reflection & Colleague Interpretation</div></div>
     </div>
     <div class="pstep-body">
-      <p>Each CXO completes the converging zone table for their own role and three closely related CXO roles. You are not filling in generic answers — you are describing how <strong>your specific organisation's context</strong> shapes each role's alignment responsibilities.</p>
-      <p>Reflect on: which two COMPASS domains does your role most directly activate? What specific organisational conditions in your company make those domains the most critical for your function? Which colleague roles are most interdependent with yours — and what do you believe their primary domain contributions are?</p>
+      <div class="info-note" style="margin-bottom:.9rem;border-left:3px solid var(--arc4-bd);background:var(--arc4-bg);color:var(--arc4-tx)"><strong>Step 1 is completed on your printed card</strong> — not on screen. Use the <em>Print Leader Cards</em> button above to generate one card per leader before the session. Each leader fills in the card independently, then the pair exchange (Step 2) happens physically before anything is entered here.</div>
+      <p>Each leader completes the Collective Intelligence table for their own role and three closely related leadership roles — describing how <strong>your specific organisation's context</strong> shapes each role's alignment responsibilities.</p>
+      <p>After the pair exchange, a single nominated leader may record the key insights from their card here as a reference before the full-group discussion:</p>
       <table class="self-table">
-        <thead><tr><th>Role</th><th>Convergence contribution (why aligning hearts &amp; minds is critical for this role in our organisation)</th><th>Top 2 COMPASS domains</th></tr></thead>
+        <thead><tr><th>Role</th><th>Collective Intelligence contribution (why aligning hearts &amp; minds is critical for this role in our organisation)</th><th>Top 2 COMPASS domains</th></tr></thead>
         <tbody>${['Your role','Colleague 1','Colleague 2','Colleague 3'].map((r,i)=>`<tr>
           <td class="role-col"><input type="text" style="border:1px solid var(--bdr2);border-radius:5px;padding:.3rem .4rem;font-size:.73rem;width:90px;font-family:'DM Sans',sans-serif" placeholder="${r}"></td>
-          <td><textarea class="stx" placeholder="Describe the convergence contribution specific to your organisation..."></textarea></td>
+          <td><textarea class="stx" placeholder="Describe the Collective Intelligence contribution specific to your organisation..."></textarea></td>
           <td>
             <select class="sdmn"><option value="">Domain 1…</option>${COMPASS_DOMAINS.map(d=>`<option>${d}</option>`).join('')}</select>
             <select class="sdmn" style="margin-top:4px"><option value="">Domain 2…</option>${COMPASS_DOMAINS.map(d=>`<option>${d}</option>`).join('')}</select>
@@ -2032,32 +2130,75 @@ function buildPanoSteps(){
   <div class="pstep" id="ps-2">
     <div class="pstep-hdr" onclick="togPS(2)">
       <div class="pstep-n">2</div>
-      <div class="pstep-meta"><div class="pstep-title">Perspective Exchange</div><div class="pstep-time">5 minutes — pair discussion</div></div>
+      <div class="pstep-meta"><div class="pstep-title">Perspective Exchange</div></div>
     </div>
     <div class="pstep-body">
       <p>Share your completed tables with the colleague whose role you selected. Each of you explains:</p>
       <p><strong>Why you chose those two domains for your own role</strong> — what is it about your function's specific scope, relationships, and accountabilities that makes those domains your primary responsibility?</p>
       <p><strong>Why you believe your colleague's role most strongly activates the domains you assigned</strong> — what is the organisational logic connecting their function to those domains?</p>
       <p>Your colleague then responds: Do you agree with that interpretation of your role? Which domains would you add or adjust, and why?</p>
-      <div class="info-note">These differences are normal and expected. They illustrate precisely why the Converging Zone is necessary. The Converging Zone emerges when executive leaders move from individual interpretations of responsibility to a shared understanding of how their roles jointly stabilise the organisation's alignment.</div>
+      <div class="info-note">These differences are normal and expected. They illustrate precisely why Collective Intelligence is necessary. Collective Intelligence emerges when executive leaders move from individual interpretations of responsibility to a shared understanding of how their roles jointly stabilise the organisation's alignment.</div>
     </div>
   </div>
 
   <div class="pstep" id="ps-3">
     <div class="pstep-hdr" onclick="togPS(3)">
       <div class="pstep-n">3</div>
-      <div class="pstep-meta"><div class="pstep-title">Convergence Discussion — Collective Intelligence Moment</div><div class="pstep-time">5 minutes — full group</div></div>
+      <div class="pstep-meta"><div class="pstep-title">Collective Intelligence Discussion — The Convergence Moment</div></div>
     </div>
     <div class="pstep-body">
-      <p>The facilitator brings the full group to reflect on the pair exchanges:</p>
-      <p><strong>1. Where did participants naturally agree on domain responsibility?</strong> Which roles and domains were unambiguous across the team — and what does that tell you about how your organisation operates?</p>
-      <p><strong>2. Where did interpretations differ across roles?</strong> What does the disagreement reveal about the assumptions each function carries about its scope, authority, and strategic contribution?</p>
-      <p><strong>3. What does this mean for Lens 1?</strong> Where in your seven COMPASS domains is your leadership team's convergence most urgently needed right now — and what specific alignment work must happen before you move into Lens 2?</p>
-      <div class="info-note"><strong>The Converging Zone is not just an exercise — it is an operating commitment.</strong> When convergence occurs, the organisation receives one coherent leadership signal rather than multiple functional interpretations. When convergence fails, each domain begins to drift because different leaders unintentionally transmit different interpretations of the strategy.</div>
-      <div class="cz-assess" style="margin-top:.75rem">
-        <div class="cz-assess-lbl">Our team's convergence commitment for Lens 1 — what we are aligning on before we proceed:</div>
-        <textarea class="cz-notes" style="min-height:72px" placeholder="Record your team's specific convergence commitments here. What shared interpretation of strategic direction, role responsibilities, and COMPASS priorities are you carrying forward into Lens 2?"></textarea>
+      <div class="info-note" style="border-left:3px solid var(--arc4-bd);background:var(--arc4-bg);color:var(--arc4-tx);margin-bottom:1rem"><strong>Facilitator panel — Step 3 is captured here.</strong> After all pair exchanges are complete, guide the full group through the three questions below and record the collective outputs. This becomes the permanent session record and feeds into the Collective Intelligence PDF.</div>
+
+      <div style="display:flex;flex-direction:column;gap:1rem;margin-bottom:1.1rem">
+
+        <div style="background:var(--surf);border:1px solid var(--bdr);border-radius:10px;overflow:hidden">
+          <div style="background:var(--surf2);padding:.6rem 1rem;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:.6rem">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--arc4-bd);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">Q1</span>
+            <span style="font-size:.8rem;font-weight:600;color:var(--tx)">Where did leaders naturally agree on domain responsibility?</span>
+          </div>
+          <div style="padding:.75rem 1rem">
+            <div style="font-size:.72rem;color:var(--tx3);margin-bottom:.45rem;font-style:italic">Which roles and domains were unambiguous — and what does that reveal about how your organisation operates?</div>
+            <textarea id="fac-q1" class="cz-notes" style="min-height:60px" placeholder="Record the domains and roles where the team agreed naturally…"></textarea>
+          </div>
+        </div>
+
+        <div style="background:var(--surf);border:1px solid var(--bdr);border-radius:10px;overflow:hidden">
+          <div style="background:var(--surf2);padding:.6rem 1rem;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:.6rem">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--arc4-bd);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">Q2</span>
+            <span style="font-size:.8rem;font-weight:600;color:var(--tx)">Where did interpretations diverge across roles?</span>
+          </div>
+          <div style="padding:.75rem 1rem">
+            <div style="font-size:.72rem;color:var(--tx3);margin-bottom:.45rem;font-style:italic">What do the differences reveal about assumptions each function carries about its scope, authority, and strategic contribution?</div>
+            <textarea id="fac-q2" class="cz-notes" style="min-height:60px" placeholder="Record where pair exchanges surfaced different interpretations of the same domain responsibility…"></textarea>
+          </div>
+        </div>
+
+        <div style="background:var(--surf);border:1px solid var(--bdr);border-radius:10px;overflow:hidden">
+          <div style="background:var(--surf2);padding:.6rem 1rem;border-bottom:1px solid var(--bdr);display:flex;align-items:center;gap:.6rem">
+            <span style="width:22px;height:22px;border-radius:50%;background:var(--arc4-bd);color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">Q3</span>
+            <span style="font-size:.8rem;font-weight:600;color:var(--tx)">Which COMPASS domains need the most urgent Collective Intelligence right now?</span>
+          </div>
+          <div style="padding:.75rem 1rem">
+            <div style="font-size:.72rem;color:var(--tx3);margin-bottom:.55rem;font-style:italic">Select the domains the team agrees must be stabilised before Lens 2:</div>
+            <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.3rem">${COMPASS_DOMAINS.map(d=>`<label style="display:flex;align-items:center;gap:.35rem;font-size:.72rem;color:var(--tx2);cursor:pointer;padding:.3rem .65rem;border:1.5px solid var(--bdr2);border-radius:20px;background:var(--surf2);transition:all .15s"><input type="checkbox" class="fac-domain-chk" value="${d}" style="accent-color:var(--arc4-bd);width:13px;height:13px" onchange="var l=this.closest('label');l.style.borderColor=this.checked?'var(--arc4-bd)':'var(--bdr2)';l.style.background=this.checked?'var(--arc4-bg)':'var(--surf2)';l.style.color=this.checked?'var(--arc4-tx)':'var(--tx2)'">${d}</label>`).join('')}</div>
+          </div>
+        </div>
+
       </div>
+
+      <div style="background:linear-gradient(135deg,var(--arc4-bg),#d4f5e5);border:1.5px solid var(--arc4-bd);border-radius:10px;padding:1rem 1.1rem;margin-bottom:.85rem">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.5rem;flex-wrap:wrap;gap:.4rem">
+          <div style="font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--arc4-tx)">Team Collective Intelligence Commitment — what we are aligning on before Lens 2</div>
+          <button id="btn-gen-commitment" onclick="generateAICommitment()" style="background:var(--arc4-bd);color:#fff;border:none;border-radius:6px;padding:.28rem .75rem;font-family:'DM Sans',sans-serif;font-size:.68rem;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0">✦ Generate from session inputs</button>
+        </div>
+        <input id="api-key-input" type="hidden" value="">
+        <div id="commitment-status" style="font-size:.68rem;color:var(--arc4-tx);font-style:italic;margin-bottom:.45rem;opacity:.85">Complete Q1, Q2 and select domains in Q3 — then click Generate. Works without an API key using smart synthesis.</div>
+        <textarea id="fac-commitment" class="cz-notes" style="min-height:90px;border-color:var(--arc4-bd);background:rgba(255,255,255,.6)" placeholder="Your team commitment will appear here. Edit freely after generation."></textarea>
+      </div>
+
+      <div class="info-note" style="margin-bottom:.85rem"><strong>Collective Intelligence is not just an exercise — it is an operating commitment.</strong> When it occurs, the organisation receives one coherent leadership signal. When it fails, each domain drifts as different leaders transmit different interpretations of the strategy.</div>
+
+      <button onclick="openCIRecord()" style="background:var(--arc4-tx);color:#fff;border:none;border-radius:8px;padding:.65rem 1.3rem;font-family:'DM Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .2s">⬇ Generate Collective Intelligence Record</button>
     </div>
   </div>`;
 }
@@ -2065,6 +2206,170 @@ function buildPanoSteps(){
 function togPS(n){
   document.getElementById('ps-'+n).classList.toggle('ps-open');
 }
+
+/* ════════════════════ AI COMMITMENT GENERATOR ════════════════════ */
+
+var DOMAIN_ACTIONS={
+  'Clarity of Strategic Direction':'establish one shared strategic narrative — a single written description of direction, priorities and trade-offs that every leader communicates in the same language',
+  'Organisational Alignment':'operate as a single leadership system across all functions, mapping every initiative requiring cross-functional movement and assigning named integrators with authority to make and close decisions',
+  'Management Discipline':'hold commitments made in this room to a standard where they are tracked, owned and followed through — governance forums will end with binding decisions and named owners, not summaries and action logs',
+  'People & Capability':'make an honest assessment of whether the strategy we design can be delivered by the people and capability we have, closing the two or three widest gaps before execution begins',
+  'Allocation of Resources':'align our actual resource and budget decisions to the strategic priorities we declare, making the trade-offs required rather than allowing inertia to define strategy by default',
+  'Sensing & Adaptation':'build genuine responsiveness into our operating rhythm — external signals will be reviewed and result in a documented strategic response, not filed away after acknowledgement',
+  'Systems & Execution':'ensure the operating model, governance structures and processes we are running are capable of delivering what we have committed to, resolving structural misalignments before they become execution blockers'
+};
+
+var DOMAIN_SIGNALS={
+  'Clarity of Strategic Direction':'Ambiguity at the top becomes fragmentation at every level below.',
+  'Organisational Alignment':'Alignment is only real when it is visible in coordinated behaviour outside the room.',
+  'Management Discipline':'The organisation reads our discipline, not our intent.',
+  'People & Capability':'Strategy without capability is intention without mechanism.',
+  'Allocation of Resources':'Our budget is our real strategy — when resources contradict stated direction, credibility collapses.',
+  'Sensing & Adaptation':'The cost of missing a signal is always higher than the cost of acting on one.',
+  'Systems & Execution':'A new strategy running through an old machine produces the same result.'
+};
+
+function buildLocalCommitment(q1,q2,checked){
+  var parts=[];
+
+  // Opening — domain-anchored or general
+  if(checked.length===1){
+    parts.push('We commit to '+DOMAIN_ACTIONS[checked[0]]+'.');
+  } else if(checked.length>1){
+    var last=checked[checked.length-1];
+    var rest=checked.slice(0,-1);
+    parts.push('We commit to addressing the '+checked.length+' domains this team has identified as requiring immediate Collective Intelligence: '+rest.join(', ')+' and '+last+'.');
+  } else {
+    parts.push('We commit to operating as a single leadership system — sending one coherent signal across the organisation rather than multiple functional interpretations of strategy.');
+  }
+
+  // Weave in Q1 agreement content if present
+  if(q1&&q1.length>15){
+    var q1short=q1.split('\n')[0].replace(/[.!?]+$/,'').trim();
+    if(q1short.length>10&&q1short.length<120){
+      parts.push('Where we found natural agreement — particularly around '+q1short+' — we will build on that foundation and protect it as strategy design progresses.');
+    } else {
+      parts.push('Where role responsibilities were unambiguous, we will codify and protect those shared interpretations as the baseline for all lenses ahead.');
+    }
+  }
+
+  // Weave in Q2 divergence content
+  if(q2&&q2.length>15){
+    var q2short=q2.split('\n')[0].replace(/[.!?]+$/,'').trim();
+    if(q2short.length>10&&q2short.length<120){
+      parts.push('Where interpretations diverged — specifically around '+q2short+' — we commit to resolving those differences explicitly before Lens 2, not carrying ambiguity forward as an assumption.');
+    } else {
+      parts.push('Where interpretations diverged across roles, we commit to resolving those differences explicitly before Lens 2 — not carrying ambiguity forward as an unspoken assumption.');
+    }
+  }
+
+  // Domain-specific action sentences for each selected domain beyond the first
+  if(checked.length>1){
+    checked.slice(1).forEach(function(d){
+      if(DOMAIN_ACTIONS[d]) parts.push('On '+d+', we will '+DOMAIN_ACTIONS[d]+'.');
+    });
+  }
+
+  // Closing signal — from first selected domain or default
+  var signal=checked.length>0?DOMAIN_SIGNALS[checked[0]]:'When Collective Intelligence occurs, the organisation receives one coherent leadership signal.';
+  parts.push(signal+' This commitment is the human foundation we carry into every lens that follows.');
+
+  return parts.join(' ');
+}
+
+async function generateAICommitment(){
+  var q1=document.getElementById('fac-q1')?document.getElementById('fac-q1').value.trim():'';
+  var q2=document.getElementById('fac-q2')?document.getElementById('fac-q2').value.trim():'';
+  var checked=Array.from(document.querySelectorAll('.fac-domain-chk:checked')).map(function(c){return c.value;});
+  var apiKey=(document.getElementById('api-key-input')?document.getElementById('api-key-input').value.trim():'');
+
+  if(!q1&&!q2&&checked.length===0){
+    setCommitmentStatus('Please complete at least one of Q1, Q2 or Q3 first.','#C04040');
+    return;
+  }
+
+  var btn=document.getElementById('btn-gen-commitment');
+  var ta=document.getElementById('fac-commitment');
+  btn.disabled=true;
+  btn.textContent='Generating…';
+  ta.value='';
+
+  // Try API path if key present
+  if(apiKey&&apiKey.startsWith('sk-')){
+    setCommitmentStatus('Synthesising with AI — reading your session inputs…','var(--arc4-tx)');
+    var contextParts=[];
+    if(q1) contextParts.push('AREAS OF NATURAL AGREEMENT:\n'+q1);
+    if(q2) contextParts.push('AREAS WHERE INTERPRETATIONS DIVERGED:\n'+q2);
+    if(checked.length>0) contextParts.push('COMPASS DOMAINS REQUIRING URGENT COLLECTIVE INTELLIGENCE:\n'+checked.join(', '));
+
+    var prompt='You are a strategy execution expert writing the output of a leadership alignment session.\n\nA leadership team has just completed the Collective Intelligence exercise (Arc 4, Lens 1: Aligning Heart & Mind, Strategy2Results® framework). The facilitator recorded:\n\n'+contextParts.join('\n\n')+'\n\nWrite a Team Collective Intelligence Commitment — one cohesive paragraph (4–6 sentences, max 130 words).\n\nRules:\n- First person plural: "We commit to…", "We will…"\n- Synthesise ALL three inputs — weave the specific content from Q1 and Q2 into the commitment, do not just list domains\n- Reference the actual words and ideas from Q1 and Q2 where possible — this must feel specific to this session\n- Do NOT mention SiP, Success in Practice, or future lens content\n- No bullet points — one flowing paragraph only\n- Decisive, leadership-grade tone — no corporate filler\n- Close with a single signal sentence about why this commitment matters';
+
+    try{
+      var response=await fetch('https://api.anthropic.com/v1/messages',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+        body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:300,messages:[{role:'user',content:prompt}]})
+      });
+      if(!response.ok) throw new Error('HTTP '+response.status);
+      var data=await response.json();
+      var text='';
+      (data.content||[]).forEach(function(b){if(b.type==='text')text+=b.text;});
+      text=text.trim();
+      if(!text) throw new Error('empty');
+      ta.value=text;
+      ta.style.minHeight='130px';
+      pushCommitmentToMC4(text);
+      setCommitmentStatus('AI-generated from your session inputs — edit freely before saving.','var(--arc4-tx)');
+      btn.disabled=false;
+      btn.textContent='✦ Regenerate';
+      return;
+    } catch(err){
+      // Fall through to local synthesis
+      console.warn('API call failed, using local synthesis:',err);
+    }
+  }
+
+  // Local synthesis path — always works, no API needed
+  setCommitmentStatus('Synthesising from your session inputs…','var(--arc4-tx)');
+  await new Promise(function(r){setTimeout(r,400);}); // brief pause so status is visible
+  var draft=buildLocalCommitment(q1,q2,checked);
+  ta.value=draft;
+  ta.style.minHeight='130px';
+  pushCommitmentToMC4(draft);
+  var keyMsg=apiKey&&!apiKey.startsWith('sk-')?' (API key not recognised — using smart synthesis)':'';
+  setCommitmentStatus('Generated from your session inputs'+keyMsg+' — edit freely before saving.','var(--arc4-tx)');
+  btn.disabled=false;
+  btn.textContent='✦ Regenerate';
+}
+
+function setCommitmentStatus(msg,color){
+  var el=document.getElementById('commitment-status');
+  if(el){el.textContent=msg;el.style.color=color||'var(--arc4-tx)';el.style.opacity='1';}
+}
+
+function pushCommitmentToMC4(text){
+  var wrap=document.getElementById('mc4-commitment-wrap');
+  var display=document.getElementById('mc4-commitment-text');
+  var empty=document.getElementById('mc4-commitment-empty');
+  if(!wrap||!display||!empty) return;
+  var t=(text||'').trim();
+  if(t){
+    display.textContent=t;
+    wrap.style.display='block';
+    empty.style.display='none';
+  } else {
+    wrap.style.display='none';
+    empty.style.display='block';
+  }
+}
+
+/* Live sync — keep MC4 updated whenever facilitator edits the textarea directly */
+document.addEventListener('DOMContentLoaded',function(){
+  var ta=document.getElementById('fac-commitment');
+  if(ta){
+    ta.addEventListener('input',function(){pushCommitmentToMC4(ta.value);});
+  }
+});
 
 /* ════════════════════ REPORT STATE ════════════════════ */
 
@@ -2295,7 +2600,7 @@ function buildSynthesisInsights(profiles,cnts){
 
   // High Values Alignment + Low Relatedness = exclusion dynamic
   if(vaP&&vaP.dom==='High'&&(cnts.Relatedness||0)>=2)
-    insights.push({title:'In-Group Cohesion vs Relatedness Breakdown',body:'High Values Alignment at team level — while a strategic asset — can become a liability when Relatedness is under threat. Teams with strong shared values tend to close ranks when they feel the social fabric is fraying, which can inadvertently exclude or marginalise those on the periphery of the group. Watch for this in cross-functional strategy sessions involving stakeholders outside the core CXO team.',type:'watch'});
+    insights.push({title:'In-Group Cohesion vs Relatedness Breakdown',body:'High Values Alignment at team level — while a strategic asset — can become a liability when Relatedness is under threat. Teams with strong shared values tend to close ranks when they feel the social fabric is fraying, which can inadvertently exclude or marginalise those on the periphery of the group. Watch for this in cross-functional strategy sessions involving stakeholders outside the core Leadership team.',type:'watch'});
 
   // Low Conscientiousness + Autonomy threat = execution without ownership
   if(conP&&conP.dom==='Low'&&(cnts.Autonomy||0)>=2)
@@ -2395,6 +2700,262 @@ function showToast(msg){
 <!-- ALIGNMENT REPORT OVERLAY -->
 <div id="alignment-report"></div>
 <div class="ar-toast" id="ar-toast"></div>
+
+<!-- LEADER CARD PRINT OVERLAY -->
+<div id="card-report" style="display:none;position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto">
+  <div style="background:var(--navy-dk);padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;border-bottom:2px solid var(--arc4-bd)">
+    <span style="font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82)">Leader Cards — Print one per leader before the session</span>
+    <div style="display:flex;gap:.4rem">
+      <button onclick="window.print()" style="font-family:'DM Sans',sans-serif;font-size:.71rem;font-weight:600;cursor:pointer;border-radius:6px;padding:.28rem .72rem;border:none;background:var(--arc4-bd);color:#fff">⬇ Print / Save PDF</button>
+      <button onclick="document.getElementById('card-report').style.display='none';document.body.classList.remove('print-card');document.body.style.overflow=''" style="font-family:'DM Sans',sans-serif;font-size:.71rem;font-weight:600;cursor:pointer;border-radius:6px;padding:.28rem .72rem;border:none;background:rgba(255,255,255,.1);color:rgba(255,255,255,.75)">✕ Close</button>
+    </div>
+  </div>
+  <div id="card-report-body" style="padding:1.5rem 2rem 3rem;font-family:'DM Sans',sans-serif"></div>
+</div>
+
+<!-- CI RECORD PRINT OVERLAY -->
+<div id="ci-record" style="display:none;position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto">
+  <div style="background:var(--navy-dk);padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;border-bottom:2px solid var(--arc4-bd)">
+    <span style="font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82)">Collective Intelligence Record — Arc 4 Session Output</span>
+    <div style="display:flex;gap:.4rem">
+      <button onclick="window.print()" style="font-family:'DM Sans',sans-serif;font-size:.71rem;font-weight:600;cursor:pointer;border-radius:6px;padding:.28rem .72rem;border:none;background:var(--arc4-bd);color:#fff">⬇ Print / Save PDF</button>
+      <button onclick="document.getElementById('ci-record').style.display='none';document.body.classList.remove('print-ci');document.body.style.overflow=''" style="font-family:'DM Sans',sans-serif;font-size:.71rem;font-weight:600;cursor:pointer;border-radius:6px;padding:.28rem .72rem;border:none;background:rgba(255,255,255,.1);color:rgba(255,255,255,.75)">✕ Close</button>
+    </div>
+  </div>
+  <div id="ci-record-body" style="max-width:780px;margin:0 auto;padding:2.5rem 2rem 5rem;font-family:'DM Sans',sans-serif"></div>
+</div>
+
+<script>
+/* ════ LEADER CARD PRINT ════ */
+function openCardPrint(){
+  var today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+  var card=`
+  <div style="max-width:720px;margin:0 auto">
+    <div style="text-align:center;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:2px solid #E2DFD8">
+      <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:#8A8A9E;margin-bottom:.3rem">S2R Strategy Design System · Impactis Consulting · Lens 1</div>
+      <div style="font-family:'DM Serif Display',serif;font-size:1.6rem;color:#0F2550;margin-bottom:.15rem">Arc 4 — Collective Intelligence</div>
+      <div style="font-size:.78rem;color:#8A8A9E">Step 1 Leader Card · ${today}</div>
+    </div>
+
+    <div style="background:#E8F8F0;border:1.5px solid #2DB57A;border-radius:10px;padding:.85rem 1.1rem;margin-bottom:1.3rem;font-size:.8rem;color:#0A4A2A;line-height:1.7">
+      <strong>Instructions — complete this card independently before the pair exchange.</strong><br>
+      For your own role and three closely related leadership roles, describe the Collective Intelligence contribution each makes and select the two COMPASS domains each role most directly activates. Be specific to <em>your organisation's context</em> — not a generic description of the role.
+    </div>
+
+    <div style="font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#4A4A5E;margin-bottom:.5rem">Your Name &amp; Role</div>
+    <div style="border:1px solid #CCC9C0;border-radius:7px;height:36px;margin-bottom:1.3rem;background:#fff"></div>
+
+    <table style="width:100%;border-collapse:collapse;font-size:.75rem">
+      <thead>
+        <tr>
+          <th style="background:#0F2550;color:rgba(255,255,255,.85);padding:.48rem .65rem;text-align:left;font-weight:600;font-size:.67rem;letter-spacing:.04em;width:90px;border-radius:6px 0 0 0">Role</th>
+          <th style="background:#0F2550;color:rgba(255,255,255,.85);padding:.48rem .65rem;text-align:left;font-weight:600;font-size:.67rem;letter-spacing:.04em">Collective Intelligence contribution — why aligning hearts &amp; minds is critical for this role in our organisation</th>
+          <th style="background:#0F2550;color:rgba(255,255,255,.85);padding:.48rem .65rem;text-align:left;font-weight:600;font-size:.67rem;letter-spacing:.04em;width:180px;border-radius:0 6px 0 0">Top 2 COMPASS domains activated</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${['Your role','Colleague 1','Colleague 2','Colleague 3'].map((r,i)=>`
+        <tr style="${i%2===1?'background:#F8F7F4':'background:#fff'}">
+          <td style="padding:.6rem .65rem;border-bottom:1px solid #E2DFD8;vertical-align:top">
+            <div style="font-weight:700;font-size:.72rem;color:#4A4A5E;margin-bottom:.3rem">${r}</div>
+            <div style="border:1px solid #CCC9C0;border-radius:5px;height:22px;background:#fff"></div>
+          </td>
+          <td style="padding:.6rem .65rem;border-bottom:1px solid #E2DFD8;vertical-align:top">
+            <div style="border:1px solid #CCC9C0;border-radius:5px;min-height:64px;background:#fff"></div>
+          </td>
+          <td style="padding:.6rem .65rem;border-bottom:1px solid #E2DFD8;vertical-align:top;font-size:.67rem;color:#4A4A5E">
+            <div style="margin-bottom:.4rem"><div style="font-size:.6rem;color:#8A8A9E;margin-bottom:.2rem">Domain 1</div><div style="border:1px solid #CCC9C0;border-radius:5px;height:22px;background:#fff"></div></div>
+            <div><div style="font-size:.6rem;color:#8A8A9E;margin-bottom:.2rem">Domain 2</div><div style="border:1px solid #CCC9C0;border-radius:5px;height:22px;background:#fff"></div></div>
+          </td>
+        </tr>`).join('')}
+      </tbody>
+    </table>
+
+    <div style="margin-top:1.3rem;background:#F8F7F4;border:1px solid #E2DFD8;border-radius:8px;padding:.85rem 1rem">
+      <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#8A8A9E;margin-bottom:.4rem">Notes for pair exchange (Step 2)</div>
+      <div style="border:1px solid #CCC9C0;border-radius:5px;min-height:54px;background:#fff"></div>
+    </div>
+
+    <div style="margin-top:1rem;font-size:.63rem;color:#8A8A9E;text-align:center;padding-top:.75rem;border-top:1px solid #E2DFD8">
+      After completing this card, exchange it with your selected colleague and discuss Steps 1 &amp; 2 verbally. Facilitator records the group outputs in the system for the Collective Intelligence Record.
+    </div>
+  </div>`;
+
+  document.getElementById('card-report-body').innerHTML=card;
+  document.getElementById('card-report').style.display='block';
+  document.body.classList.add('print-card');
+  document.body.style.overflow='hidden';
+}
+
+/* ════ CI RECORD PRINT ════ */
+function openCIRecord(){
+  var q1=document.getElementById('fac-q1')?document.getElementById('fac-q1').value:'';
+  var q2=document.getElementById('fac-q2')?document.getElementById('fac-q2').value:'';
+  var commitment=document.getElementById('fac-commitment')?document.getElementById('fac-commitment').value:'';
+  var checkedDomains=Array.from(document.querySelectorAll('.fac-domain-chk:checked')).map(c=>c.value);
+  var today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+
+  var html=`
+  <div style="background:linear-gradient(140deg,#0B1E4A 0%,#18215A 55%,#22145A 100%);padding:2.2rem 2.5rem 1.8rem;margin-bottom:2rem">
+    <div style="font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(155,143,216,.8);margin-bottom:.5rem">S2R Strategy Design System &middot; Impactis Consulting &middot; Lens 1: Aligning Heart &amp; Mind</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:1.9rem;color:#fff;line-height:1.15;margin-bottom:.25rem">Collective Intelligence Record</div>
+    <div style="font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:.8rem">Arc 4 &mdash; Session Output &middot; ${today}</div>
+    <div style="font-size:.78rem;color:rgba(255,255,255,.75);line-height:1.7;max-width:620px">This record captures the leadership team's collective outputs from the Arc 4 Panoramic Application exercise. It is the formal alignment commitment the team carries forward into Lens 2.</div>
+  </div>
+
+  <div style="padding:0 2rem">
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.5rem">
+      <div style="border-radius:10px;border:1.5px solid #5BA3D9;overflow:hidden;page-break-inside:avoid">
+        <div style="background:#E8F4FD;padding:.7rem 1rem;border-bottom:1px solid #5BA3D9;display:flex;align-items:center;gap:.5rem">
+          <span style="width:22px;height:22px;border-radius:50%;background:#5BA3D9;color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">Q1</span>
+          <span style="font-size:.82rem;font-weight:600;color:#0C3D6B">Areas of natural agreement</span>
+        </div>
+        <div style="padding:.85rem 1rem;font-size:.8rem;color:#4A4A5E;line-height:1.7;min-height:80px">${q1||'<span style="color:#8A8A9E;font-style:italic">Not recorded in this session</span>'}</div>
+      </div>
+      <div style="border-radius:10px;border:1.5px solid #E88A1A;overflow:hidden;page-break-inside:avoid">
+        <div style="background:#FFF0E8;padding:.7rem 1rem;border-bottom:1px solid #E88A1A;display:flex;align-items:center;gap:.5rem">
+          <span style="width:22px;height:22px;border-radius:50%;background:#E88A1A;color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">Q2</span>
+          <span style="font-size:.82rem;font-weight:600;color:#6B3200">Areas of interpretation divergence</span>
+        </div>
+        <div style="padding:.85rem 1rem;font-size:.8rem;color:#4A4A5E;line-height:1.7;min-height:80px">${q2||'<span style="color:#8A8A9E;font-style:italic">Not recorded in this session</span>'}</div>
+      </div>
+    </div>
+
+    ${checkedDomains.length>0?`
+    <div style="border-radius:10px;border:1.5px solid #2DB57A;overflow:hidden;margin-bottom:1.5rem;page-break-inside:avoid">
+      <div style="background:#E8F8F0;padding:.7rem 1rem;border-bottom:1px solid #2DB57A;display:flex;align-items:center;gap:.5rem">
+        <span style="width:22px;height:22px;border-radius:50%;background:#2DB57A;color:#fff;font-size:.72rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">Q3</span>
+        <span style="font-size:.82rem;font-weight:600;color:#0A4A2A">COMPASS domains requiring urgent Collective Intelligence before Lens 2</span>
+      </div>
+      <div style="padding:.85rem 1rem;display:flex;flex-wrap:wrap;gap:.45rem">
+        ${checkedDomains.map(d=>`<span style="font-size:.74rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;background:#E8F8F0;color:#0A4A2A;border:1.5px solid #2DB57A">${d}</span>`).join('')}
+      </div>
+    </div>`:''}
+
+    <div style="background:linear-gradient(135deg,#E8F8F0,#d4f5e5);border:2px solid #2DB57A;border-radius:12px;padding:1.2rem 1.3rem;margin-bottom:1.5rem;page-break-inside:avoid">
+      <div style="font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#0A4A2A;margin-bottom:.5rem">Team Collective Intelligence Commitment — carried forward into Lens 2</div>
+      <div style="font-size:.88rem;color:#1A1A2E;line-height:1.75;font-style:${commitment?'normal':'italic'}">${commitment||'<span style="color:#8A8A9E">No commitment recorded — return to Step 3 and complete the commitment field before generating the record.</span>'}</div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,#0F2550,#1E1560);border-radius:12px;padding:1.3rem 1.4rem;margin-bottom:1.5rem;color:#fff;page-break-inside:avoid">
+      <div style="font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:.35rem">What Collective Intelligence means for Lens 2</div>
+      <div style="font-size:.78rem;color:rgba(255,255,255,.7);line-height:1.7">The insights captured in this record define the human foundation the leadership team is carrying into Strategy Visioning &amp; SiP. Where agreement was strong, those domains are leverage points. Where interpretations diverged, those are the seams that require deliberate facilitation in the lenses ahead. The team commitment recorded above is the single leadership signal this organisation will now operate from.</div>
+    </div>
+
+    <div style="margin-top:1.5rem;padding-top:.85rem;border-top:1px solid #E2DFD8;display:flex;justify-content:space-between;font-size:.63rem;color:#8A8A9E">
+      <span>S2R Strategy Design System &middot; Impactis Consulting</span>
+      <span>Lens 1: Aligning Heart &amp; Mind &middot; Arc 4 &middot; ${today}</span>
+    </div>
+  </div>`;
+
+  document.getElementById('ci-record-body').innerHTML=html;
+  document.getElementById('ci-record').style.display='block';
+  document.body.classList.add('print-ci');
+  document.body.style.overflow='hidden';
+}
+</script>
+
+</body>
+</html>
+
+<!-- MICRO-CLIMB PRINT OVERLAY -->
+<div id="mc-report" style="display:none;position:fixed;inset:0;z-index:500;background:#fff;overflow-y:auto">
+  <div style="background:var(--navy-dk);padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;border-bottom:2px solid var(--arc4-bd)">
+    <span style="font-size:.78rem;font-weight:600;color:rgba(255,255,255,.82)">Micro-Climb Summary — Aligning Hearts & Minds</span>
+    <div style="display:flex;gap:.4rem">
+      <button onclick="window.print()" style="font-family:'DM Sans',sans-serif;font-size:.71rem;font-weight:600;cursor:pointer;border-radius:6px;padding:.28rem .72rem;border:none;background:var(--arc4-bd);color:#fff">⬇ Save as PDF</button>
+      <button onclick="closeMCPrint()" style="font-family:'DM Sans',sans-serif;font-size:.71rem;font-weight:600;cursor:pointer;border-radius:6px;padding:.28rem .72rem;border:none;background:rgba(255,255,255,.1);color:rgba(255,255,255,.75)">✕ Close</button>
+    </div>
+  </div>
+  <div id="mc-report-body" style="max-width:780px;margin:0 auto;padding:2.5rem 2rem 5rem;font-family:'DM Sans',sans-serif"></div>
+</div>
+
+<script>
+function openMCPrint(){
+  var stages=[
+    {n:1,color:'#5BA3D9',bg:'#E8F4FD',bd:'#5BA3D9',tx:'#0C3D6B',title:'Awareness — What',sub:'Strategy execution is first a human interpretation problem',body:'Leaders recognise that every executive interprets strategy through functional expertise, personality tendencies, and emotional context. Cognitive biases and emotional states shape how strategy is understood, prioritised, and acted upon. Aligning hearts and minds establishes the behavioural conditions that allow diverse perspectives to converge into coordinated action.',tag:'OCEANAL Profile · SCARF Diagnostic · 5 Principles of Alignment'},
+    {n:2,color:'#E88A1A',bg:'#FFF0E8',bd:'#E88A1A',tx:'#6B3200',title:'Intelligence — Why',sub:'Alignment determines execution outcomes',body:'Leaders understand why alignment determines execution outcomes. A strategy document represents strategic potential — direction, intent, and ambition. Execution begins only when individuals choose to invest energy in advancing that direction. Organisations can drive execution through compliance or through commitment. Alignment of hearts and minds shifts the organisation from supervised effort to self-driven momentum, enabling resilience, discretionary effort, and coordinated progress.',tag:'Potential vs Kinetic Energy · Commitment vs Compliance · ACE-IT Behaviours'},
+    {n:3,color:'#9B4FCC',bg:'#F5EAF8',bd:'#9B4FCC',tx:'#4A0A7A',title:'Extrapolating — Where',sub:'Identifying the organisational hot zones where alignment matters most',body:'Leaders identify the organisational hot zones where alignment matters most. These High-Flammable zones appear across seven COMPASS domains: <strong>Clarity of Strategic Direction, Allocation of Resources, Sensing &amp; Adaptation, Organisational Alignment, Management Discipline, People &amp; Capability,</strong> and <strong>Systems &amp; Execution.</strong><br><br>When alignment is strong, these domains amplify performance. When alignment weakens, they gradually escalate into Burning Platforms, where execution breakdown becomes visible and costly.',tag:'7 COMPASS Domains · High Flammables · Burning Platforms'},
+    {n:4,color:'#2DB57A',bg:'#E8F8F0',bd:'#2DB57A',tx:'#0A4A2A',title:'Collective Intelligence — How We Lead Together',sub:'Individual perspectives integrate into one shared leadership system',body:'The executive team achieves Collective Intelligence, where individual functional perspectives integrate into a shared leadership interpretation. At this point, the leadership team begins operating as a single leadership system — stabilising the seven High-Flammable COMPASS domains and sending one coherent signal across the organisation.<br><br>Collective Intelligence occurs when each leader understands not only their own domain responsibilities, but how those responsibilities interlock with every other leadership function. The organisation stops receiving multiple functional interpretations of strategy and instead receives one unified leadership signal.',tag:'Leadership Collective Intelligence Map · Panoramic Application · Commitment to One Signal'}
+  ];
+
+  // Read live commitment from Step 3
+  var liveCommitment=(document.getElementById('fac-commitment')?document.getElementById('fac-commitment').value.trim():'');
+
+  var today=new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+
+  var html=`
+  <div style="background:linear-gradient(140deg,#0B1E4A 0%,#18215A 55%,#22145A 100%);padding:2.4rem 2.5rem 2rem;margin-bottom:2rem;border-radius:0">
+    <div style="font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(155,143,216,.8);margin-bottom:.5rem">S2R Strategy Design System &middot; Impactis Consulting &middot; Lens 1: Aligning Heart &amp; Mind</div>
+    <div style="font-family:'DM Serif Display',serif;font-size:2rem;color:#fff;line-height:1.15;margin-bottom:.3rem">Micro-Climb Summary</div>
+    <div style="font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:1.2rem">Arc 4 &mdash; Collective Intelligence &middot; ${today}</div>
+    <div style="font-size:.82rem;color:rgba(255,255,255,.75);line-height:1.7;max-width:640px">The Aligning Hearts &amp; Minds micro-climb establishes the human conditions required for strategy execution. Strategy moves through people before it moves through systems. The four stages below build the alignment foundation the organisation needs before strategy can be executed.</div>
+  </div>
+
+  <div style="padding:0 2rem">
+  ${stages.map(s=>{
+    var extraBlock='';
+    if(s.n===4&&liveCommitment){
+      extraBlock=`<div style="margin-top:1rem;background:linear-gradient(135deg,#E8F8F0,#d4f5e5);border:1.5px solid #2DB57A;border-radius:9px;padding:.9rem 1.1rem;page-break-inside:avoid;break-inside:avoid">
+        <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#0A4A2A;margin-bottom:.45rem">Team Collective Intelligence Commitment — carried forward into Lens 2</div>
+        <div style="font-size:.82rem;color:#1A1A2E;line-height:1.75">${liveCommitment.replace(/\n/g,'<br>')}</div>
+      </div>`;
+    }
+    return`
+  <div style="border-radius:12px;border:1.5px solid ${s.bd};margin-bottom:1.2rem;overflow:hidden;page-break-inside:avoid;break-inside:avoid">
+    <div style="background:${s.bg};padding:.9rem 1.2rem;display:flex;align-items:center;gap:.9rem">
+      <div style="width:32px;height:32px;border-radius:50%;background:${s.color};color:#fff;font-size:.82rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">${s.n}</div>
+      <div>
+        <div style="font-family:'DM Serif Display',serif;font-size:1.1rem;color:${s.tx};line-height:1.2">${s.title}</div>
+        <div style="font-size:.7rem;color:${s.color};font-weight:600;margin-top:.1rem">${s.sub}</div>
+      </div>
+    </div>
+    <div style="padding:1rem 1.25rem">
+      <div style="font-size:.82rem;color:#4A4A5E;line-height:1.75;margin-bottom:.75rem">${s.body}</div>
+      <div style="display:inline-block;font-size:.67rem;font-weight:600;padding:.28rem .8rem;border-radius:20px;background:${s.bg};color:${s.tx};border:1px solid ${s.bd}">${s.tag}</div>
+      ${extraBlock}
+    </div>
+  </div>`;
+  }).join('')}
+
+  <div style="background:linear-gradient(135deg,#0F2550,#1E1560);border-radius:13px;padding:1.4rem 1.5rem;margin-top:1.5rem;color:#fff;page-break-inside:avoid;break-inside:avoid">
+    <div style="font-family:'DM Serif Display',serif;font-size:1.3rem;margin-bottom:.35rem">Outcome of the Micro-Climb</div>
+    <div style="font-size:.8rem;color:rgba(255,255,255,.6);margin-bottom:1.1rem;line-height:1.65">The organisation leaves this micro-climb with aligned leadership interpretation, emotional commitment to the strategy, and clear visibility of the organisational conditions that will enable or constrain execution.</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.65rem">
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:.85rem .95rem">
+        <div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:.28rem">What you have surfaced</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.88);line-height:1.55">The human terrain your strategy must travel through — including your team's behavioural DNA, live SCARF climate signals, and the emotional dynamics shaping leadership interpretation.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:.85rem .95rem">
+        <div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:.28rem">What you have mapped</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.88);line-height:1.55">The seven COMPASS hot zones with your current heat rating — distinguishing High Flammables you can leverage from Burning Platforms requiring corrective action.</div>
+      </div>
+      <div style="background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:.85rem .95rem">
+        <div style="font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:.28rem">What you are carrying forward</div>
+        <div style="font-size:.75rem;color:rgba(255,255,255,.88);line-height:1.55">This alignment creates the human foundation for the Strategy2Results® journey ahead, where the leadership team will define Success in Practice (SiP) and translate strategic direction into a shared picture of the future organisation.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:2rem;padding-top:.85rem;border-top:1px solid #E2DFD8;display:flex;justify-content:space-between;font-size:.63rem;color:#8A8A9E">
+    <span>S2R Strategy Design System &middot; Impactis Consulting</span>
+    <span>Lens 1: Aligning Heart &amp; Mind &middot; ${today}</span>
+  </div>
+  </div>`;
+
+  document.getElementById('mc-report-body').innerHTML=html;
+  document.getElementById('mc-report').style.display='block';
+  document.body.classList.add('print-mc');
+  document.body.style.overflow='hidden';
+}
+
+function closeMCPrint(){
+  document.getElementById('mc-report').style.display='none';
+  document.body.classList.remove('print-mc');
+  document.body.style.overflow='';
+}
+</script>
 
 </body>
 </html>
