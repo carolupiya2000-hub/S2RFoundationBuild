@@ -624,6 +624,67 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
   .rp-synth-title{color:#3C2A8C!important}
   @page{margin:1.5cm 1.8cm;size:A4}
 }
+
+/* ── REDESIGNED ARC 3 REPORT ── */
+.ar-cover{background:linear-gradient(140deg,#0B1E4A 0%,#18215A 55%,#22145A 100%);padding:2.8rem 2.5rem 2.4rem;margin-bottom:0;border-radius:0}
+.ar-cover-brand{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(155,143,216,.8);margin-bottom:.55rem}
+.ar-cover-title{font-family:'DM Serif Display',serif;font-size:2.1rem;color:#fff;line-height:1.15;margin-bottom:.35rem}
+.ar-cover-sub{font-size:.82rem;color:rgba(255,255,255,.5);margin-bottom:1.4rem}
+.ar-cover-chips{display:flex;gap:.5rem;flex-wrap:wrap}
+.ar-cover-chip{font-size:.68rem;font-weight:600;padding:.24rem .72rem;border-radius:20px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8)}
+.ar-cover-chip.chip-burn{background:rgba(208,64,64,.25);border-color:rgba(208,64,64,.6)}
+.ar-cover-chip.chip-flame{background:rgba(232,138,26,.2);border-color:rgba(232,138,26,.5)}
+.ar-cover-chip.chip-stable{background:rgba(45,176,122,.2);border-color:rgba(45,176,122,.5)}
+
+/* Definition cards */
+.ar-def-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1.8rem 0 2rem}
+@media(max-width:600px){.ar-def-grid{grid-template-columns:1fr}}
+.ar-def-card{border-radius:12px;padding:1.4rem 1.5rem;border:1.5px solid}
+.ar-def-flame{background:#FFFBEE;border-color:#D8A020}
+.ar-def-burn{background:#FEE8E8;border-color:#D04040}
+.ar-def-icon{font-size:1.5rem;margin-bottom:.5rem}
+.ar-def-title{font-family:'DM Serif Display',serif;font-size:1.1rem;margin-bottom:.18rem}
+.ar-def-flame .ar-def-title{color:#7A5000}
+.ar-def-burn .ar-def-title{color:#8A1A1A}
+.ar-def-subtitle{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-bottom:.65rem}
+.ar-def-flame .ar-def-subtitle{color:#B07820}
+.ar-def-burn .ar-def-subtitle{color:#C04040}
+.ar-def-body{font-size:.78rem;line-height:1.72;color:var(--tx2)}
+
+/* Report guide strip */
+.ar-guide{background:var(--surf2);border:1px solid var(--bdr);border-radius:10px;padding:1rem 1.25rem;margin-bottom:2rem;display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+.ar-guide-lbl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--tx3);white-space:nowrap;padding-top:.1rem}
+.ar-guide-steps{display:flex;gap:.35rem;align-items:center;flex-wrap:wrap}
+.ar-guide-step{font-size:.74rem;font-weight:600;padding:.25rem .75rem;border-radius:20px}
+.ar-guide-step.gs-burn{background:#FEE8E8;color:#8A1A1A;border:1px solid #EEB0B0}
+.ar-guide-step.gs-flame{background:#FFFBEE;color:#7A5000;border:1px solid #D8C080}
+.ar-guide-step.gs-stable{background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090}
+.ar-guide-step.gs-commit{background:var(--build-bg);color:var(--build-tx);border:1px solid var(--build-bd)}
+.ar-guide-arrow{font-size:.8rem;color:var(--tx3)}
+
+/* Page break — each domain card starts on new page in print */
+.ar-domain-card{page-break-before:auto;break-before:auto}
+.ar-domain-card+.ar-domain-card{page-break-before:always;break-before:page;margin-top:0}
+/* Section headings stay with first card */
+.ar-section-intro{page-break-after:avoid;break-after:avoid}
+
+@media print{
+  .ar-cover{background:#0B1E4A!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;padding:1.8cm 1.8cm 1.5cm}
+  .ar-cover-title{color:#fff!important;font-size:1.7rem}
+  .ar-cover-sub{color:rgba(255,255,255,.6)!important}
+  .ar-def-flame{background:#FFFBEE!important;border-color:#D8A020!important}
+  .ar-def-burn{background:#FEE8E8!important;border-color:#D04040!important}
+  .ar-def-body{color:#4A4A5E!important}
+  .ar-guide{background:#F2F0EC!important;border-color:#E2DFD8!important}
+  .ar-guide-step.gs-burn{background:#FEE8E8!important;color:#8A1A1A!important}
+  .ar-guide-step.gs-flame{background:#FFFBEE!important;color:#7A5000!important}
+  .ar-guide-step.gs-stable{background:#E8F8E8!important;color:#0A4A1A!important}
+  .ar-guide-step.gs-commit{background:#EDE8FF!important;color:#3C2A8C!important}
+  .ar-domain-card+.ar-domain-card{page-break-before:always!important;break-before:page!important;margin-top:2cm}
+  .ar-section-intro{page-break-after:avoid!important}
+  .ar-sec-hdr{page-break-after:avoid!important}
+}
+
 </style>
 </head>
 <body>
@@ -1781,28 +1842,15 @@ function generateAlignmentMap(){
   var burnSection='',flameSection='',stableSection='';
 
   if(burn.length){
-    burnSection='<div class="ar-section">'
-      +'<div class="ar-sec-hdr"><div class="ar-sec-title">⚠️ Burning Platforms — Corrective Action Required</div></div>'
-      +'<div style="font-size:.8rem;color:#8A1A1A;background:#FEE8E8;border:1px solid #EEB0B0;border-radius:8px;padding:.65rem .85rem;margin-bottom:1rem;line-height:1.65">These zones have already crossed the threshold. Cognitive alignment has fractured. Emotional alignment has collapsed. <strong>Strategy design cannot proceed safely through these domains without corrective action.</strong> Assign an owner to each domain and define the first action before leaving this arc.</div>'
-      +burn.map(function(n){return domainCard(n,'burn');}).join('')
-      +'</div>';
+    burnSection='<div class="ar-section">'      +'<div class="ar-sec-hdr ar-section-intro"><div class="ar-sec-num" style="background:#D04040;font-size:.9rem">!</div><div class="ar-sec-title" style="color:#8A1A1A">Burning Platforms — Corrective Action Required</div></div>'      +'<div class="ar-section-intro" style="font-size:.79rem;color:#7A1A1A;background:#FEE8E8;border:1.5px solid #D04040;border-radius:9px;padding:.85rem 1.1rem;margin-bottom:1.5rem;line-height:1.7">These zones have already crossed the threshold. <strong>Cognitive alignment has fractured. Emotional alignment has collapsed.</strong> Strategy design cannot proceed safely through these domains without corrective action. Assign a named owner to each domain and define the first corrective action before leaving this arc.</div>'      +burn.map(function(n){return domainCard(n,'burn');}).join('')      +'</div>';
   }
 
   if(flame.length){
-    flameSection='<div class="ar-section">'
-      +'<div class="ar-sec-hdr"><div class="ar-sec-title">🔥 High Flammables — Early Intervention Required</div></div>'
-      +'<div style="font-size:.8rem;color:#7A5000;background:#FFFBEE;border:1px solid #D8C080;border-radius:8px;padding:.65rem .85rem;margin-bottom:1rem;line-height:1.65">These zones are live leverage points. If alignment is addressed here now, they become performance amplifiers. If left unaddressed, they will escalate into Burning Platforms during the strategy execution phase.</div>'
-      +flame.map(function(n){return domainCard(n,'flame');}).join('')
-      +'</div>';
+    flameSection='<div class="ar-section">'      +'<div class="ar-sec-hdr ar-section-intro"><div class="ar-sec-num" style="background:#D8A020;font-size:.85rem">🔥</div><div class="ar-sec-title" style="color:#7A5000">High Flammables — Early Intervention Required</div></div>'      +'<div class="ar-section-intro" style="font-size:.79rem;color:#7A5000;background:#FFFBEE;border:1.5px solid #D8A020;border-radius:9px;padding:.85rem 1.1rem;margin-bottom:1.5rem;line-height:1.7">These zones are live leverage points. If alignment is addressed here now, they become <strong>performance amplifiers</strong>. If left unaddressed, they will escalate into Burning Platforms during the strategy execution phase. Intervene early.</div>'      +flame.map(function(n){return domainCard(n,'flame');}).join('')      +'</div>';
   }
 
   if(stable.length){
-    stableSection='<div class="ar-section">'
-      +'<div class="ar-sec-hdr"><div class="ar-sec-title">✓ Stable — Monitor</div></div>'
-      +'<div style="font-size:.8rem;color:var(--tx2);line-height:1.65;margin-bottom:.85rem">These domains are currently stable. Monitor them through the strategy build — they can be destabilised by decisions made in adjacent domains.</div>'
-      +'<div style="display:flex;flex-wrap:wrap;gap:.5rem">'
-      +stable.map(function(n){return'<span style="font-size:.75rem;font-weight:600;padding:.25rem .7rem;border-radius:12px;background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090">'+n+'</span>';}).join('')
-      +'</div></div>';
+    stableSection='<div class="ar-section">'      +'<div class="ar-sec-hdr ar-section-intro"><div class="ar-sec-num" style="background:#2AB07A">✓</div><div class="ar-sec-title" style="color:#0A4A2A">Stable Domains — Monitor Through the Build</div></div>'      +'<div class="ar-section-intro" style="font-size:.79rem;color:#0A4A2A;background:#E8F8F0;border:1.5px solid #2AB07A;border-radius:9px;padding:.85rem 1.1rem;margin-bottom:1rem;line-height:1.7">These domains are currently stable. Monitor them throughout the strategy build — stable domains can be destabilised by decisions made in adjacent High Flammable or Burning Platform zones.</div>'      +'<div style="display:flex;flex-wrap:wrap;gap:.55rem">'      +stable.map(function(n){return'<span style="font-size:.76rem;font-weight:600;padding:.3rem .8rem;border-radius:12px;background:#E8F8E8;color:#0A4A1A;border:1px solid #90D090">✓ '+n+'</span>';}).join('')      +'</div></div>';
   }
 
   var html='<div class="ar-topbar">'
@@ -1813,22 +1861,13 @@ function generateAlignmentMap(){
     +'<button class="ar-btn ar-btn-close" onclick="closeAlignmentReport()">✕ Close</button>'
     +'</div></div>'
     +'<div class="ar-body">'
-    +'<div class="ar-masthead">'
-    +'<div class="ar-brand">S2R Strategy Design System · Impactis Consulting · Lens 1: Aligning Heart & Mind</div>'
-    +'<div class="ar-doc-title">Organisation Alignment Map</div>'
-    +'<div class="ar-doc-sub">Arc 3 — Extrapolating · COMPASS Assessment · Generated '+today+'</div>'
-    +'<div class="ar-verdict">'
-    +(burn.length?'<span class="ar-verdict-chip avc-burn">'+burn.length+' Burning Platform'+(burn.length>1?'s':'')+'</span>':'')
-    +(flame.length?'<span class="ar-verdict-chip avc-flame">'+flame.length+' High Flammable'+(flame.length>1?'s':'')+'</span>':'')
-    +(stable.length?'<span class="ar-verdict-chip avc-stable">'+stable.length+' Stable</span>':'')
-    +'</div></div>'
-    +burnSection+flameSection+stableSection
+    +'<div class="ar-cover">'    +'<div class="ar-cover-brand">S2R Strategy Design System &middot; Impactis Consulting &middot; Lens 1: Aligning Heart &amp; Mind</div>'    +'<div class="ar-cover-title">Organisation Alignment Map</div>'    +'<div class="ar-cover-sub">Arc 3 &mdash; Extrapolating &middot; COMPASS Assessment &middot; '+today+'</div>'    +'<div class="ar-cover-chips">'    +(burn.length?'<span class="ar-cover-chip chip-burn">&#9888; '+burn.length+' Burning Platform'+(burn.length>1?'s':'')+' </span>':'')    +(flame.length?'<span class="ar-cover-chip chip-flame">&#128293; '+flame.length+' High Flammable'+(flame.length>1?'s':'')+' </span>':'')    +(stable.length?'<span class="ar-cover-chip chip-stable">&#10003; '+stable.length+' Stable</span>':'')    +'</div>'    +'</div>'    +'<div style="padding:1.5rem 2.5rem 0">'    +'<div class="ar-def-grid">'    +'<div class="ar-def-card ar-def-flame">'    +'<div class="ar-def-icon">&#128293;</div>'    +'<div class="ar-def-title">High Flammable Zones &mdash; The Leverage Zones</div>'    +'<div class="ar-def-subtitle">Where Alignment Has the Highest Risk and Reward</div>'    +'<div class="ar-def-body">High Flammables are organisational leverage points &mdash; places where human interpretation, emotional state, and behaviour have a disproportionate impact on performance outcomes. When hearts and minds are actively aligned in these areas, they generate rapid clarity, coordinated effort, and compounding momentum. When alignment is weak or absent, the same zones begin to produce distorted interpretation, defensive behaviour, and friction that multiplies across functions.</div>'    +'</div>'    +'<div class="ar-def-card ar-def-burn">'    +'<div class="ar-def-icon">&#9888;&#65039;</div>'    +'<div class="ar-def-title">Burning Platforms &mdash; The Cost Zones</div>'    +'<div class="ar-def-subtitle">Where Misalignment Has Become Destructive</div>'    +'<div class="ar-def-body">Burning Platforms are not separate from High Flammables. They are High Flammables that have remained misaligned long enough for the consequences to become visible and costly. Where High Flammables signal leverage, Burning Platforms signal urgency. They mark the points where execution damage is already occurring, trust or performance has begun to erode, and alignment work is no longer optional.</div>'    +'</div>'    +'</div>'    +'<div class="ar-guide">'    +'<div class="ar-guide-lbl">Report order</div>'    +'<div class="ar-guide-steps">'    +(burn.length?'<span class="ar-guide-step gs-burn">&#9888; Burning Platforms</span><span class="ar-guide-arrow">&rarr;</span>':'')    +(flame.length?'<span class="ar-guide-step gs-flame">&#128293; High Flammables</span><span class="ar-guide-arrow">&rarr;</span>':'')    +(stable.length?'<span class="ar-guide-step gs-stable">&#10003; Stable</span><span class="ar-guide-arrow">&rarr;</span>':'')    +'<span class="ar-guide-step gs-commit">Leadership Commitments</span>'    +'</div>'    +'<div style="font-size:.7rem;color:var(--tx3);margin-top:.5rem;width:100%">Each flagged domain appears on a new page in the PDF. Stable domains are listed together.</div>'    +'</div>'    +'</div>'    +burnSection+flameSection+stableSection
     +'<div class="ar-section">'
     +'<div class="ar-sec-hdr"><div class="ar-sec-title">Leadership Commitments — Before Proceeding to Arc 4</div></div>'
     +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">Burning Platform owners and first actions agreed in this session</div><div class="ar-commit-field" contenteditable="true" data-ph="For each Burning Platform domain, record: the named owner, the first corrective action, and the agreed timeline. This must be completed before moving to the Converging Zone in Arc 4."></div></div>'
     +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">High Flammable priorities for early intervention</div><div class="ar-commit-field" contenteditable="true" data-ph="Which High Flammable domains will be actively monitored through the strategy build? Who is responsible for signalling when they begin to escalate?"></div></div>'
     +'</div>'
-    +'<div class="no-print" style="margin-top:1rem;padding:.6rem 1rem;background:#F2F0EC;border:1px dashed #CCC9C0;border-radius:8px;font-size:.72rem;color:#4A4A5E;line-height:1.7">'    +'<strong style="color:#1A1A2E">Export — </strong>'    +'<strong style="color:#3C2A8C">⬇ Save as PDF:</strong> click the button above · all red / amber / green colour coding is preserved. &nbsp;'    +'<strong style="color:#0A4A2A">✉ Email:</strong> copies a plain-text summary to clipboard ready to paste into any email client.'    +'</div>'    +'<div class="ar-footer-bar">'    +'<span><strong>S2R Strategy Design System</strong> · Impactis Consulting · Lens 1: Aligning Heart & Mind · Arc 3</span>'    +'<span>'+today+'</span>'    +'</div></div>';
+    +'<div class="no-print" style="margin-top:1rem;padding:.6rem 1rem;background:#F2F0EC;border:1px dashed #CCC9C0;border-radius:8px;font-size:.72rem;color:#4A4A5E;line-height:1.7">'    +'<strong style="color:#1A1A2E">Export — </strong>'    +'<strong style="color:#3C2A8C">⬇ Save as PDF:</strong> click the button above · all red / amber / green colour coding is preserved. &nbsp;'    +'<strong style="color:#0A4A2A">✉ Email:</strong> copies a plain-text summary to clipboard ready to paste into any email client.'    +'</div>'    +'</div>'    +'<div class="ar-footer-bar">'    +'<span><strong>S2R Strategy Design System</strong> · Impactis Consulting · Lens 1: Aligning Heart & Mind · Arc 3</span>'    +'<span>'+today+'</span>'    +'</div>'    +'</div></div>';
 
   var panel=document.getElementById('alignment-report');
   panel.innerHTML=html;
