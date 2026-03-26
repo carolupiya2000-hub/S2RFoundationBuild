@@ -692,6 +692,7 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
   .ar-dc-body{page-break-inside:avoid!important;break-inside:avoid!important}
   .ar-actions-box{page-break-inside:avoid!important;break-inside:avoid!important}
   .ar-commitbox{page-break-inside:avoid!important;break-inside:avoid!important}
+  .ar-commitbox+.ar-commitbox{page-break-before:always!important;break-before:page!important}
 }
 
 </style>
@@ -1916,7 +1917,7 @@ function generateAlignmentMap(){
     +'<span style="font-size:.76rem;color:#C04040;font-weight:600">&#128204; Attach completed Burning Platform commitments document here</span>'
     +'</div>'
     +'</div>'
-    +'<div class="ar-commitbox">'
+    +'<div class="ar-commitbox" style="page-break-before:always;break-before:page;margin-top:0">'
     +'<div class="ar-commitbox-lbl">High Flammable Priorities for Early Intervention</div>'
     +'<div style="font-size:.78rem;color:#4A4A5E;line-height:1.7;margin-bottom:.5rem">Identify which High Flammable domains will be actively monitored through the strategy build and who is responsible for signalling escalation.</div>'
     +'<div style="border:1.5px dashed #D8A020;border-radius:8px;background:#FFFDF0;padding:1.1rem 1.2rem;min-height:90px;display:flex;align-items:center;justify-content:center;text-align:center">'
