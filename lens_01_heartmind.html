@@ -461,21 +461,42 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
 .ar-action-item:last-child{margin-bottom:0}
 .ar-action-item::before{content:'→';position:absolute;left:0;color:var(--build-bd);font-weight:700}
 .ar-commitbox{border:1.5px solid var(--bdr2);border-radius:9px;padding:.85rem 1rem;margin-bottom:.75rem;background:var(--surf)}
-.ar-commitbox-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx3);margin-bottom:.4rem}
+.ar-commitbox-lbl{font-size:.63rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--tx2);margin-bottom:.4rem}
 .ar-commit-field{min-height:60px;border:1px solid var(--bdr2);border-radius:6px;padding:.5rem .65rem;font-family:'DM Sans',sans-serif;font-size:.79rem;color:var(--tx);background:var(--surf2);line-height:1.68;outline:none;white-space:pre-wrap;word-break:break-word}
-.ar-commit-field:empty::before{content:attr(data-ph);color:var(--tx3);pointer-events:none}
+.ar-commit-field:empty::before{content:attr(data-ph);color:#6A6A7E;pointer-events:none}
 .ar-commit-field:focus{border-color:var(--arc3-bd);background:var(--arc3-bg)}
 .ar-footer-bar{margin-top:2rem;padding-top:.85rem;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;font-size:.63rem;color:var(--tx3)}
 .ar-toast{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);background:var(--navy-dk);color:#fff;font-size:.76rem;font-weight:500;padding:.45rem 1.2rem;border-radius:20px;z-index:600;opacity:0;transition:opacity .3s;pointer-events:none}
 .ar-toast.show{opacity:1}
 @media print{
-  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .topnav,.arc-nav,.main,.ar-topbar{display:none!important}
   #alignment-report{display:block!important;position:static!important;overflow:visible!important}
-  .ar-body{padding:1cm 1.5cm;max-width:100%}
+  .ar-topbar{display:none!important}
+  .ar-body{padding:1.2cm 1.8cm;max-width:100%}
   .ar-domain-card{page-break-inside:avoid;break-inside:avoid}
-  .ar-commit-field{border:1px solid #ccc;background:#f9f9f9}
+  .ar-commit-field{border:1px solid #ccc;background:#f9f9f9;min-height:55px}
   .ar-commit-field:empty::before{color:#aaa}
+  .no-print{display:none!important}
+  /* Colour-safe badge & card overrides */
+  .dc-burn .ar-dc-hdr{background:#FEE8E8!important}
+  .dc-flame .ar-dc-hdr{background:#FFFBEE!important}
+  .dc-stable .ar-dc-hdr{background:#E8F8E8!important}
+  .dc-burn{border-color:#D04040!important}
+  .dc-flame{border-color:#D8A020!important}
+  .dc-stable{border-color:#2AB07A!important}
+  .dc-burn .ar-dc-name{color:#8A1A1A!important}
+  .dc-flame .ar-dc-name{color:#7A5000!important}
+  .dc-stable .ar-dc-name{color:#0A4A1A!important}
+  .dc-burn .ar-dc-badge{background:#FEE8E8!important;color:#8A1A1A!important;border:1px solid #EEB0B0!important}
+  .dc-flame .ar-dc-badge{background:#FFFBEE!important;color:#7A5000!important;border:1px solid #D8C080!important}
+  .dc-stable .ar-dc-badge{background:#E8F8E8!important;color:#0A4A1A!important;border:1px solid #90D090!important}
+  .ar-actions-box{background:#EDE8FF!important;border:1.5px solid #9B8FD8!important}
+  .avc-burn{background:#FEE8E8!important;color:#8A1A1A!important;border:1px solid #EEB0B0!important}
+  .avc-flame{background:#FFFBEE!important;color:#7A5000!important;border:1px solid #D8C080!important}
+  .avc-stable{background:#E8F8E8!important;color:#0A4A1A!important;border:1px solid #90D090!important}
+  .ar-sec-hdr{border-bottom:2px solid #E2DFD8!important}
+  @page{margin:1.5cm 1.8cm;size:A4}
 }
 
 /* SECTION DIVIDER */
@@ -569,26 +590,39 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
 
 /* ── PRINT STYLES ── */
 @media print{
-  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
   .topnav,.arc-nav,.main,.copy-toast{display:none!important}
   #dna-report{display:block!important;position:static!important;overflow:visible!important}
   .rp-topbar{display:none!important}
-  .rp-body{padding:1cm 1.5cm;max-width:100%}
+  .rp-body{padding:1.2cm 1.8cm;max-width:100%}
   .rp-doc-title{font-size:1.6rem}
   .rp-section{page-break-inside:avoid}
   .rp-commit-box{page-break-inside:avoid;break-inside:avoid}
-  .rp-commit-field{
-    min-height:0;
-    height:auto;
-    overflow:visible;
-    white-space:pre-wrap;
-    border:1px solid #ccc;
-    background:#fafafa;
-    -webkit-print-color-adjust:exact
-  }
+  .rp-commit-field{min-height:0;height:auto;overflow:visible;white-space:pre-wrap;border:1px solid #ccc;background:#fafafa}
   .rp-commit-field:empty{min-height:80px;border:1px dashed #ccc}
   .rp-commit-field:empty::before{content:attr(data-placeholder);color:#aaa}
+  .no-print{display:none!important}
   .rp-impl-grid{grid-template-columns:1fr 1fr}
+  /* Colour-safe trait & scarf badge overrides */
+  .hlv.H{background:#E8F8E8!important;color:#1A6A1A!important}
+  .hlv.B{background:#FFF8E0!important;color:#7A5A00!important}
+  .hlv.L{background:#FEE8E8!important;color:#8A1A1A!important}
+  .badge-high{background:#FEE8E8!important;color:#8A1A1A!important;border:1px solid #EEB0B0!important}
+  .badge-mod{background:#FFF8E0!important;color:#7A5A00!important;border:1px solid #E8C880!important}
+  .badge-low{background:#E8F8F0!important;color:#0A4A2A!important;border:1px solid #90D0A8!important}
+  .rp-impl-risk{background:#FEE8E8!important;border:1px solid #EEB0B0!important}
+  .rp-impl-design{background:#E8F0FF!important;border:1px solid #A0B8EE!important}
+  .rp-impl-watch{background:#FFF8E0!important;border:1px solid #E8C880!important}
+  .rp-impl-strength{background:#E8F8F0!important;border:1px solid #90D0A8!important}
+  .rp-impl-risk .rp-impl-lbl{color:#8A1A1A!important}
+  .rp-impl-design .rp-impl-lbl{color:#1A3A8A!important}
+  .rp-impl-watch .rp-impl-lbl{color:#7A5A00!important}
+  .rp-impl-strength .rp-impl-lbl{color:#0A4A2A!important}
+  .rp-t-risk{background:#FEE8E8!important;color:#7A1A1A!important}
+  .rp-t-resp{background:#E8F8F0!important;color:#0A4A2A!important}
+  .rp-synthesis{background:#EDE8FF!important;border-color:#9B8FD8!important}
+  .rp-synth-title{color:#3C2A8C!important}
+  @page{margin:1.5cm 1.8cm;size:A4}
 }
 </style>
 </head>
@@ -732,11 +766,16 @@ textarea.czb-notes:focus{outline:none;border-color:var(--arc3-bd);background:var
   <div class="report-trigger" id="report-trigger">
     <div class="rt-text">
       <strong>Generate Lens 1 — Awareness Report</strong>
-      Complete both the OCEANAL Team Profile and the SCARF Climate Diagnostic above, then generate your organisation's Team DNA Report. The report synthesises personality + climate into a unified leadership brief and is ready to print as PDF or share by email.
+      Complete both tools above, then generate your Team DNA Report. Three export options:
+      <span style="display:block;margin-top:.35rem;font-size:.73rem">
+        <span style="color:#3C2A8C;font-weight:600">⬇ PDF</span> — full colour-coded report via browser print dialog &nbsp;·&nbsp;
+        <span style="color:#0A4A2A;font-weight:600">✉ Email</span> — plain-text summary copied to clipboard &nbsp;·&nbsp;
+        <span style="color:#1A3A8A;font-weight:600">🖥 Screen</span> — scrollable on-screen view
+      </span>
     </div>
     <div class="rt-actions">
-      <button class="rpt-btn secondary" id="btn-copy-report" onclick="emailReport()" disabled>✉ Copy for Email</button>
-      <button class="rpt-btn primary" id="btn-gen-report" onclick="generateReport()" disabled>▶ Generate Team DNA Report</button>
+      <button class="rpt-btn secondary" id="btn-copy-report" onclick="emailReport()" disabled>✉ Email</button>
+      <button class="rpt-btn primary" id="btn-gen-report" onclick="generateReport()" disabled>▶ Generate Report</button>
     </div>
   </div>
 
@@ -1769,8 +1808,8 @@ function generateAlignmentMap(){
   var html='<div class="ar-topbar">'
     +'<span class="ar-topbar-title">Arc 3 — Extrapolating: Alignment Map Report</span>'
     +'<div class="ar-topbar-actions">'
-    +'<button class="ar-btn ar-btn-email" onclick="emailAlignmentReport()">✉ Copy for Email</button>'
-    +'<button class="ar-btn ar-btn-print" onclick="window.print()">⬇ Print / Save as PDF</button>'
+    +'<button class="ar-btn ar-btn-email" onclick="emailAlignmentReport()" title="Copy plain-text to clipboard for email">✉ Email</button>'
+    +'<button class="ar-btn ar-btn-print" onclick="window.print()" title="Saves colour-coded PDF — choose Save as PDF in print dialog">⬇ Save as PDF</button>'
     +'<button class="ar-btn ar-btn-close" onclick="closeAlignmentReport()">✕ Close</button>'
     +'</div></div>'
     +'<div class="ar-body">'
@@ -1789,10 +1828,7 @@ function generateAlignmentMap(){
     +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">Burning Platform owners and first actions agreed in this session</div><div class="ar-commit-field" contenteditable="true" data-ph="For each Burning Platform domain, record: the named owner, the first corrective action, and the agreed timeline. This must be completed before moving to the Converging Zone in Arc 4."></div></div>'
     +'<div class="ar-commitbox"><div class="ar-commitbox-lbl">High Flammable priorities for early intervention</div><div class="ar-commit-field" contenteditable="true" data-ph="Which High Flammable domains will be actively monitored through the strategy build? Who is responsible for signalling when they begin to escalate?"></div></div>'
     +'</div>'
-    +'<div class="ar-footer-bar">'
-    +'<span><strong>S2R Strategy Design System</strong> · Impactis Consulting · Lens 1: Aligning Heart & Mind · Arc 3</span>'
-    +'<span>'+today+'</span>'
-    +'</div></div>';
+    +'<div class="no-print" style="margin-top:1rem;padding:.6rem 1rem;background:#F2F0EC;border:1px dashed #CCC9C0;border-radius:8px;font-size:.72rem;color:#4A4A5E;line-height:1.7">'    +'<strong style="color:#1A1A2E">Export — </strong>'    +'<strong style="color:#3C2A8C">⬇ Save as PDF:</strong> click the button above · all red / amber / green colour coding is preserved. &nbsp;'    +'<strong style="color:#0A4A2A">✉ Email:</strong> copies a plain-text summary to clipboard ready to paste into any email client.'    +'</div>'    +'<div class="ar-footer-bar">'    +'<span><strong>S2R Strategy Design System</strong> · Impactis Consulting · Lens 1: Aligning Heart & Mind · Arc 3</span>'    +'<span>'+today+'</span>'    +'</div></div>';
 
   var panel=document.getElementById('alignment-report');
   panel.innerHTML=html;
@@ -2052,8 +2088,8 @@ function generateReport(){
   <div class="rp-topbar">
     <span class="rp-topbar-title">Lens 1 — Awareness: Team DNA Report</span>
     <div class="rp-topbar-actions">
-      <button class="rp-email" onclick="emailReport()">✉ Copy for Email</button>
-      <button class="rp-print" onclick="window.print()">⬇ Print / Save as PDF</button>
+      <button class="rp-email" onclick="emailReport()" title="Copy plain-text version to clipboard for pasting into email">✉ Email</button>
+      <button class="rp-print" onclick="window.print()" title="Save colour-coded PDF via your browser's print dialog">⬇ Save as PDF</button>
       <button class="rp-close" onclick="closeReport()">✕ Close</button>
     </div>
   </div>
@@ -2112,9 +2148,11 @@ function generateReport(){
         <div class="rp-commit-lbl">Facilitator notes</div>
         <div class="rp-commit-field" contenteditable="true" style="min-height:90px" data-placeholder="Observations from the Awareness arc. What surfaced in discussion that is not captured in the diagnostics above? What should the facilitator carry forward into Arcs 2–4?"></div>
       </div>
-      <div style="margin-top:.85rem;padding:.75rem 1rem;background:var(--surf2);border:1px dashed var(--bdr2);border-radius:8px;font-size:.76rem;color:var(--tx3);line-height:1.65">
-        <strong style="color:var(--tx);display:block;margin-bottom:.2rem">Attaching a commitment document</strong>
-        If your team has prepared a separate commitment summary, print this report using the button above and attach the document behind page 1. The printed report includes a footer line on each page to keep the set together.
+      <div class="no-print" style="margin-top:.85rem;padding:.75rem 1rem;background:var(--surf2);border:1px dashed var(--bdr2);border-radius:8px;font-size:.76rem;color:var(--tx3);line-height:1.65">
+        <strong style="color:var(--tx);display:block;margin-bottom:.2rem">Export options for this report</strong>
+        <strong style="color:#3C2A8C">⬇ Save as PDF</strong> — Click the button above. In the print dialog, choose "Save as PDF". All colour coding (red / amber / green) is preserved in the PDF output.<br>
+        <strong style="color:#0A4A2A">✉ Email</strong> — Copies a plain-text version to your clipboard. Paste it directly into any email client. Includes trait summaries, SCARF scores, and leadership actions.<br>
+        <strong style="color:#1A3A8A">🖥 Screen view</strong> — The current panel is the on-screen version. Scroll to review all sections before exporting.
       </div>
     </div>
 
